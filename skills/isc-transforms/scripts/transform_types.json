@@ -1,0 +1,344 @@
+{
+ "_generated": "tools/build_references.py from developer.sailpoint.com fe42feb",
+ "ruleOperations": {
+  "generateRandomString": {
+   "doc": "generate-random-string",
+   "optional": [],
+   "required": [
+    "includeNumbers",
+    "includeSpecialChars",
+    "length"
+   ]
+  },
+  "getEndOfString": {
+   "doc": "rule",
+   "optional": [],
+   "required": []
+  },
+  "getReferenceIdentityAttribute": {
+   "doc": "get-reference-identity-attribute",
+   "optional": [],
+   "required": [
+    "attributeName",
+    "uid"
+   ]
+  }
+ },
+ "types": {
+  "accountAttribute": {
+   "doc": "account-attribute",
+   "optional": [
+    "accountFilter",
+    "accountPropertyFilter",
+    "accountReturnFirstLink",
+    "accountSortAttribute",
+    "accountSortDescending",
+    "input"
+   ],
+   "required": [
+    "attributeName",
+    "sourceName"
+   ]
+  },
+  "base64Decode": {
+   "doc": "base64-decode",
+   "optional": [
+    "input"
+   ],
+   "required": []
+  },
+  "base64Encode": {
+   "doc": "base64-encode",
+   "optional": [
+    "input"
+   ],
+   "required": []
+  },
+  "concat": {
+   "doc": "concatenation",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "values"
+   ]
+  },
+  "conditional": {
+   "doc": "conditional",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "expression",
+    "negativeCondition",
+    "positiveCondition"
+   ]
+  },
+  "dateCompare": {
+   "doc": "date-compare",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "firstDate",
+    "negativeCondition",
+    "operator",
+    "positiveCondition",
+    "secondDate"
+   ]
+  },
+  "dateFormat": {
+   "doc": "date-format",
+   "optional": [
+    "input",
+    "inputFormat",
+    "outputFormat"
+   ],
+   "required": []
+  },
+  "dateMath": {
+   "doc": "date-math",
+   "optional": [
+    "input",
+    "roundUp"
+   ],
+   "required": [
+    "expression"
+   ]
+  },
+  "decomposeDiacriticalMarks": {
+   "doc": "decompose-diacritical-marks",
+   "optional": [
+    "input"
+   ],
+   "required": []
+  },
+  "displayName": {
+   "doc": "display-name",
+   "optional": [
+    "input"
+   ],
+   "required": []
+  },
+  "e164phone": {
+   "doc": "e164-phone",
+   "optional": [
+    "defaultRegion",
+    "input"
+   ],
+   "required": []
+  },
+  "firstValid": {
+   "doc": "first-valid",
+   "optional": [
+    "ignoreErrors",
+    "input"
+   ],
+   "required": [
+    "values"
+   ]
+  },
+  "identityAttribute": {
+   "doc": "identity-attribute",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "name"
+   ]
+  },
+  "indexOf": {
+   "doc": "index-of",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "substring"
+   ]
+  },
+  "iso3166": {
+   "doc": "iso-3166",
+   "optional": [
+    "format",
+    "input"
+   ],
+   "required": []
+  },
+  "join": {
+   "doc": "join",
+   "optional": [
+    "input",
+    "separator"
+   ],
+   "required": [
+    "values"
+   ]
+  },
+  "lastIndexOf": {
+   "doc": "last-index-of",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "substring"
+   ]
+  },
+  "leftPad": {
+   "doc": "left-pad",
+   "optional": [
+    "input",
+    "padding"
+   ],
+   "required": [
+    "length"
+   ]
+  },
+  "lookup": {
+   "doc": "lookup",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "table"
+   ]
+  },
+  "lower": {
+   "doc": "lower",
+   "optional": [
+    "input"
+   ],
+   "required": []
+  },
+  "normalizeNames": {
+   "doc": "name-normalizer",
+   "optional": [
+    "input"
+   ],
+   "required": []
+  },
+  "randomAlphaNumeric": {
+   "doc": "random-alphanumeric",
+   "optional": [
+    "input",
+    "length"
+   ],
+   "required": []
+  },
+  "randomNumeric": {
+   "doc": "random-numeric",
+   "optional": [
+    "input",
+    "length"
+   ],
+   "required": []
+  },
+  "reference": {
+   "doc": "reference",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "id"
+   ]
+  },
+  "replace": {
+   "doc": "replace",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "regex",
+    "replacement"
+   ]
+  },
+  "replaceAll": {
+   "doc": "replace-all",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "table"
+   ]
+  },
+  "rfc5646": {
+   "doc": "rfc-5646",
+   "optional": [
+    "input"
+   ],
+   "required": []
+  },
+  "rightPad": {
+   "doc": "right-pad",
+   "optional": [
+    "input",
+    "padding"
+   ],
+   "required": [
+    "length"
+   ]
+  },
+  "split": {
+   "doc": "split",
+   "optional": [
+    "input",
+    "throws"
+   ],
+   "required": [
+    "delimiter",
+    "index"
+   ]
+  },
+  "static": {
+   "doc": "static",
+   "optional": [
+    "input"
+   ],
+   "required": [
+    "value"
+   ]
+  },
+  "substring": {
+   "doc": "substring",
+   "optional": [
+    "beginOffset",
+    "end",
+    "endOffset",
+    "input"
+   ],
+   "required": [
+    "begin"
+   ]
+  },
+  "trim": {
+   "doc": "trim",
+   "optional": [
+    "input"
+   ],
+   "required": []
+  },
+  "upper": {
+   "doc": "upper",
+   "optional": [
+    "input"
+   ],
+   "required": []
+  },
+  "usernameGenerator": {
+   "doc": "username-generator",
+   "optional": [
+    "input",
+    "sourceCheck"
+   ],
+   "required": [
+    "patterns"
+   ]
+  },
+  "uuid": {
+   "doc": "uuid-generator",
+   "optional": [
+    "input"
+   ],
+   "required": []
+  }
+ }
+}

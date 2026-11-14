@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule name="Bad" type="BeforeProvisioning">
+  <Source><![CDATA[
+    import sailpoint.object.*;
+    System.out.println("start");
+    Identity id = context.getObjectByName(Identity.class, "x");
+    log.info("password is " + plan.getArguments().get("password"));
+    Thread.sleep(1000);
+    try { foo(); } catch (Exception e) {}
+    return plan;
+  ]]></Source>
+</Rule>

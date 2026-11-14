@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule name="Calculate Lifecycle" type="IdentityAttribute">
+  <Description>Lifecycle state from start and end dates.</Description>
+  <Source><![CDATA[
+    import java.text.SimpleDateFormat;
+    import java.util.Date;
+
+    if (identity == null) {
+      return oldValue;
+    }
+    String start = identity.getStringAttribute("startDate");
+    if (start == null) {
+      log.debug("No startDate, keeping current value");
+      return oldValue;
+    }
+    try {
+      Date startDate = new SimpleDateFormat("yyyy-MM-dd").parse(start);
+      return startDate.after(new Date()) ? "prehire" : "active";
+    } catch (Exception e) {
+      log.warn("Unparseable startDate for " + identity.getName());
+      return oldValue;
+    }
+  ]]></Source>
+</Rule>

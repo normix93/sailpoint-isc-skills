@@ -1,0 +1,1 @@
+{"name":"Email - first.last","type":"lower","attributes":{"input":{"type":"decomposeDiacriticalMarks","attributes":{"input":{"type":"static","attributes":{"first":{"type":"identityAttribute","attributes":{"name":"firstname"}},"last":{"type":"identityAttribute","attributes":{"name":"lastname"}},"value":"$first.$last@example.com"}}}}}}
