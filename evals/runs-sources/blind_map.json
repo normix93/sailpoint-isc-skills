@@ -1,0 +1,42 @@
+{
+ "src-01": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "src-02": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "src-03": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "src-04": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "src-05": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "src-06": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "src-07": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "src-08": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "src-09": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "src-10": {
+  "A": "skills",
+  "B": "baseline"
+ }
+}
