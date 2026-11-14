@@ -1,0 +1,40 @@
+{"id": "api-01", "A": {"score": 2, "note": "Correct path, filters with operators, query params, limit 250/offset, stable sorters."}, "B": {"score": 0, "note": "Lists status as a filter (forbidden); legacy path unmapped."}}
+{"id": "api-02", "A": {"score": 2, "note": "Correct path, all filters with operators, sorters created/modified."}, "B": {"score": 1, "note": "Legacy path unmapped; filters incomplete (no accessRequestId, created)."}}
+{"id": "api-03", "A": {"score": 0, "note": "Suggests Search with @accounts as alternative (forbidden); legacy path unmapped."}, "B": {"score": 2, "note": "Correct endpoint, filters, limit 250; correctly warns against Search."}}
+{"id": "api-04", "A": {"score": 2, "note": "Correct mapping, per-service versioning, legacy until end of support, avoid /latest."}, "B": {"score": 1, "note": "Hedged, guesses a wrong path first; correct one only as alternative."}}
+{"id": "api-05", "A": {"score": 2, "note": "json-patch+json and JSON Patch op array."}, "B": {"score": 2, "note": "json-patch+json and JSON Patch op array, correct examples."}}
+{"id": "api-06", "A": {"score": 2, "note": "100/10s per client_id and version, 429 Retry-After, backoff."}, "B": {"score": 0, "note": "States limit is per access token (forbidden)."}}
+{"id": "api-07", "A": {"score": 0, "note": "Says EQ is accepted (forbidden)."}, "B": {"score": 2, "note": "Lowercase operators required, double-quoted strings."}}
+{"id": "api-08", "A": {"score": 2, "note": "searchAfter, sort on id, pass last sort values."}, "B": {"score": 2, "note": "searchAfter, unique sort field, last record's sort values."}}
+{"id": "wf-01", "A": {"score": 2, "note": "Correct trigger and department filter."}, "B": {"score": 2, "note": "Correct trigger and department filter."}}
+{"id": "wf-02", "A": {"score": 2, "note": "Cron hours only, weekly option to check in UI, overlap noted."}, "B": {"score": 0, "note": "Claims cron 30 6 * * 1-5 works (forbidden)."}}
+{"id": "wf-03", "A": {"score": 2, "note": "loopInput, context, only these two visible."}, "B": {"score": 1, "note": "loopInput and context right; speculative $.loop.index and output path."}}
+{"id": "wf-04", "A": {"score": 1, "note": "250 hedged; no serial 1000; says fail or truncate."}, "B": {"score": 2, "note": "250 parallel, 1000 serial, exceeding fails."}}
+{"id": "wf-05", "A": {"score": 1, "note": "No-wait and second workflow right; missing failedAccessRequests behavior."}, "B": {"score": 2, "note": "All must facts present."}}
+{"id": "wf-06", "A": {"score": 1, "note": "Only inline {{}}; misses Templating Context and ${name}."}, "B": {"score": 2, "note": "Templating Context map, ${displayName}, and inline alternative."}}
+{"id": "wf-07", "A": {"score": 1, "note": "Reassign advice good; misses auto-created PAT and orphaned/unauthorized failure."}, "B": {"score": 2, "note": "Owner+PAT, orphaned unauthorized failure, reassign before leaving."}}
+{"id": "wf-08", "A": {"score": 2, "note": "External trigger, New Access Token, correct execute path, $.trigger."}, "B": {"score": 1, "note": "Correct concept but legacy /v3 paths unmapped; no UI token step."}}
+{"id": "wf-09", "A": {"score": 2, "note": "requestedItem singular; requestedItemsStatus belongs to Decision."}, "B": {"score": 0, "note": "Claims requestedItemsStatus in Submitted (forbidden)."}}
+{"id": "wf-10", "A": {"score": 0, "note": "Guessed wrong variable names; misses workflowErrorMessage/StatusCode."}, "B": {"score": 2, "note": "Enable Error Handling, workflowErrorMessage, workflowStatusCode."}}
+{"id": "et-01", "A": {"score": 2, "note": "Trigger, three response fields, one subscription, failure on no response."}, "B": {"score": 0, "note": "Says request proceeds on timeout, contradicting failure behavior."}}
+{"id": "et-02", "A": {"score": 2, "note": "10s, ASYNC ack then callback with secret before responseDeadline, DYNAMIC."}, "B": {"score": 1, "note": "10s, ASYNC, DYNAMIC present; deadline vague and hedged."}}
+{"id": "et-03", "A": {"score": 2, "note": "50."}, "B": {"score": 2, "note": "50."}}
+{"id": "et-04", "A": {"score": 2, "note": "Correct filter on Identity Attributes Changed."}, "B": {"score": 2, "note": "Correct filter on Identity Attributes Changed."}}
+{"id": "et-05", "A": {"score": 1, "note": "Path and body right; no quote escaping, uses single quotes."}, "B": {"score": 2, "note": "Correct path, input+filter body, escape quotes."}}
+{"id": "nt-01", "A": {"score": 0, "note": "Wrong template name/keys, guessed variables, no variables endpoint."}, "B": {"score": 2, "note": "Access Request Decision to requester, correct variables, endpoint."}}
+{"id": "nt-02", "A": {"score": 0, "note": "Suggests deleting template/toggle; misses no_send/Stop."}, "B": {"score": 2, "note": "no_send/Stop subject, overrides process settings caveat."}}
+{"id": "nt-03", "A": {"score": 2, "note": "v2 template, $user v1 only, use $__recipient/$__util."}, "B": {"score": 1, "note": "Probably not, but misses v1/v2 reason and v2 globals."}}
+{"id": "nt-04", "A": {"score": 2, "note": "Only globals, conditionals skipped, real event with test address."}, "B": {"score": 1, "note": "Real event advice; misses globals-only and conditional sections."}}
+{"id": "nt-05", "A": {"score": 1, "note": "Inline styles advised but hedged; unclear on comments."}, "B": {"score": 2, "note": "Sanitizer strips style/head/comments; use inline styles."}}
+{"id": "nt-06", "A": {"score": 2, "note": "Global/brand From, verified, Reply-To per template."}, "B": {"score": 0, "note": "Suggests per-template From via API; misses Reply-To."}}
+{"id": "tr-01", "A": {"score": 1, "note": "dateCompare correct; missing requiresPeriodicRefresh."}, "B": {"score": 2, "note": "dateCompare with now, operator, conditions, requiresPeriodicRefresh true."}}
+{"id": "tr-02", "A": {"score": 0, "note": "Claims ne works in conditional (forbidden)."}, "B": {"score": 2, "note": "Only eq; swap outputs or use lookup."}}
+{"id": "tr-03", "A": {"score": 2, "note": "begin required, end optional, offsets."}, "B": {"score": 2, "note": "begin required, end optional, offsets."}}
+{"id": "tr-04", "A": {"score": 2, "note": "Rule-type transform, Cloud Services Deployment Utility, uid manager, attributeName email."}, "B": {"score": 0, "note": "Wrong JSON: non-existent type and name instead of uid; not rule-based."}}
+{"id": "ru-01", "A": {"score": 2, "note": "Forbidden context/getObjectByName; idn helpers."}, "B": {"score": 1, "note": "Right core; confusing wrong note on getIdentityById availability."}}
+{"id": "ru-02", "A": {"score": 2, "note": "POST /connector-rules/v1, no review, PATCH jdbcProvisionRule."}, "B": {"score": 1, "note": "Connector rule no review right; unsure/wrong attach path."}}
+{"id": "ru-03", "A": {"score": 2, "note": "Map with identityAttributeName/Value."}, "B": {"score": 2, "note": "Map with identityAttributeName/Value."}}
+{"id": "ru-04", "A": {"score": 2, "note": "Rule - Type - Name.xml."}, "B": {"score": 2, "note": "Rule - {type} - {name}.xml."}}
+{"id": "se-01", "A": {"score": 2, "note": "Correct query, single @accounts group."}, "B": {"score": 2, "note": "Correct query, single @accounts group."}}
+{"id": "se-02", "A": {"score": 1, "note": "Events index and wildcard technicalName; speculative messy syntax."}, "B": {"score": 2, "note": "Events, ROLE_UPDATE_PASSED, created:[now-1M TO now]."}}
+{"id": "se-03", "A": {"score": 2, "note": "No, with full unsupported list."}, "B": {"score": 0, "note": "Says yes (forbidden)."}}

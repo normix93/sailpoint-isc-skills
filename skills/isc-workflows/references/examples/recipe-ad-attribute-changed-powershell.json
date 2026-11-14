@@ -1,0 +1,72 @@
+{
+  "name": "AD attribute changed - run PowerShell (employees only)",
+  "description": "When the 'title' attribute of an Active Directory account changes for an identity of type Employee, call the endpoint that runs the PowerShell script.",
+  "enabled": false,
+  "trigger": {
+    "type": "EVENT",
+    "attributes": {
+      "id": "<ID of 'Account Updated' from GET /workflow-library/v1/triggers?filters=name eq \"Account Updated\">",
+      "filter.$": "$.singleValueAttributeChanges[?(@.name == \"title\")]",
+      "description": "Account updated with a change to title"
+    }
+  },
+  "definition": {
+    "start": "Is AD Account",
+    "steps": {
+      "Is AD Account": {
+        "type": "choice",
+        "description": "Only the Active Directory source",
+        "choiceList": [
+          { "comparator": "StringEquals", "variableA.$": "$.trigger.source.name", "variableB": "Active Directory", "nextStep": "Is Correlated" }
+        ],
+        "defaultStep": "Not In Scope"
+      },
+      "Is Correlated": {
+        "type": "choice",
+        "description": "Uncorrelated accounts have no identity",
+        "choiceList": [
+          { "comparator": "IsPresent", "variableA.$": "$.trigger.identity.id", "nextStep": "Get Identity" }
+        ],
+        "defaultStep": "Not In Scope"
+      },
+      "Get Identity": {
+        "actionId": "sp:get-identity",
+        "attributes": { "id.$": "$.trigger.identity.id" },
+        "nextStep": "Is Employee",
+        "type": "action",
+        "versionNumber": 2
+      },
+      "Is Employee": {
+        "type": "choice",
+        "description": "Identity attribute that marks employees (adapt name and value to your identity profile)",
+        "choiceList": [
+          { "comparator": "StringEquals", "variableA.$": "$.getIdentity.attributes.employeeType", "variableB": "Employee", "nextStep": "Run PowerShell" }
+        ],
+        "defaultStep": "Not In Scope"
+      },
+      "Run PowerShell": {
+        "actionId": "sp:http",
+        "description": "Calls the service that runs the script (e.g. an automation runbook webhook). Put the credential in Sensitive Request Headers in the UI.",
+        "attributes": {
+          "method": "post",
+          "url": "https://automation.example.com/webhooks/ad-title-changed",
+          "authenticationType": null,
+          "requestContentType": "json",
+          "jsonRequestBody": {
+            "identityId": "{{$.trigger.identity.id}}",
+            "identityName": "{{$.getIdentity.name}}",
+            "nativeIdentity": "{{$.trigger.account.nativeIdentity}}",
+            "sAMAccountName": "{{$.trigger.account.attributes.sAMAccountName}}",
+            "attribute": "title",
+            "cause": "{{$.trigger.event.cause}}"
+          }
+        },
+        "nextStep": "Done",
+        "type": "action",
+        "versionNumber": 2
+      },
+      "Done": { "type": "success" },
+      "Not In Scope": { "type": "success", "description": "Not AD, not correlated or not an employee" }
+    }
+  }
+}

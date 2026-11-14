@@ -1,0 +1,1 @@
+{"name":"LCS","type":"dateCompare","attributes":{"firstDate":{"type":"accountAttribute","name":"inner","attributes":{"attributeName":"end"}},"secondDate":"now","operator":"after","positiveCondition":"inactive","negativeCondition":"active","foo":1}}

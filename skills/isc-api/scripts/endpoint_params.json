@@ -1,0 +1,12028 @@
+{
+"_generated": "tools/build_references.py from sailpoint-oss/api-specs 1f5d866",
+"endpoints": {
+"DELETE /access-model-metadata/v1/attributes/{key}": {
+"experimental": false,
+"query": []
+},
+"DELETE /access-model-metadata/v1/attributes/{key}/values/{value}": {
+"experimental": false,
+"query": []
+},
+"DELETE /access-profiles/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /access-profiles/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}": {
+"experimental": false,
+"query": []
+},
+"DELETE /access-profiles/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"DELETE /accounts/v1/search-attribute-config/{name}": {
+"experimental": false,
+"query": []
+},
+"DELETE /accounts/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /authorization/v1/custom-user-levels/{id}": {
+"experimental": true,
+"query": []
+},
+"DELETE /brandings/v1/{name}": {
+"experimental": false,
+"query": []
+},
+"DELETE /campaign-templates/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /campaign-templates/v1/{id}/schedule": {
+"experimental": false,
+"query": []
+},
+"DELETE /certification-campaigns/v1/campaign-templates/{id}": {
+"experimental": true,
+"query": []
+},
+"DELETE /certification-campaigns/v1/campaign-templates/{id}/schedule": {
+"experimental": true,
+"query": []
+},
+"DELETE /configuration-hub/v1/backups/uploads/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /configuration-hub/v1/backups/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /configuration-hub/v1/drafts/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /configuration-hub/v1/object-mappings/{sourceOrg}/{objectMappingId}": {
+"experimental": false,
+"query": []
+},
+"DELETE /configuration-hub/v1/scheduled-actions/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /connector-customizers/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /connector-rules/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /connectors/v1/{scriptName}": {
+"experimental": false,
+"query": []
+},
+"DELETE /controls/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /criteria/v1/privilege/{criteriaId}": {
+"experimental": false,
+"query": []
+},
+"DELETE /custom-password-instructions/v1/{pageId}": {
+"experimental": true,
+"query": [
+"locale"
+]
+},
+"DELETE /das/v1/applications/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /das/v1/identity-collectors/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /das/v1/permissions/fields/{name}": {
+"experimental": false,
+"query": []
+},
+"DELETE /das/v1/tasks/schedules/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /das/v1/tasks/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /data-segments/v1/{segmentId}": {
+"experimental": true,
+"query": [
+"published"
+]
+},
+"DELETE /entitlements/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}": {
+"experimental": false,
+"query": []
+},
+"DELETE /form-definitions/v1/{formDefinitionID}": {
+"experimental": false,
+"query": []
+},
+"DELETE /generic-approvals/v1/config/{id}/{scope}": {
+"experimental": false,
+"query": []
+},
+"DELETE /icons/v1/{objectType}/{objectId}": {
+"experimental": true,
+"query": []
+},
+"DELETE /identities/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /identity-attributes/v1/bulk-delete": {
+"experimental": false,
+"query": []
+},
+"DELETE /identity-attributes/v1/{name}": {
+"experimental": false,
+"query": []
+},
+"DELETE /identity-profiles/v1/{identity-profile-id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /identity-profiles/v1/{identity-profile-id}/lifecycle-states/{lifecycle-state-id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /launchers/v1/{launcherID}": {
+"experimental": false,
+"query": []
+},
+"DELETE /machine-identities/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"DELETE /machine-identities/v1/{id}/delete-async": {
+"experimental": true,
+"query": []
+},
+"DELETE /machine-identities/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"DELETE /machine-identities/v2/{id}/delete-async": {
+"experimental": true,
+"query": []
+},
+"DELETE /managed-clients/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /managed-cluster-types/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /managed-clusters/v1/{id}": {
+"experimental": false,
+"query": [
+"removeClients"
+]
+},
+"DELETE /multihosts/v1/{multihostId}": {
+"experimental": false,
+"query": []
+},
+"DELETE /non-employee-records/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /non-employee-requests/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /non-employee-sources/v1/{sourceId}": {
+"experimental": false,
+"query": []
+},
+"DELETE /non-employee-sources/v1/{sourceId}/schema-attributes": {
+"experimental": false,
+"query": []
+},
+"DELETE /non-employee-sources/v1/{sourceId}/schema-attributes/{attributeId}": {
+"experimental": false,
+"query": []
+},
+"DELETE /oauth-clients/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /parameter-storage/v1/parameters/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /password-policies/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"DELETE /password-sync-groups/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /personal-access-tokens/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /reassignment-configurations/v1/{identityId}/{configType}": {
+"experimental": true,
+"query": []
+},
+"DELETE /reminder-escalations/v1/config/tenants/{domainObjectType}": {
+"experimental": true,
+"query": []
+},
+"DELETE /roles/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /roles/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}": {
+"experimental": false,
+"query": []
+},
+"DELETE /roles/v1/{roleId}/dimensions/{dimensionId}": {
+"experimental": false,
+"query": []
+},
+"DELETE /saved-searches/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /scheduled-searches/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /segments/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /service-desk-integrations/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /sim-integrations/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"DELETE /sod-policies/v1/{id}": {
+"experimental": false,
+"query": [
+"logical"
+]
+},
+"DELETE /sod-policies/v1/{id}/schedule": {
+"experimental": false,
+"query": []
+},
+"DELETE /source-apps/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"DELETE /source-subtypes/v1/{subtypeId}": {
+"experimental": true,
+"query": []
+},
+"DELETE /source-subtypes/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"DELETE /source-subtypes/v2/{id}/provisioning-policy": {
+"experimental": true,
+"query": []
+},
+"DELETE /sources/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/classify": {
+"experimental": true,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/datasets/{datasetId}": {
+"experimental": true,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/machine-account-mappings": {
+"experimental": true,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/machine-classification-config": {
+"experimental": true,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/native-change-detection-config": {
+"experimental": false,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/provisioning-policies/{usageType}": {
+"experimental": false,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/resources/{resourceId}": {
+"experimental": true,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/resources/{resourceId}/correlation-configs/{configId}": {
+"experimental": true,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/schedules/{scheduleType}": {
+"experimental": false,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/schemas/{schemaId}": {
+"experimental": false,
+"query": []
+},
+"DELETE /sources/v1/{sourceId}/subtypes/{technicalName}": {
+"experimental": true,
+"query": []
+},
+"DELETE /sources/v2/{sourceId}/provisioning-policies/{id}": {
+"experimental": true,
+"query": []
+},
+"DELETE /ssf/v1/streams": {
+"experimental": false,
+"query": [
+"stream_id"
+]
+},
+"DELETE /tagged-objects/v1/{type}/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /tags/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /transforms/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /trigger-subscriptions/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /ui-plugins/v1/{pluginInstanceId}": {
+"experimental": true,
+"query": []
+},
+"DELETE /ui-plugins/v1/{pluginInstanceId}/link": {
+"experimental": true,
+"query": []
+},
+"DELETE /verified-from-addresses/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /workflows/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"DELETE /workgroups/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /.well-known/v1/ssf-configuration": {
+"experimental": false,
+"query": []
+},
+"GET /access-model-metadata/v1/attributes": {
+"experimental": false,
+"filters": {
+"key": [
+"eq",
+"co"
+],
+"name": [
+"eq",
+"co"
+],
+"objectTypes": [
+"eq"
+],
+"status": [
+"eq"
+],
+"type": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"limit",
+"offset",
+"count"
+],
+"sorters": [
+"key",
+"name",
+"type",
+"status"
+]
+},
+"GET /access-model-metadata/v1/attributes/{key}": {
+"experimental": false,
+"query": []
+},
+"GET /access-model-metadata/v1/attributes/{key}/values": {
+"experimental": false,
+"filters": {
+"name": [
+"eq",
+"co"
+],
+"status": [
+"eq"
+],
+"type": [
+"eq"
+],
+"value": [
+"eq",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"limit",
+"offset",
+"count"
+],
+"sorters": [
+"value",
+"name",
+"status",
+"type"
+]
+},
+"GET /access-model-metadata/v1/attributes/{key}/values/{value}": {
+"experimental": false,
+"query": []
+},
+"GET /access-profiles/v1": {
+"experimental": false,
+"filters": {
+"created": [
+"gt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"requestable": [
+"eq"
+],
+"source.id": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"for-subadmin",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters",
+"for-segment-ids",
+"include-unsegmented"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"GET /access-profiles/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /access-profiles/v1/{id}/entitlements": {
+"experimental": false,
+"filters": {
+"attribute": [
+"eq",
+"sw"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"source.id": [
+"eq",
+"in"
+],
+"value": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"attribute",
+"value",
+"created",
+"modified"
+]
+},
+"GET /access-profiles/v2": {
+"experimental": true,
+"filters": {
+"additionalOwners.id": [
+"eq",
+"in"
+],
+"created": [
+"lt",
+"le",
+"gt",
+"ge"
+],
+"dimensional": [
+"eq"
+],
+"entitlement.id": [
+"eq",
+"in"
+],
+"entitlement.name": [
+"eq",
+"co"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"lt",
+"le",
+"gt",
+"ge"
+],
+"name": [
+"eq",
+"in",
+"co"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"privilegeLevel.effective": [
+"eq",
+"in"
+],
+"requestable": [
+"eq"
+],
+"source.id": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"for-subadmin",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters",
+"for-segment-ids",
+"include-unsegmented",
+"cursor"
+],
+"sorters": [
+"name",
+"created",
+"modified",
+"id",
+"privilegeLevel.effective"
+]
+},
+"GET /access-profiles/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /access-profiles/v2/{id}/entitlements": {
+"experimental": true,
+"filters": {
+"attribute": [
+"eq",
+"co"
+],
+"created": [
+"lt",
+"le",
+"gt",
+"ge"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"lt",
+"le",
+"gt",
+"ge"
+],
+"name": [
+"eq",
+"in",
+"co"
+],
+"privilegeLevel.effective": [
+"eq",
+"in"
+],
+"value": [
+"eq",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters",
+"cursor"
+],
+"sorters": [
+"name",
+"attribute",
+"value",
+"created",
+"modified",
+"id",
+"privilegeLevel.effective"
+]
+},
+"GET /access-request-administration/v1": {
+"experimental": true,
+"filters": {
+"accessRequestId": [
+"in",
+"eq",
+"ne",
+"ge",
+"gt",
+"le",
+"lt",
+"sw"
+],
+"accountActivityItemId": [
+"eq",
+"in",
+"ge",
+"gt",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+],
+"created": [
+"eq",
+"in",
+"ge",
+"gt",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+],
+"status": [
+"in",
+"eq",
+"ne"
+]
+},
+"limitMax": 250,
+"query": [
+"requested-for",
+"requested-by",
+"regarding-identity",
+"assigned-to",
+"count",
+"limit",
+"offset",
+"filters",
+"sorters",
+"request-state"
+],
+"sorters": [
+"created",
+"modified",
+"accountActivityItemId",
+"name",
+"accessRequestId"
+]
+},
+"GET /access-request-approvals/v1/approval-summary": {
+"experimental": false,
+"query": [
+"owner-id",
+"from-date"
+]
+},
+"GET /access-request-approvals/v1/completed": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"in",
+"ge",
+"gt",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le",
+"eq",
+"in",
+"ne",
+"sw"
+],
+"requestedFor.id": [
+"eq",
+"in",
+"ge",
+"gt",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"owner-id",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"created",
+"modified"
+]
+},
+"GET /access-request-approvals/v1/pending": {
+"experimental": false,
+"filters": {
+"accessRequestId": [
+"eq",
+"in"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le",
+"eq",
+"in"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le",
+"eq",
+"in"
+],
+"requestedFor.id": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"owner-id",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"created",
+"modified"
+]
+},
+"GET /access-request-approvals/v1/{accessRequestId}/approvers": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /access-request-config/v1": {
+"experimental": false,
+"query": []
+},
+"GET /access-request-config/v2": {
+"experimental": true,
+"query": []
+},
+"GET /access-request-identity-metrics/v1/{identityId}/requested-objects/{requestedObjectId}/type/{type}": {
+"experimental": false,
+"query": []
+},
+"GET /access-request-status/v1": {
+"experimental": false,
+"filters": {
+"accessRequestId": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt",
+"ne",
+"sw"
+],
+"accountActivityItemId": [
+"eq",
+"in",
+"ge",
+"gt",
+"le",
+"ne",
+"sw"
+],
+"created": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt",
+"ne"
+]
+},
+"limitMax": 250,
+"query": [
+"requested-for",
+"requested-by",
+"regarding-identity",
+"assigned-to",
+"count",
+"limit",
+"offset",
+"filters",
+"sorters",
+"request-state"
+],
+"sorters": [
+"created",
+"modified",
+"accountActivityItemId",
+"name"
+]
+},
+"GET /account-activities/v1": {
+"experimental": false,
+"filters": {
+"created": [
+"gt",
+"lt",
+"ge",
+"le",
+"eq",
+"in",
+"ne",
+"isnull",
+"sw"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le",
+"eq",
+"in",
+"ne",
+"isnull",
+"sw"
+],
+"type": [
+"eq",
+"in",
+"ge",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"requested-for",
+"requested-by",
+"regarding-identity",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"type",
+"created",
+"modified"
+]
+},
+"GET /account-activities/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /account-aggregations/v1/{id}/status": {
+"experimental": false,
+"query": []
+},
+"GET /account-requests/v1/deletion": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"mine"
+]
+},
+"GET /account-requests/v1/machine-account-create/{accountRequestId}": {
+"experimental": true,
+"query": []
+},
+"GET /account-usages/v1/{accountId}/summaries": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"sorters"
+],
+"sorters": [
+"date"
+]
+},
+"GET /accounts/v1": {
+"experimental": false,
+"filters": {
+"created": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"entitlements": [
+"eq"
+],
+"hasEntitlements": [
+"eq"
+],
+"id": [
+"eq",
+"in",
+"sw"
+],
+"identity.correlated": [
+"eq"
+],
+"identity.identityState": [
+"eq",
+"in"
+],
+"identity.name": [
+"eq",
+"in",
+"sw"
+],
+"identityId": [
+"eq",
+"in",
+"sw"
+],
+"manuallyCorrelated": [
+"eq"
+],
+"modified": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"nativeIdentity": [
+"eq",
+"in",
+"sw"
+],
+"origin": [
+"eq",
+"in"
+],
+"recommendation.method": [
+"eq",
+"in",
+"isnull"
+],
+"source.authoritative": [
+"eq"
+],
+"source.connectionType": [
+"eq",
+"in"
+],
+"source.displayableName": [
+"eq",
+"in"
+],
+"sourceId": [
+"eq",
+"in",
+"sw"
+],
+"uncorrelated": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"detailLevel",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"sourceId",
+"identityId",
+"nativeIdentity",
+"uuid",
+"manuallyCorrelated",
+"entitlements",
+"origin",
+"identity.name",
+"identity.identityState",
+"identity.correlated",
+"source.displayableName",
+"source.authoritative",
+"source.connectionType"
+]
+},
+"GET /accounts/v1/search-attribute-config": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /accounts/v1/search-attribute-config/{name}": {
+"experimental": false,
+"query": []
+},
+"GET /accounts/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /accounts/v1/{id}/entitlements": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /accounts/v1/{id}/recommendation": {
+"experimental": true,
+"query": []
+},
+"GET /accounts/v2": {
+"experimental": true,
+"filters": {
+"classificationMethod": [
+"eq",
+"ne",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"correlated": [
+"eq"
+],
+"correlatedIdentity.id": [
+"eq",
+"in",
+"sw"
+],
+"correlatedIdentity.name": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"correlatedIdentity.state": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"created": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"description": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"disabled": [
+"eq"
+],
+"hasEntitlements": [
+"eq"
+],
+"id": [
+"eq",
+"in",
+"sw"
+],
+"locked": [
+"eq"
+],
+"manuallyCorrelated": [
+"eq"
+],
+"modified": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"name": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"nativeIdentity": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"origin": [
+"eq",
+"in"
+],
+"owner.id": [
+"eq",
+"in",
+"sw"
+],
+"owner.name": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"owner.state": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"privilegeLevel.effective": [
+"eq",
+"in",
+"isnull",
+"pr"
+],
+"recommendation.method": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"recommendation.type": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"source.authoritative": [
+"eq"
+],
+"source.connectionType": [
+"eq",
+"in",
+"isnull",
+"pr"
+],
+"source.id": [
+"eq",
+"in",
+"sw"
+],
+"source.name": [
+"eq",
+"in",
+"sw"
+],
+"subType": [
+"eq",
+"ne",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"synced": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"type": [
+"eq",
+"ne"
+],
+"uuid": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"searchAfter",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"uuid",
+"nativeIdentity",
+"created",
+"modified",
+"manuallyCorrelated",
+"description",
+"type",
+"recommendation.type",
+"recommendation.method",
+"locked",
+"disabled",
+"correlated",
+"hasEntitlements",
+"origin",
+"privilegeLevel.effective",
+"classificationMethod",
+"subType",
+"owner.id",
+"owner.name",
+"owner.state",
+"correlatedIdentity.id",
+"correlatedIdentity.name",
+"correlatedIdentity.state",
+"source.id",
+"source.name",
+"source.authoritative",
+"source.connectionType",
+"synced",
+"description",
+"type",
+"origin",
+"source.name",
+"source.connectionType",
+"owner.name",
+"correlatedIdentity.name",
+"correlatedIdentity.state",
+"privilegeLevel.effective",
+"recommendation.type",
+"recommendation.method",
+"classificationMethod",
+"uuid",
+"nativeIdentity",
+"source.id",
+"owner.id"
+]
+},
+"GET /ai-access-request-recommendations/v1": {
+"experimental": true,
+"filters": {
+"access.description": [
+"co",
+"eq",
+"in"
+],
+"access.name": [
+"co"
+],
+"access.type": [
+"eq",
+"in"
+]
+},
+"limitMax": 15,
+"query": [
+"identity-id",
+"limit",
+"offset",
+"count",
+"include-translation-messages",
+"filters",
+"sorters"
+],
+"sorters": [
+"access.name",
+"access.type"
+]
+},
+"GET /ai-access-request-recommendations/v1/config": {
+"experimental": true,
+"query": []
+},
+"GET /ai-access-request-recommendations/v1/ignored-items": {
+"experimental": true,
+"filters": {
+"access.id": [
+"eq",
+"in"
+],
+"access.type": [
+"eq",
+"in"
+],
+"identityId": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"access.id",
+"access.type",
+"identityId",
+"timestamp"
+]
+},
+"GET /ai-access-request-recommendations/v1/requested-items": {
+"experimental": true,
+"filters": {
+"access.id": [
+"eq",
+"in"
+],
+"access.type": [
+"eq",
+"in"
+],
+"identityId": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"access.id",
+"access.type",
+"identityId",
+"timestamp"
+]
+},
+"GET /ai-access-request-recommendations/v1/viewed-items": {
+"experimental": true,
+"filters": {
+"access.id": [
+"eq",
+"in"
+],
+"access.type": [
+"eq",
+"in"
+],
+"identityId": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"access.id",
+"access.type",
+"identityId",
+"timestamp"
+]
+},
+"GET /ai-recommendations/v1/reasons/machine-account-discovery": {
+"experimental": true,
+"query": []
+},
+"GET /api-usage/v1/count": {
+"experimental": true,
+"filters": {
+"endDate": [
+"lt",
+"eq"
+],
+"method": [
+"eq"
+],
+"startDate": [
+"gt",
+"eq"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /api-usage/v1/summary": {
+"experimental": true,
+"filters": {
+"endDate": [
+"lt",
+"eq"
+],
+"method": [
+"eq"
+],
+"startDate": [
+"gt",
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"limit",
+"offset"
+]
+},
+"GET /auth-org/v1/lockout-config": {
+"experimental": false,
+"query": []
+},
+"GET /auth-org/v1/network-config": {
+"experimental": false,
+"query": []
+},
+"GET /auth-org/v1/service-provider-config": {
+"experimental": false,
+"query": []
+},
+"GET /auth-org/v1/session-config": {
+"experimental": false,
+"query": []
+},
+"GET /auth-profiles/v1": {
+"experimental": false,
+"query": []
+},
+"GET /auth-profiles/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /auth-users/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /authorization/v1/authorization-assignable-right-sets": {
+"experimental": true,
+"filters": {
+"category": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"limit",
+"offset"
+],
+"sorters": [
+"id",
+"name",
+"category"
+]
+},
+"GET /authorization/v1/custom-user-levels": {
+"experimental": true,
+"filters": {
+"description": [
+"co"
+],
+"name": [
+"co"
+],
+"owner": [
+"co"
+],
+"status": [
+"eq"
+]
+},
+"limitMax": 50,
+"query": [
+"detailLevel",
+"filters",
+"sorters",
+"limit",
+"offset"
+],
+"sorters": [
+"name",
+"created",
+"description",
+"status",
+"owner"
+]
+},
+"GET /authorization/v1/custom-user-levels/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /authorization/v1/user-levels/{id}/identities": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"count",
+"sorters",
+"limit",
+"offset"
+],
+"sorters": [
+"displayName"
+]
+},
+"GET /brandings/v1": {
+"experimental": false,
+"query": []
+},
+"GET /brandings/v1/{name}": {
+"experimental": false,
+"query": []
+},
+"GET /business-applications/v1": {
+"experimental": true,
+"filters": {
+"id": [
+"eq"
+],
+"name": [
+"eq",
+"co"
+],
+"sanctionedStatus": [
+"eq"
+],
+"signatures.name": [
+"eq",
+"co"
+],
+"signatures.type": [
+"eq",
+"co"
+],
+"source.name": [
+"eq",
+"co"
+],
+"vendor": [
+"eq",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"id",
+"name",
+"sanctionedStatus"
+]
+},
+"GET /business-applications/v1/mcp-servers": {
+"experimental": true,
+"filters": {
+"description": [
+"eq",
+"co"
+],
+"remotes": [
+"eq"
+],
+"sanctionedStatus": [
+"eq",
+"in"
+],
+"serverName": [
+"eq",
+"co",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"serverName",
+"description",
+"modified",
+"connectedAgentCount"
+]
+},
+"GET /business-applications/v1/mcp-servers/count": {
+"experimental": true,
+"query": []
+},
+"GET /business-applications/v1/mcp-servers/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /business-applications/v1/mcp-servers/{id}/connected-agents": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"created",
+"modified",
+"name",
+"nativeIdentity",
+"owners.primaryIdentity.name",
+"owners.secondaryIdentity.name",
+"source.name",
+"resource.id"
+]
+},
+"GET /business-applications/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /campaign-filters/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"start",
+"includeSystemFilters"
+]
+},
+"GET /campaign-filters/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /campaign-templates/v1": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"ge",
+"gt",
+"in",
+"le",
+"lt",
+"ne",
+"sw"
+],
+"name": [
+"eq",
+"ge",
+"gt",
+"in",
+"le",
+"lt",
+"ne",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"sorters",
+"filters"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"GET /campaign-templates/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /campaign-templates/v1/{id}/schedule": {
+"experimental": false,
+"query": []
+},
+"GET /campaigns/v1": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"sw"
+],
+"status": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"detail",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"created"
+]
+},
+"GET /campaigns/v1/reports-configuration": {
+"experimental": false,
+"query": []
+},
+"GET /campaigns/v1/{id}": {
+"experimental": false,
+"query": [
+"detail"
+]
+},
+"GET /campaigns/v1/{id}/reports": {
+"experimental": false,
+"query": []
+},
+"GET /capabilities/v1": {
+"experimental": true,
+"filters": {
+"created": [
+"gt",
+"ge",
+"lt",
+"le"
+],
+"datasetId": [
+"eq",
+"in"
+],
+"environment": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"ge",
+"lt",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"nativeIdentity": [
+"eq",
+"in",
+"sw"
+],
+"owners.governanceGroup.id": [
+"eq",
+"in"
+],
+"owners.governanceGroup.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.primary.id": [
+"eq",
+"in"
+],
+"owners.primary.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.primaryIdentity.id": [
+"eq",
+"in"
+],
+"owners.primaryIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.secondaryGovernanceGroup.id": [
+"eq",
+"in"
+],
+"owners.secondaryGovernanceGroup.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.secondaryIdentity.id": [
+"eq",
+"in"
+],
+"owners.secondaryIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"resource.id": [
+"eq",
+"in"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"sw"
+],
+"type": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"created",
+"modified",
+"name",
+"type",
+"source.id",
+"source.name",
+"resource.id",
+"environment",
+"datasetId",
+"nativeIdentity",
+"owners.primary.id",
+"owners.primary.name",
+"owners.primaryIdentity.id",
+"owners.primaryIdentity.name",
+"owners.secondaryIdentity.id",
+"owners.secondaryIdentity.name",
+"owners.secondaryGovernanceGroup.id",
+"owners.secondaryGovernanceGroup.name",
+"owners.governanceGroup.id",
+"owners.governanceGroup.name"
+]
+},
+"GET /capabilities/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/campaign-filters": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /certification-campaigns/v1/campaign-filters/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/campaign-templates": {
+"experimental": true,
+"filters": {
+"id": [
+"eq",
+"ne",
+"in",
+"gt",
+"ge",
+"lt",
+"le",
+"sw",
+"co"
+],
+"name": [
+"eq",
+"ne",
+"in",
+"gt",
+"ge",
+"lt",
+"le",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"sorters",
+"filters"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"GET /certification-campaigns/v1/campaign-templates/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/campaign-templates/{id}/schedule": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/campaigns": {
+"experimental": true,
+"filters": {
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"sw",
+"co"
+],
+"status": [
+"eq",
+"in",
+"ne"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"created",
+"modified",
+"deadline",
+"status",
+"totalCertifications",
+"completedCertifications"
+]
+},
+"GET /certification-campaigns/v1/campaigns/{campaignId}/reports": {
+"experimental": true,
+"filters": {
+"format": [
+"eq",
+"in",
+"ne"
+],
+"id": [
+"eq",
+"ne",
+"in"
+],
+"name": [
+"eq",
+"sw",
+"co"
+],
+"status": [
+"eq",
+"in",
+"ne"
+],
+"type": [
+"eq",
+"in",
+"ne"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"type",
+"format",
+"created",
+"modified"
+]
+},
+"GET /certification-campaigns/v1/campaigns/{campaignId}/reports/{reportId}": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/campaigns/{campaignId}/reports/{reportId}/download-url": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/campaigns/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/certification-tasks": {
+"experimental": true,
+"filters": {
+"id": [
+"eq",
+"in"
+],
+"targetId": [
+"eq",
+"in"
+],
+"type": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"reviewer-identity",
+"limit",
+"offset",
+"count",
+"filters"
+]
+},
+"GET /certification-campaigns/v1/certification-tasks/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/certifications": {
+"experimental": true,
+"filters": {
+"campaignRef.campaignType": [
+"eq",
+"in"
+],
+"campaignRef.id": [
+"eq",
+"in"
+],
+"completed": [
+"eq"
+],
+"id": [
+"eq",
+"in"
+],
+"phase": [
+"eq"
+],
+"reviewProgress": [
+"eq",
+"in"
+],
+"reviewerDeleted": [
+"eq"
+],
+"reviewerName": [
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"reviewer-identity",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"dueDate",
+"dateSigned"
+]
+},
+"GET /certification-campaigns/v1/certifications/status-summary": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/access-summaries/{type}": {
+"experimental": true,
+"filters": {
+"completed": [
+"eq",
+"ne"
+],
+"sourceName": [
+"eq",
+"sw",
+"co"
+],
+"targetReference.id": [
+"eq",
+"ne",
+"in"
+],
+"targetReference.name": [
+"eq",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"targetReference.name"
+]
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/decision-summary": {
+"experimental": true,
+"filters": {
+"certificationSubjectSummary.id": [
+"eq",
+"in"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/review-items": {
+"experimental": true,
+"filters": {
+"accountName": [
+"eq",
+"sw",
+"co"
+],
+"certificationSubjectSummary.id": [
+"eq",
+"ne",
+"in"
+],
+"certificationSubjectSummary.identityState": [
+"eq",
+"in",
+"ne"
+],
+"certificationSubjectSummary.subjectEmail": [
+"eq",
+"sw",
+"co"
+],
+"certificationSubjectSummary.subjectManagerName": [
+"eq",
+"sw",
+"co"
+],
+"certificationSubjectSummary.subjectName": [
+"eq",
+"sw",
+"co"
+],
+"completed": [
+"eq",
+"ne"
+],
+"id": [
+"eq",
+"ne",
+"in"
+],
+"reauthRequired": [
+"eq",
+"ne"
+],
+"reviewData.entitlement.provisioningType": [
+"eq",
+"ne",
+"in"
+],
+"reviewData.targetReference.id": [
+"eq",
+"ne",
+"in"
+],
+"reviewData.targetReference.name": [
+"eq",
+"sw",
+"co"
+],
+"reviewData.targetReference.type": [
+"eq"
+],
+"sourceName": [
+"eq",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters",
+"activity-data"
+],
+"sorters": [
+"certificationSubjectSummary.subjectName",
+"certificationSubjectSummary.subjectManagerName",
+"reviewData.targetReference.id",
+"reviewData.targetReference.name",
+"sourceName",
+"accountName"
+]
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/access-profiles/{accessProfileId}": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}/children": {
+"experimental": true,
+"filters": {
+"attribute": [
+"eq",
+"in"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"requestable": [
+"eq"
+],
+"source.id": [
+"eq",
+"in"
+],
+"type": [
+"eq",
+"in"
+],
+"value": [
+"eq",
+"in",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"type",
+"attribute",
+"value",
+"source.id"
+]
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}/parents": {
+"experimental": true,
+"filters": {
+"attribute": [
+"eq",
+"in"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"requestable": [
+"eq"
+],
+"source.id": [
+"eq",
+"in"
+],
+"type": [
+"eq",
+"in"
+],
+"value": [
+"eq",
+"in",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"type",
+"attribute",
+"value",
+"source.id"
+]
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/entitlements/{entitlementId}/permissions": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/review-items/{reviewItemId}/item-id/{entitlementId}/cert-account-details": {
+"experimental": true,
+"query": []
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/reviewers": {
+"experimental": true,
+"filters": {
+"email": [
+"eq",
+"sw",
+"co"
+],
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"email"
+]
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/subject-summaries": {
+"experimental": true,
+"filters": {
+"completed": [
+"eq",
+"ne"
+],
+"id": [
+"eq",
+"in"
+],
+"subjectName": [
+"eq",
+"sw",
+"co"
+],
+"targetId": [
+"eq",
+"ne",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"subjectName",
+"targetDisplayName"
+]
+},
+"GET /certification-campaigns/v1/certifications/{certificationId}/subject-summary/{subjectId}": {
+"experimental": true,
+"query": []
+},
+"GET /certification-tasks/v1": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"in"
+],
+"targetId": [
+"eq",
+"in"
+],
+"type": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"reviewer-identity",
+"limit",
+"offset",
+"count",
+"filters"
+]
+},
+"GET /certification-tasks/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /certifications/v1": {
+"experimental": false,
+"filters": {
+"campaign.id": [
+"eq",
+"in"
+],
+"completed": [
+"eq"
+],
+"id": [
+"eq",
+"in"
+],
+"phase": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"reviewer-identity",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"due",
+"signed"
+]
+},
+"GET /certifications/v1/{certificationId}/access-review-items/{itemId}/permissions": {
+"experimental": false,
+"filters": {
+"rights": [
+"ca"
+],
+"target": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /certifications/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /certifications/v1/{id}/access-review-items": {
+"experimental": false,
+"filters": {
+"access.id": [
+"eq",
+"in"
+],
+"access.name": [
+"eq",
+"sw"
+],
+"access.type": [
+"eq"
+],
+"accessProfile.sourceName": [
+"eq",
+"sw"
+],
+"completed": [
+"eq",
+"ne"
+],
+"entitlement.sourceName": [
+"eq",
+"sw"
+],
+"id": [
+"eq",
+"in"
+],
+"identitySummary.id": [
+"eq",
+"in"
+],
+"identitySummary.name": [
+"eq",
+"sw"
+],
+"type": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters",
+"entitlements",
+"access-profiles",
+"roles"
+],
+"sorters": [
+"identitySummary.name",
+"access.name",
+"access.type",
+"entitlement.sourceName",
+"accessProfile.sourceName"
+]
+},
+"GET /certifications/v1/{id}/access-summaries/{type}": {
+"experimental": false,
+"filters": {
+"access.id": [
+"eq",
+"in"
+],
+"access.name": [
+"eq",
+"sw"
+],
+"accessProfile.sourceName": [
+"eq",
+"sw"
+],
+"completed": [
+"eq",
+"ne"
+],
+"entitlement.sourceName": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"access.name"
+]
+},
+"GET /certifications/v1/{id}/decision-summary": {
+"experimental": false,
+"filters": {
+"identitySummary.id": [
+"eq",
+"in"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /certifications/v1/{id}/identity-summaries": {
+"experimental": false,
+"filters": {
+"completed": [
+"eq",
+"ne"
+],
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name"
+]
+},
+"GET /certifications/v1/{id}/identity-summaries/{identitySummaryId}": {
+"experimental": false,
+"query": []
+},
+"GET /certifications/v1/{id}/reviewers": {
+"experimental": false,
+"filters": {
+"email": [
+"eq",
+"sw"
+],
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"email"
+]
+},
+"GET /common-access/v1": {
+"experimental": true,
+"filters": {
+"access.description": [
+"sw",
+"eq"
+],
+"access.id": [
+"eq",
+"sw"
+],
+"access.name": [
+"sw",
+"eq"
+],
+"access.type": [
+"eq"
+],
+"reviewedByUser": [
+"eq"
+],
+"status": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"access.name",
+"status",
+"ascending"
+]
+},
+"GET /configuration-hub/v1/backups": {
+"experimental": false,
+"filters": {
+"status": [
+"eq"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /configuration-hub/v1/backups/uploads": {
+"experimental": false,
+"filters": {
+"status": [
+"eq"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /configuration-hub/v1/backups/uploads/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /configuration-hub/v1/deploys": {
+"experimental": false,
+"query": []
+},
+"GET /configuration-hub/v1/deploys/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /configuration-hub/v1/drafts": {
+"experimental": false,
+"filters": {
+"approvalStatus": [
+"eq"
+],
+"status": [
+"eq"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /configuration-hub/v1/object-mappings/{sourceOrg}": {
+"experimental": false,
+"query": []
+},
+"GET /configuration-hub/v1/scheduled-actions": {
+"experimental": false,
+"query": []
+},
+"GET /connector-customizers/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"offset",
+"limit"
+]
+},
+"GET /connector-customizers/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /connector-rules/v1": {
+"experimental": false,
+"limitMax": 50,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /connector-rules/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /connectors/v1": {
+"experimental": false,
+"filters": {
+"category": [
+"eq"
+],
+"directConnect": [
+"eq"
+],
+"features": [
+"ca"
+],
+"labels": [
+"ca"
+],
+"name": [
+"sw",
+"co"
+],
+"type": [
+"sw",
+"co",
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"limit",
+"offset",
+"count",
+"locale"
+]
+},
+"GET /connectors/v1/{scriptName}": {
+"experimental": false,
+"query": [
+"locale"
+]
+},
+"GET /connectors/v1/{scriptName}/correlation-config": {
+"experimental": false,
+"query": []
+},
+"GET /connectors/v1/{scriptName}/source-config": {
+"experimental": false,
+"query": []
+},
+"GET /connectors/v1/{scriptName}/source-template": {
+"experimental": false,
+"query": []
+},
+"GET /connectors/v1/{scriptName}/translations/{locale}": {
+"experimental": false,
+"query": []
+},
+"GET /controls/v1": {
+"experimental": false,
+"filters": {
+"action": [
+"eq",
+"in"
+],
+"description": [
+"eq",
+"in",
+"sw",
+"co"
+],
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"in",
+"sw",
+"co"
+],
+"owner": [
+"eq",
+"in"
+],
+"type": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sort"
+]
+},
+"GET /controls/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /credentials/v1": {
+"experimental": true,
+"filters": {
+"created": [
+"gt",
+"ge",
+"lt",
+"le"
+],
+"expiresAt": [
+"gt",
+"ge",
+"lt",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"ge",
+"lt",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"nativeIdentity": [
+"eq",
+"in",
+"sw"
+],
+"owners.governanceGroup.id": [
+"eq",
+"in"
+],
+"owners.governanceGroup.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.primary.id": [
+"eq",
+"in"
+],
+"owners.primary.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.primaryIdentity.id": [
+"eq",
+"in"
+],
+"owners.primaryIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.secondaryGovernanceGroup.id": [
+"eq",
+"in"
+],
+"owners.secondaryGovernanceGroup.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.secondaryIdentity.id": [
+"eq",
+"in"
+],
+"owners.secondaryIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"resource.id": [
+"eq",
+"in"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"sw"
+],
+"status": [
+"eq",
+"in"
+],
+"type": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"created",
+"modified",
+"name",
+"nativeIdentity",
+"resource.id",
+"source.name",
+"owners.primary.id",
+"owners.primary.name",
+"owners.primaryIdentity.id",
+"owners.primaryIdentity.name",
+"owners.secondaryIdentity.id",
+"owners.secondaryIdentity.name",
+"owners.secondaryGovernanceGroup.id",
+"owners.secondaryGovernanceGroup.name",
+"owners.governanceGroup.id",
+"owners.governanceGroup.name"
+]
+},
+"GET /credentials/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /criteria-config/v1/privilege": {
+"experimental": false,
+"filters": {
+"sourceId": [
+"eq"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /criteria-config/v1/privilege/{criteriaConfigId}": {
+"experimental": false,
+"query": []
+},
+"GET /criteria/v1/privilege": {
+"experimental": false,
+"filters": {
+"privilegeLevel": [
+"eq"
+],
+"sourceId": [
+"eq"
+],
+"type": [
+"eq"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /criteria/v1/privilege/{criteriaId}": {
+"experimental": false,
+"query": []
+},
+"GET /custom-password-instructions/v1/{pageId}": {
+"experimental": true,
+"query": [
+"locale"
+]
+},
+"GET /das/v1/applications": {
+"experimental": false,
+"filters": {
+"appIds": [
+"eq",
+"in"
+],
+"appName": [
+"eq"
+],
+"groupCodes": [
+"eq",
+"in"
+],
+"statuses": [
+"eq",
+"in"
+],
+"supportsValidation": [
+"eq"
+],
+"tagIds": [
+"eq",
+"in"
+],
+"virtualAppId": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /das/v1/applications/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /das/v1/identity-collectors": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"co"
+],
+"sourceId": [
+"eq"
+],
+"type": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /das/v1/identity-collectors/properties": {
+"experimental": false,
+"filters": {
+"type": [
+"eq"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /das/v1/identity-collectors/types": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /das/v1/owners/applications/{appId}": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /das/v1/owners/resources/{resourceId}": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /das/v1/owners/{ownerIdentityId}/resources": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /das/v1/permissions/fields": {
+"experimental": false,
+"filters": {
+"dataDictionaryType": [
+"eq"
+],
+"name": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /das/v1/tasks": {
+"experimental": false,
+"filters": {
+"endBeforeTime": [
+"eq"
+],
+"statuses": [
+"eq",
+"in"
+],
+"taskIds": [
+"eq",
+"in"
+],
+"taskName": [
+"eq"
+],
+"taskTypeName": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /das/v1/tasks/schedules": {
+"experimental": false,
+"filters": {
+"applicationId": [
+"eq"
+],
+"fullName": [
+"eq"
+],
+"nameSubString": [
+"eq"
+],
+"scheduleTaskIds": [
+"eq",
+"in"
+],
+"scheduleType": [
+"eq"
+],
+"status": [
+"eq"
+],
+"taskTypeName": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /das/v1/tasks/schedules/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /das/v1/tasks/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /data-segments/v1": {
+"experimental": true,
+"filters": {
+"id": [
+"eq",
+"in",
+"sw"
+],
+"name": [
+"eq",
+"in",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"enabled",
+"unique",
+"published",
+"limit",
+"offset",
+"count",
+"filters"
+]
+},
+"GET /data-segments/v1/membership/{identityId}": {
+"experimental": true,
+"query": []
+},
+"GET /data-segments/v1/user-enabled/{identityId}": {
+"experimental": true,
+"query": []
+},
+"GET /data-segments/v1/{segmentId}": {
+"experimental": true,
+"query": []
+},
+"GET /devices/v1": {
+"experimental": true,
+"filters": {
+"created": [
+"gt",
+"ge",
+"lt",
+"le"
+],
+"datasetId": [
+"eq",
+"in",
+"sw"
+],
+"description": [
+"eq",
+"in",
+"sw"
+],
+"detectionModuleVersion": [
+"eq",
+"in",
+"sw"
+],
+"email": [
+"eq",
+"in",
+"sw"
+],
+"environment": [
+"eq",
+"in",
+"sw"
+],
+"hostname": [
+"eq",
+"in",
+"sw"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"ge",
+"lt",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"nativeIdentity": [
+"eq",
+"in",
+"sw"
+],
+"os.type": [
+"eq",
+"in",
+"sw"
+],
+"os.version": [
+"eq",
+"in",
+"sw"
+],
+"owners.governanceGroup.id": [
+"eq",
+"in"
+],
+"owners.governanceGroup.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.primary.id": [
+"eq",
+"in"
+],
+"owners.primary.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.primaryIdentity.id": [
+"eq",
+"in"
+],
+"owners.primaryIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.secondaryGovernanceGroup.id": [
+"eq",
+"in"
+],
+"owners.secondaryGovernanceGroup.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.secondaryIdentity.id": [
+"eq",
+"in"
+],
+"owners.secondaryIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"resource.id": [
+"eq",
+"in"
+],
+"resource.type": [
+"eq",
+"in"
+],
+"sentinelVersion": [
+"eq",
+"in",
+"sw"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"sw"
+],
+"subtype": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"created",
+"modified",
+"name",
+"nativeIdentity",
+"hostname",
+"os.type",
+"os.version",
+"sentinelVersion",
+"detectionModuleVersion",
+"email",
+"description",
+"environment",
+"datasetId",
+"resource.id",
+"resource.type",
+"source.name",
+"owners.primaryIdentity.name",
+"owners.secondaryIdentity.name",
+"owners.secondaryGovernanceGroup.id",
+"owners.secondaryGovernanceGroup.name",
+"owners.governanceGroup.id",
+"owners.governanceGroup.name"
+]
+},
+"GET /devices/v1/device-counts": {
+"experimental": true,
+"query": []
+},
+"GET /devices/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /discovered-applications/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"detail",
+"filter",
+"sorters"
+],
+"sorters": [
+"name",
+"description",
+"discoveredAt",
+"discoverySource",
+"discoverySourceName",
+"discoverySourceCategory"
+]
+},
+"GET /entitlement-connections/v1": {
+"experimental": false,
+"filters": {
+"account.id": [
+"eq",
+"in"
+],
+"account.name": [
+"eq",
+"in",
+"co"
+],
+"entitlement.attribute": [
+"eq",
+"in",
+"co"
+],
+"entitlement.id": [
+"eq",
+"in"
+],
+"entitlement.privilegeLevel.effective": [
+"eq",
+"in",
+"co"
+],
+"entitlement.value": [
+"eq",
+"in",
+"co"
+],
+"identity.id": [
+"eq",
+"in"
+],
+"identity.name": [
+"eq",
+"in",
+"co"
+],
+"jit.activation": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"jit.deactivation": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"jit.deprovision": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"jit.expiration": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"jit.provision": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"co"
+],
+"standalone": [
+"eq",
+"in"
+],
+"state.value": [
+"eq",
+"in",
+"co"
+],
+"type": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count",
+"searchAfter",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"identity.id",
+"identity.name",
+"source.id",
+"source.name",
+"account.id",
+"account.name",
+"entitlement.id",
+"entitlement.displayName",
+"entitlement.attribute",
+"entitlement.privilegeLevel.effective",
+"type",
+"state.value",
+"standalone",
+"jit.activation",
+"jit.provision",
+"jit.deactivation",
+"jit.deprovision",
+"jit.expiration"
+]
+},
+"GET /entitlement-connections/v1/current-identity": {
+"experimental": false,
+"filters": {
+"account.id": [
+"eq",
+"in"
+],
+"account.name": [
+"eq",
+"in",
+"co"
+],
+"entitlement.attribute": [
+"eq",
+"in",
+"co"
+],
+"entitlement.id": [
+"eq",
+"in"
+],
+"entitlement.privilegeLevel.effective": [
+"eq",
+"in",
+"co"
+],
+"entitlement.value": [
+"eq",
+"in",
+"co"
+],
+"identity.id": [
+"eq",
+"in"
+],
+"identity.name": [
+"eq",
+"in",
+"co"
+],
+"jit.activation": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"jit.deactivation": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"jit.deprovision": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"jit.expiration": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"jit.provision": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"co"
+],
+"standalone": [
+"eq",
+"in"
+],
+"state.value": [
+"eq",
+"in",
+"co"
+],
+"type": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count",
+"searchAfter",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"identity.id",
+"identity.name",
+"source.id",
+"source.name",
+"account.id",
+"account.name",
+"entitlement.id",
+"entitlement.displayName",
+"entitlement.attribute",
+"entitlement.privilegeLevel.effective",
+"type",
+"state.value",
+"standalone",
+"jit.activation",
+"jit.provision",
+"jit.deactivation",
+"jit.deprovision",
+"jit.expiration"
+]
+},
+"GET /entitlement-recommendations/v1/pending-approvals": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"offset",
+"limit"
+]
+},
+"GET /entitlements/v1": {
+"experimental": false,
+"filters": {
+"attribute": [
+"eq",
+"in"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"privilegeLevel.direct": [
+"eq"
+],
+"requestable": [
+"eq"
+],
+"source.id": [
+"eq",
+"in"
+],
+"tags": [
+"eq"
+],
+"type": [
+"eq",
+"in"
+],
+"value": [
+"eq",
+"in",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"segmented-for-identity",
+"for-segment-ids",
+"include-unsegmented",
+"offset",
+"limit",
+"count",
+"searchAfter",
+"sorters",
+"filters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"type",
+"attribute",
+"value",
+"source.id",
+"requestable"
+]
+},
+"GET /entitlements/v1/account/{accountId}/entitlements": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"searchAfter",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"type",
+"attribute",
+"value",
+"source.id",
+"requestable"
+]
+},
+"GET /entitlements/v1/identities/{id}/entitlements": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /entitlements/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /entitlements/v1/{id}/children": {
+"experimental": false,
+"filters": {
+"attribute": [
+"eq",
+"in"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"privilegeLevel.direct": [
+"eq"
+],
+"requestable": [
+"eq"
+],
+"source.id": [
+"eq",
+"in"
+],
+"tags": [
+"eq"
+],
+"type": [
+"eq",
+"in"
+],
+"value": [
+"eq",
+"in",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"searchAfter",
+"sorters",
+"filters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"type",
+"attribute",
+"value",
+"source.id",
+"requestable"
+]
+},
+"GET /entitlements/v1/{id}/entitlement-request-config": {
+"experimental": false,
+"query": []
+},
+"GET /entitlements/v1/{id}/parents": {
+"experimental": false,
+"filters": {
+"attribute": [
+"eq",
+"in"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"privilegeLevel.direct": [
+"eq"
+],
+"requestable": [
+"eq"
+],
+"source.id": [
+"eq",
+"in"
+],
+"tags": [
+"eq"
+],
+"type": [
+"eq",
+"in"
+],
+"value": [
+"eq",
+"in",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"searchAfter",
+"sorters",
+"filters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"type",
+"attribute",
+"value",
+"source.id",
+"requestable"
+]
+},
+"GET /form-definitions/v1": {
+"experimental": false,
+"filters": {
+"created": [
+"eq",
+"gt",
+"sw",
+"in"
+],
+"description": [
+"eq",
+"gt",
+"sw",
+"in"
+],
+"modified": [
+"eq",
+"gt",
+"sw",
+"in"
+],
+"name": [
+"eq",
+"gt",
+"sw",
+"in"
+]
+},
+"query": [
+"offset",
+"limit",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"description",
+"created",
+"modified"
+]
+},
+"GET /form-definitions/v1/export": {
+"experimental": false,
+"filters": {
+"created": [
+"eq",
+"gt",
+"sw",
+"in"
+],
+"description": [
+"eq",
+"gt",
+"sw",
+"in"
+],
+"modified": [
+"eq",
+"gt",
+"sw",
+"in"
+],
+"name": [
+"eq",
+"gt",
+"sw",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"filters",
+"sorters",
+"count"
+],
+"sorters": [
+"name",
+"description",
+"created",
+"modified"
+]
+},
+"GET /form-definitions/v1/predefined-select-options": {
+"experimental": false,
+"query": []
+},
+"GET /form-definitions/v1/{formDefinitionID}": {
+"experimental": false,
+"query": []
+},
+"GET /form-definitions/v1/{formDefinitionID}/file/{fileID}": {
+"experimental": false,
+"query": []
+},
+"GET /form-instances/v1": {
+"experimental": false,
+"filters": {
+"formDefinitionId": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"filters"
+]
+},
+"GET /form-instances/v1/{formInstanceID}": {
+"experimental": false,
+"query": []
+},
+"GET /form-instances/v1/{formInstanceID}/data-source/{formElementID}": {
+"experimental": false,
+"filters": {
+"value": [
+"eq",
+"ne",
+"in"
+]
+},
+"query": [
+"limit",
+"filters",
+"query"
+]
+},
+"GET /form-instances/v1/{formInstanceID}/file/{fileID}": {
+"experimental": false,
+"query": []
+},
+"GET /generic-approvals/v1": {
+"experimental": false,
+"filters": {
+"approvalId": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"approverId": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"batchId": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"completedDate": [
+"eq",
+"ne",
+"in",
+"co",
+"sw",
+"gt",
+"ge",
+"lt",
+"le"
+],
+"createdDate": [
+"eq",
+"ne",
+"in",
+"co",
+"sw",
+"gt",
+"ge",
+"lt",
+"le"
+],
+"currentEPLevel": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"decisionDate": [
+"eq",
+"ne",
+"in",
+"co",
+"sw",
+"gt",
+"ge",
+"lt",
+"le"
+],
+"description": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"dueDate": [
+"eq",
+"ne",
+"in",
+"co",
+"sw",
+"gt",
+"ge",
+"lt",
+"le"
+],
+"medium": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"modifiedDate": [
+"eq",
+"ne",
+"in",
+"co",
+"sw",
+"gt",
+"ge",
+"lt",
+"le"
+],
+"name": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"priority": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"referenceId": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"referenceName": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"referenceType": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"requestedTargetId": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"requestedTargetName": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"requestedTargetRequestType": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"requestedTargetType": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"requesteeId": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"requesterId": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"search": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"status": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+],
+"type": [
+"eq",
+"ne",
+"in",
+"co",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"mine",
+"requesterId",
+"requesteeId",
+"approverId",
+"count",
+"count-only",
+"include-comments",
+"include-approvers",
+"include-reassignment-history",
+"include-batch-info",
+"filters",
+"limit",
+"offset"
+]
+},
+"GET /generic-approvals/v1/config/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /generic-approvals/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /generic-request-approval-config/v1": {
+"experimental": true,
+"query": [
+"targetType",
+"targetId",
+"sourceId"
+]
+},
+"GET /historical-identities/v1": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"starts-with-query",
+"is-deleted",
+"is-active",
+"limit",
+"offset"
+]
+},
+"GET /historical-identities/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /historical-identities/v1/{id}/access-items": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"type",
+"limit",
+"count",
+"offset"
+]
+},
+"GET /historical-identities/v1/{id}/compare": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"snapshot1",
+"snapshot2",
+"accessItemTypes",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /historical-identities/v1/{id}/compare/{access-type}": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"access-associated",
+"snapshot1",
+"snapshot2",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /historical-identities/v1/{id}/events": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"from",
+"eventTypes",
+"accessItemTypes",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /historical-identities/v1/{id}/snapshot-summary": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"before",
+"interval",
+"time-zone",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /historical-identities/v1/{id}/snapshots": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"start",
+"interval",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /historical-identities/v1/{id}/snapshots/{date}": {
+"experimental": true,
+"query": []
+},
+"GET /historical-identities/v1/{id}/snapshots/{date}/access-items": {
+"experimental": true,
+"query": [
+"type"
+]
+},
+"GET /historical-identities/v1/{id}/start-date": {
+"experimental": true,
+"query": []
+},
+"GET /identities/v1": {
+"experimental": false,
+"filters": {
+"alias": [
+"eq",
+"sw"
+],
+"cloudStatus": [
+"eq"
+],
+"correlated": [
+"eq"
+],
+"email": [
+"eq",
+"sw"
+],
+"firstname": [
+"eq",
+"sw"
+],
+"id": [
+"eq",
+"in"
+],
+"lastname": [
+"eq",
+"sw"
+],
+"name": [
+"eq",
+"sw"
+],
+"processingState": [
+"eq"
+],
+"protected": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"defaultFilter",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"name",
+"alias",
+"cloudStatus"
+]
+},
+"GET /identities/v1/{identityId}/ownership": {
+"experimental": false,
+"query": []
+},
+"GET /identities/v1/{identityId}/role-assignments": {
+"experimental": false,
+"query": [
+"roleId",
+"roleName"
+]
+},
+"GET /identities/v1/{identityId}/role-assignments/{assignmentId}": {
+"experimental": false,
+"query": []
+},
+"GET /identities/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /identities/v2": {
+"experimental": true,
+"filters": {
+"alias": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"correlated": [
+"eq"
+],
+"created": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"disabled": [
+"eq"
+],
+"emailAddress": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"id": [
+"eq",
+"in",
+"sw"
+],
+"identityStatus": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"inactive": [
+"eq"
+],
+"isManager": [
+"eq"
+],
+"lastRefresh": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"lifecycleState.manuallyUpdated": [
+"eq"
+],
+"lifecycleState.stateName": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"locked": [
+"eq"
+],
+"manager.id": [
+"eq",
+"in",
+"sw"
+],
+"manager.name": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"manager.type": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"modified": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"name": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"privilegeLevel.effective": [
+"eq",
+"in",
+"isnull",
+"pr"
+],
+"processingState": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+],
+"protected": [
+"eq"
+],
+"synced": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"type": [
+"eq",
+"in",
+"sw",
+"isnull",
+"pr"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"searchAfter",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"alias",
+"type",
+"emailAddress",
+"identityStatus",
+"processingState",
+"protected",
+"correlated",
+"inactive",
+"isManager",
+"locked",
+"disabled",
+"manager.id",
+"manager.name",
+"manager.type",
+"lifecycleState.stateName",
+"lifecycleState.manuallyUpdated",
+"created",
+"modified",
+"synced",
+"lastRefresh",
+"privilegeLevel.effective"
+]
+},
+"GET /identities/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /identity-attributes/v1": {
+"experimental": false,
+"query": [
+"includeSystem",
+"includeSilent",
+"searchableOnly",
+"count"
+]
+},
+"GET /identity-attributes/v1/{name}": {
+"experimental": false,
+"query": []
+},
+"GET /identity-profiles/v1": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"ne",
+"ge",
+"gt",
+"in",
+"le",
+"sw"
+],
+"name": [
+"eq",
+"ne",
+"ge",
+"gt",
+"in",
+"le",
+"sw"
+],
+"priority": [
+"eq",
+"ne"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"priority",
+"created",
+"modified",
+"owner.id",
+"owner.name"
+]
+},
+"GET /identity-profiles/v1/export": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"ne"
+],
+"name": [
+"eq",
+"ne"
+],
+"priority": [
+"eq",
+"ne"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"priority"
+]
+},
+"GET /identity-profiles/v1/{identity-profile-id}": {
+"experimental": false,
+"query": []
+},
+"GET /identity-profiles/v1/{identity-profile-id}/default-identity-attribute-config": {
+"experimental": false,
+"query": []
+},
+"GET /identity-profiles/v1/{identity-profile-id}/lifecycle-states": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"sorters"
+],
+"sorters": [
+"name",
+"priority",
+"created",
+"modified"
+]
+},
+"GET /identity-profiles/v1/{identity-profile-id}/lifecycle-states/{lifecycle-state-id}": {
+"experimental": false,
+"query": []
+},
+"GET /intelligence/v1/identities": {
+"experimental": false,
+"filters": {
+"email": [
+"eq"
+],
+"id": [
+"eq"
+],
+"opaqueIdentifier": [
+"eq"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /intelligence/v1/identities/{id}/access-history/access-items": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /intelligence/v1/identities/{id}/access-history/certifications": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /intelligence/v1/identities/{id}/accounts": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"isNHI"
+]
+},
+"GET /intelligence/v1/identities/{id}/non-human-identity-ownership/{category}": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"ownershipRole",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /intelligence/v1/identities/{id}/outliers/rare-access": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /intelligence/v1/response-actions/{id}/status": {
+"experimental": false,
+"query": []
+},
+"GET /jit-activation-config/v1/{configType}": {
+"experimental": true,
+"query": []
+},
+"GET /jit-activation-history/v1": {
+"experimental": true,
+"filters": {
+"activationInitiated": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"connectionId": [
+"eq"
+],
+"entitlementId": [
+"eq",
+"in"
+],
+"identityId": [
+"eq",
+"in"
+],
+"policyFrictionOutcome": [
+"eq",
+"in"
+],
+"sourceId": [
+"eq"
+],
+"status": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"sorters",
+"searchAfter",
+"filters"
+],
+"sorters": [
+"activationInitiated",
+"provisionCompleted",
+"status"
+]
+},
+"GET /jit-activation-history/v1/current-identity": {
+"experimental": true,
+"filters": {
+"activationInitiated": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"connectionId": [
+"eq"
+],
+"entitlementId": [
+"eq",
+"in"
+],
+"policyFrictionOutcome": [
+"eq",
+"in"
+],
+"sourceId": [
+"eq"
+],
+"status": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"sorters",
+"searchAfter",
+"filters"
+],
+"sorters": [
+"activationInitiated",
+"provisionCompleted",
+"status"
+]
+},
+"GET /jit-activations/v1/{activationId}/frictions": {
+"experimental": true,
+"query": []
+},
+"GET /launchers/v1": {
+"experimental": false,
+"filters": {
+"description": [
+"sw"
+],
+"disabled": [
+"eq"
+],
+"name": [
+"sw"
+]
+},
+"limitMax": 100,
+"query": [
+"filters",
+"next",
+"limit"
+]
+},
+"GET /launchers/v1/{launcherID}": {
+"experimental": false,
+"query": []
+},
+"GET /machine-accounts/v1": {
+"experimental": true,
+"filters": {
+"accessType": [
+"eq",
+"in",
+"sw"
+],
+"attributes": [
+"eq"
+],
+"created": [
+"eq",
+"gt",
+"lt",
+"ge",
+"le"
+],
+"description": [
+"eq",
+"in",
+"sw"
+],
+"enabled": [
+"eq"
+],
+"environment": [
+"eq",
+"in",
+"sw"
+],
+"hasEntitlements": [
+"eq"
+],
+"id": [
+"eq",
+"in"
+],
+"lastUsedAt": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"locked": [
+"eq"
+],
+"machineIdentity.id": [
+"eq",
+"in"
+],
+"machineIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"manuallyCorrelated": [
+"eq"
+],
+"modified": [
+"eq",
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"nativeIdentity": [
+"eq",
+"in",
+"sw"
+],
+"ownerIdentity": [
+"eq",
+"in"
+],
+"ownerIdentity.id": [
+"eq",
+"in"
+],
+"ownerIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"permissionLevel": [
+"eq",
+"in"
+],
+"risk.severity": [
+"eq",
+"in"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"sw"
+],
+"subtype.displayName": [
+"eq",
+"in",
+"sw"
+],
+"subtype.technicalName": [
+"eq",
+"in",
+"sw"
+],
+"uuid": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"nativeIdentity",
+"ownerIdentity",
+"uuid",
+"description",
+"machineIdentity.id",
+"machineIdentity.name",
+"subtype.technicalName",
+"subtype.displayName",
+"accessType",
+"environment",
+"manuallyCorrelated",
+"enabled",
+"locked",
+"hasEntitlements",
+"ownerIdentity.id",
+"ownerIdentity.name",
+"attributes",
+"source.id",
+"source.name",
+"created",
+"modified",
+"risk.severity",
+"permissionLevel",
+"lastUsedAt",
+"LOW",
+"MEDIUM",
+"HIGH"
+]
+},
+"GET /machine-accounts/v1/machine-accounts-summary": {
+"experimental": true,
+"filters": {
+"source.id": [
+"eq",
+"in"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /machine-accounts/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /machine-accounts/v1/{id}/entitlements": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /machine-accounts/v1/{id}/machine-identities": {
+"experimental": true,
+"query": []
+},
+"GET /machine-accounts/v2": {
+"experimental": true,
+"filters": {
+"accessType": [
+"eq",
+"in",
+"sw"
+],
+"attributes": [
+"eq"
+],
+"connectorAttributes": [
+"eq"
+],
+"created": [
+"eq",
+"gt",
+"lt",
+"ge",
+"le"
+],
+"datasetId": [
+"eq",
+"in"
+],
+"description": [
+"eq",
+"in",
+"sw"
+],
+"enabled": [
+"eq"
+],
+"environment": [
+"eq",
+"in",
+"sw"
+],
+"hasEntitlements": [
+"eq"
+],
+"id": [
+"eq",
+"in"
+],
+"lastUsedAt": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"locked": [
+"eq"
+],
+"machineIdentity.id": [
+"eq",
+"in"
+],
+"machineIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"manuallyCorrelated": [
+"eq"
+],
+"modified": [
+"eq",
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"nativeIdentity": [
+"eq",
+"in",
+"sw"
+],
+"ownerIdentity": [
+"eq",
+"in"
+],
+"ownerIdentity.id": [
+"eq",
+"in"
+],
+"ownerIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.governanceGroup.id": [
+"eq",
+"in"
+],
+"owners.governanceGroup.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.primary.id": [
+"eq",
+"in"
+],
+"owners.primary.name": [
+"eq",
+"in",
+"sw"
+],
+"owners.secondaryIdentity.id": [
+"eq",
+"in"
+],
+"owners.secondaryIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"permissionLevel": [
+"eq",
+"in"
+],
+"resource.id": [
+"eq",
+"in"
+],
+"risk.severity": [
+"eq",
+"in"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"sw"
+],
+"subtype.displayName": [
+"eq",
+"in",
+"sw"
+],
+"subtype.technicalName": [
+"eq",
+"in",
+"sw"
+],
+"type": [
+"eq",
+"in"
+],
+"uuid": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"ownerIdentity",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"nativeIdentity",
+"uuid",
+"description",
+"machineIdentity.id",
+"machineIdentity.name",
+"subtype.technicalName",
+"subtype.displayName",
+"accessType",
+"environment",
+"ownerIdentity",
+"ownerIdentity.id",
+"ownerIdentity.name",
+"owners.primary.id",
+"owners.primary.name",
+"owners.secondaryIdentity.id",
+"owners.secondaryIdentity.name",
+"owners.governanceGroup.id",
+"owners.governanceGroup.name",
+"manuallyCorrelated",
+"enabled",
+"locked",
+"hasEntitlements",
+"attributes",
+"connectorAttributes",
+"source.id",
+"source.name",
+"datasetId",
+"resource.id",
+"type",
+"created",
+"modified",
+"risk.severity",
+"permissionLevel",
+"lastUsedAt",
+"LOW",
+"MEDIUM",
+"HIGH"
+]
+},
+"GET /machine-accounts/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identities/v1": {
+"experimental": true,
+"filters": {
+"attributes": [
+"eq"
+],
+"cisIdentityId": [
+"eq",
+"in",
+"sw"
+],
+"displayName": [
+"eq",
+"in",
+"sw"
+],
+"entitlement.id": [
+"eq",
+"in"
+],
+"entitlement.name": [
+"eq",
+"in",
+"sw"
+],
+"id": [
+"eq",
+"in",
+"sw"
+],
+"manuallyEdited": [
+"eq"
+],
+"nativeIdentity": [
+"eq",
+"in",
+"sw"
+],
+"owners.primaryIdentity.id": [
+"eq",
+"in",
+"sw"
+],
+"owners.primaryIdentity.name": [
+"eq",
+"in",
+"isnull",
+"pr"
+],
+"owners.secondaryIdentity.id": [
+"eq",
+"in",
+"sw"
+],
+"owners.secondaryIdentity.name": [
+"eq",
+"in",
+"isnull",
+"pr"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"sw"
+],
+"subtype": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"nativeIdentity",
+"name",
+"owners.primaryIdentity.name",
+"source.name",
+"created",
+"modified"
+]
+},
+"GET /machine-identities/v1/agent-counts": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identities/v1/all-counts": {
+"experimental": true,
+"filters": {
+"ownerId": [
+"eq"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /machine-identities/v1/anomaly-summaries/unsanctioned": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identities/v1/application-counts": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identities/v1/counts/daily": {
+"experimental": true,
+"query": [
+"days",
+"entityType",
+"subType"
+]
+},
+"GET /machine-identities/v1/lifecycle-actions": {
+"experimental": true,
+"filters": {
+"completed": [
+"eq"
+],
+"created": [
+"gt",
+"ge",
+"lt",
+"le"
+],
+"operationType": [
+"eq",
+"in"
+],
+"resourceType": [
+"eq",
+"in"
+],
+"sourceId": [
+"eq"
+],
+"status": [
+"eq",
+"in"
+],
+"targetId": [
+"eq"
+],
+"targetName": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"limit",
+"offset",
+"count"
+],
+"sorters": [
+"created",
+"modified",
+"status"
+]
+},
+"GET /machine-identities/v1/lifecycle-actions/{requestId}": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identities/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identities/v1/{id}/anomalies": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"detectedAt"
+]
+},
+"GET /machine-identities/v2": {
+"experimental": true,
+"filters": {
+"attributes": [
+"eq"
+],
+"businessApplicationRefs.id": [
+"eq"
+],
+"displayName": [
+"eq",
+"in",
+"sw"
+],
+"effectiveSanctionedStatus": [
+"eq"
+],
+"entitlement.id": [
+"eq",
+"in"
+],
+"entitlement.name": [
+"eq",
+"in",
+"sw"
+],
+"entroId": [
+"eq"
+],
+"id": [
+"eq",
+"in",
+"sw"
+],
+"insights": [
+"eq"
+],
+"manuallyEdited": [
+"eq"
+],
+"nativeIdentity": [
+"eq",
+"in",
+"sw"
+],
+"owners.primaryIdentity.id": [
+"eq",
+"in",
+"sw"
+],
+"owners.primaryIdentity.name": [
+"eq",
+"in",
+"isnull",
+"pr"
+],
+"owners.secondaryGovernanceGroup.id": [
+"eq",
+"in"
+],
+"owners.secondaryGovernanceGroup.name": [
+"eq",
+"in",
+"isnull",
+"pr"
+],
+"owners.secondaryIdentity.id": [
+"eq",
+"in",
+"sw"
+],
+"owners.secondaryIdentity.name": [
+"eq",
+"in",
+"isnull",
+"pr"
+],
+"risk.severity": [
+"eq",
+"in"
+],
+"sessionCount": [
+"eq",
+"gt",
+"ge",
+"lt",
+"le",
+"isnull"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"sw"
+],
+"subtype": [
+"eq",
+"in"
+],
+"suspiciousSessionCount": [
+"eq",
+"gt",
+"ge",
+"lt",
+"le",
+"isnull"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"nativeIdentity",
+"name",
+"owners.primaryIdentity.name",
+"source.name",
+"created",
+"modified",
+"sessionCount",
+"suspiciousSessionCount"
+]
+},
+"GET /machine-identities/v2/agent-counts": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identities/v2/application-counts": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identities/v2/hostnames": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"prefix",
+"limit",
+"cursor"
+]
+},
+"GET /machine-identities/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identities/v2/{id}/accounts": {
+"experimental": true,
+"filters": {
+"accessType": [
+"eq",
+"in",
+"sw"
+],
+"attributes": [
+"eq"
+],
+"created": [
+"eq",
+"gt",
+"lt",
+"ge",
+"le"
+],
+"description": [
+"eq",
+"in",
+"sw"
+],
+"enabled": [
+"eq"
+],
+"environment": [
+"eq",
+"in",
+"sw"
+],
+"hasEntitlements": [
+"eq"
+],
+"id": [
+"eq",
+"in"
+],
+"lastUsedAt": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"locked": [
+"eq"
+],
+"machineIdentity.id": [
+"eq",
+"in"
+],
+"machineIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"manuallyCorrelated": [
+"eq"
+],
+"modified": [
+"eq",
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw"
+],
+"nativeIdentity": [
+"eq",
+"in",
+"sw"
+],
+"ownerIdentity": [
+"eq",
+"in"
+],
+"ownerIdentity.id": [
+"eq",
+"in"
+],
+"ownerIdentity.name": [
+"eq",
+"in",
+"sw"
+],
+"permissionLevel": [
+"eq",
+"in"
+],
+"risk.severity": [
+"eq",
+"in"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"sw"
+],
+"subtype.displayName": [
+"eq",
+"in",
+"sw"
+],
+"subtype.technicalName": [
+"eq",
+"in",
+"sw"
+],
+"uuid": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"nativeIdentity",
+"ownerIdentity",
+"uuid",
+"description",
+"machineIdentity.id",
+"machineIdentity.name",
+"subtype.technicalName",
+"subtype.displayName",
+"accessType",
+"environment",
+"manuallyCorrelated",
+"enabled",
+"locked",
+"hasEntitlements",
+"ownerIdentity.id",
+"ownerIdentity.name",
+"attributes",
+"source.id",
+"source.name",
+"created",
+"modified",
+"risk.severity",
+"permissionLevel",
+"lastUsedAt",
+"LOW",
+"MEDIUM",
+"HIGH"
+]
+},
+"GET /machine-identities/v2/{id}/capabilities": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identities/v2/{id}/entitlements": {
+"experimental": true,
+"filters": {
+"entitlementName": [
+"eq",
+"in",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"entitlementName"
+]
+},
+"GET /machine-identity-metadata/v1/subtypes": {
+"experimental": true,
+"query": []
+},
+"GET /machine-identity-user-entitlements/v1": {
+"experimental": true,
+"filters": {
+"entitlement.id": [
+"eq",
+"in"
+],
+"entitlement.name": [
+"eq",
+"in",
+"sw"
+],
+"machineIdentityId": [
+"eq",
+"in"
+],
+"machineIdentityName": [
+"eq",
+"in",
+"sw"
+],
+"source.id": [
+"eq",
+"in"
+],
+"source.name": [
+"eq",
+"in",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"machineIdentityName",
+"entitlement.name",
+"source.name"
+]
+},
+"GET /machine-mapping-metadata/v1/target-account-attributes": {
+"experimental": true,
+"query": []
+},
+"GET /machine-mapping-metadata/v1/target-identity-attributes": {
+"experimental": true,
+"query": []
+},
+"GET /mail-from-attributes/v1/{identity}": {
+"experimental": false,
+"query": []
+},
+"GET /managed-clients/v1": {
+"experimental": false,
+"filters": {
+"clientId": [
+"eq"
+],
+"clusterId": [
+"eq"
+],
+"id": [
+"eq"
+],
+"name": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count",
+"filters"
+]
+},
+"GET /managed-clients/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /managed-clients/v1/{id}/health-indicators": {
+"experimental": false,
+"query": []
+},
+"GET /managed-clients/v1/{id}/status": {
+"experimental": false,
+"query": [
+"type"
+]
+},
+"GET /managed-cluster-types/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"type",
+"pod",
+"org",
+"offset",
+"limit"
+]
+},
+"GET /managed-cluster-types/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /managed-clusters/v1": {
+"experimental": false,
+"filters": {
+"name": [
+"eq"
+],
+"operational": [
+"eq"
+],
+"status": [
+"eq"
+],
+"type": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count",
+"filters"
+]
+},
+"GET /managed-clusters/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /managed-clusters/v1/{id}/log-config": {
+"experimental": false,
+"query": []
+},
+"GET /manual-discover-applications-template/v1": {
+"experimental": false,
+"query": []
+},
+"GET /mfa/v1/duo-web/config": {
+"experimental": false,
+"query": []
+},
+"GET /mfa/v1/kba/config": {
+"experimental": false,
+"query": [
+"allLanguages"
+]
+},
+"GET /mfa/v1/okta-verify/config": {
+"experimental": false,
+"query": []
+},
+"GET /mfa/v1/{method}/test": {
+"experimental": false,
+"query": []
+},
+"GET /multihosts/v1": {
+"experimental": false,
+"filters": {
+"forSubAdminId": [
+"in"
+],
+"type": [
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"sorters",
+"filters",
+"count",
+"for-subadmin"
+],
+"sorters": [
+"name"
+]
+},
+"GET /multihosts/v1/types": {
+"experimental": false,
+"query": []
+},
+"GET /multihosts/v1/{multiHostId}/entitlementAggregationGroups": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"offset",
+"limit"
+]
+},
+"GET /multihosts/v1/{multiHostId}/sources/errors": {
+"experimental": false,
+"query": []
+},
+"GET /multihosts/v1/{multihostId}": {
+"experimental": false,
+"query": []
+},
+"GET /multihosts/v1/{multihostId}/acctAggregationGroups": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"offset",
+"limit"
+]
+},
+"GET /multihosts/v1/{multihostId}/sources": {
+"experimental": false,
+"filters": {
+"id": [
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"sorters",
+"filters",
+"count"
+],
+"sorters": [
+"name"
+]
+},
+"GET /multihosts/v1/{multihostId}/sources/{sourceId}/testConnection": {
+"experimental": false,
+"query": []
+},
+"GET /my-violations/v1": {
+"experimental": false,
+"filters": {
+"level": [
+"eq",
+"in"
+],
+"ownerName": [
+"eq",
+"in",
+"sw",
+"co"
+],
+"policyId": [
+"eq"
+],
+"policyName": [
+"eq",
+"in",
+"sw",
+"co"
+],
+"status": [
+"eq",
+"in"
+],
+"targetId": [
+"eq",
+"in"
+],
+"targetName": [
+"eq",
+"in",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"level"
+]
+},
+"GET /non-employee-approvals/v1": {
+"experimental": false,
+"filters": {
+"approvalStatus": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"requested-for",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"created",
+"modified"
+]
+},
+"GET /non-employee-approvals/v1/summary/{requested-for}": {
+"experimental": false,
+"query": []
+},
+"GET /non-employee-approvals/v1/{id}": {
+"experimental": false,
+"query": [
+"include-detail"
+]
+},
+"GET /non-employee-records/v1": {
+"experimental": false,
+"filters": {
+"sourceId": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"sorters",
+"filters"
+],
+"sorters": [
+"id",
+"accountName",
+"sourceId",
+"manager",
+"firstName",
+"lastName",
+"email",
+"phone",
+"startDate",
+"endDate",
+"created",
+"modified"
+]
+},
+"GET /non-employee-records/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /non-employee-requests/v1": {
+"experimental": false,
+"filters": {
+"sourceId": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"requested-for",
+"sorters",
+"filters"
+],
+"sorters": [
+"created",
+"approvalStatus",
+"firstName",
+"lastName",
+"email",
+"phone",
+"accountName",
+"startDate",
+"endDate"
+]
+},
+"GET /non-employee-requests/v1/summary/{requested-for}": {
+"experimental": false,
+"query": []
+},
+"GET /non-employee-requests/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /non-employee-sources/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"requested-for",
+"non-employee-count",
+"sorters"
+],
+"sorters": [
+"name",
+"created",
+"sourceId"
+]
+},
+"GET /non-employee-sources/v1/{id}/non-employee-bulk-upload/status": {
+"experimental": false,
+"query": []
+},
+"GET /non-employee-sources/v1/{id}/non-employees/download": {
+"experimental": false,
+"query": []
+},
+"GET /non-employee-sources/v1/{id}/schema-attributes-template/download": {
+"experimental": false,
+"query": []
+},
+"GET /non-employee-sources/v1/{sourceId}": {
+"experimental": false,
+"query": []
+},
+"GET /non-employee-sources/v1/{sourceId}/schema-attributes": {
+"experimental": false,
+"query": []
+},
+"GET /non-employee-sources/v1/{sourceId}/schema-attributes/{attributeId}": {
+"experimental": false,
+"query": []
+},
+"GET /notification-preferences/v1": {
+"experimental": false,
+"filters": {
+"key": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"key"
+]
+},
+"GET /notification-preferences/v1/{key}": {
+"experimental": false,
+"query": [
+"filterUnavailableMediums"
+]
+},
+"GET /notification-template-context/v1": {
+"experimental": false,
+"query": []
+},
+"GET /notification-template-defaults/v1": {
+"experimental": false,
+"filters": {
+"key": [
+"eq",
+"in",
+"sw"
+],
+"locale": [
+"eq",
+"sw"
+],
+"medium": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"filters"
+]
+},
+"GET /notification-template-variables/v1/{key}/{medium}": {
+"experimental": false,
+"query": [
+"sorters"
+],
+"sorters": [
+"key",
+"type",
+"description"
+]
+},
+"GET /notification-templates/v1": {
+"experimental": false,
+"filters": {
+"key": [
+"eq",
+"in",
+"sw"
+],
+"locale": [
+"eq",
+"sw"
+],
+"medium": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"filters",
+"sorters"
+],
+"sorters": [
+"key",
+"name",
+"medium"
+]
+},
+"GET /notification-templates/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /oauth-clients/v1": {
+"experimental": false,
+"filters": {
+"lastUsed": [
+"le",
+"isnull"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /oauth-clients/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /org-config/v1": {
+"experimental": false,
+"query": []
+},
+"GET /org-config/v1/valid-time-zones": {
+"experimental": false,
+"limitMax": 50,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /outlier-feature-summaries/v1/{outlierFeatureId}": {
+"experimental": true,
+"query": []
+},
+"GET /outlier-summaries/v1": {
+"experimental": true,
+"filters": {
+"snapshotDate": [
+"ge",
+"le"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"type",
+"filters",
+"sorters"
+],
+"sorters": [
+"snapshotDate"
+]
+},
+"GET /outlier-summaries/v1/latest": {
+"experimental": true,
+"query": [
+"type"
+]
+},
+"GET /outliers/v1": {
+"experimental": true,
+"filters": {
+"attributes": [
+"eq",
+"sw",
+"co",
+"in"
+],
+"certStatus": [
+"eq"
+],
+"firstDetectionDate": [
+"ge",
+"le"
+],
+"ignored": [
+"eq"
+],
+"score": [
+"ge",
+"le"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"type",
+"filters",
+"sorters"
+],
+"sorters": [
+"firstDetectionDate",
+"attributes",
+"score"
+]
+},
+"GET /outliers/v1/export": {
+"experimental": true,
+"query": [
+"type"
+]
+},
+"GET /outliers/v1/{outlierId}/contributing-features": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"include-translation-messages",
+"sorters"
+],
+"sorters": [
+"importance"
+]
+},
+"GET /outliers/v1/{outlierId}/feature-details/{contributingFeatureName}/access-items": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"accessType",
+"sorters"
+],
+"sorters": [
+"displayName"
+]
+},
+"GET /parameter-storage/v1/attestation": {
+"experimental": false,
+"query": [
+"key"
+]
+},
+"GET /parameter-storage/v1/parameters": {
+"experimental": false,
+"filters": {
+"description": [
+"co"
+],
+"id": [
+"eq",
+"ne"
+],
+"name": [
+"eq",
+"in",
+"co"
+],
+"ownerId": [
+"eq"
+],
+"type": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"offset",
+"limit"
+],
+"sorters": [
+"id",
+"name",
+"ownerId",
+"type",
+"description",
+"lastModifiedAt",
+"lastModifiedBy",
+"privateFieldsLastModifiedAt",
+"privateFieldsLastModifiedAt"
+]
+},
+"GET /parameter-storage/v1/parameters/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /parameter-storage/v1/parameters/{id}/references": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"sorters",
+"limit",
+"offset"
+],
+"sorters": [
+"id",
+"consumerId",
+"parameterId",
+"name",
+"usageHint"
+]
+},
+"GET /parameter-storage/v1/specifications": {
+"experimental": false,
+"query": []
+},
+"GET /password-change-status/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /password-dictionary/v1": {
+"experimental": false,
+"query": []
+},
+"GET /password-org-config/v1": {
+"experimental": false,
+"query": []
+},
+"GET /password-policies/v1": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /password-policies/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /password-sync-groups/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /password-sync-groups/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /peer-group-strategies/v1/{strategy}/identity-outliers": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /personal-access-tokens/v1": {
+"experimental": false,
+"filters": {
+"lastUsed": [
+"le",
+"isnull"
+]
+},
+"query": [
+"owner-id",
+"filters"
+]
+},
+"GET /privileged-recommendations/v1": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"offset",
+"limit"
+]
+},
+"GET /public-identities-config/v1": {
+"experimental": false,
+"query": []
+},
+"GET /public-identities/v1": {
+"experimental": false,
+"filters": {
+"alias": [
+"eq",
+"sw"
+],
+"email": [
+"eq",
+"sw"
+],
+"firstname": [
+"eq",
+"sw"
+],
+"id": [
+"eq",
+"in"
+],
+"lastname": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"add-core-filters",
+"sorters"
+],
+"sorters": [
+"name"
+]
+},
+"GET /public-identities/v2/visible-attributes": {
+"experimental": true,
+"query": []
+},
+"GET /public-machine-identities/v1": {
+"experimental": true,
+"filters": {
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"sw"
+],
+"owner": [
+"eq"
+],
+"owner.id": [
+"eq"
+],
+"subtype": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"subtype"
+]
+},
+"GET /reassignment-configurations/v1": {
+"experimental": true,
+"limitMax": 20,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /reassignment-configurations/v1/tenant-config": {
+"experimental": true,
+"query": []
+},
+"GET /reassignment-configurations/v1/types": {
+"experimental": true,
+"query": []
+},
+"GET /reassignment-configurations/v1/{identityId}": {
+"experimental": true,
+"query": []
+},
+"GET /reassignment-configurations/v1/{identityId}/evaluate/{configType}": {
+"experimental": true,
+"query": [
+"exclusionFilters"
+]
+},
+"GET /recommendations/v1/config": {
+"experimental": true,
+"query": []
+},
+"GET /reminder-escalations/v1/config/tenants/{domainObjectType}": {
+"experimental": true,
+"query": []
+},
+"GET /reports/v1/{taskResultId}": {
+"experimental": false,
+"query": [
+"fileFormat",
+"name",
+"auditable"
+]
+},
+"GET /reports/v1/{taskResultId}/result": {
+"experimental": false,
+"query": [
+"completed"
+]
+},
+"GET /requestable-objects/v1": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"in",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"identity-id",
+"types",
+"term",
+"statuses",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name"
+]
+},
+"GET /revocable-objects/v1": {
+"experimental": false,
+"query": []
+},
+"GET /role-insights/v1": {
+"experimental": true,
+"filters": {
+"description": [
+"sw"
+],
+"name": [
+"sw"
+],
+"ownerName": [
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count",
+"sorters",
+"filters"
+],
+"sorters": [
+"numberOfUpdates",
+"identitiesWithAccess",
+"totalNumberOfIdentities"
+]
+},
+"GET /role-insights/v1/requests/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /role-insights/v1/summary": {
+"experimental": true,
+"query": []
+},
+"GET /role-insights/v1/{insightId}": {
+"experimental": true,
+"query": []
+},
+"GET /role-insights/v1/{insightId}/current-entitlements": {
+"experimental": true,
+"filters": {
+"description": [
+"sw"
+],
+"name": [
+"sw"
+]
+},
+"query": [
+"filters"
+]
+},
+"GET /role-insights/v1/{insightId}/entitlement-changes": {
+"experimental": true,
+"filters": {
+"description": [
+"sw"
+],
+"name": [
+"sw"
+]
+},
+"query": [
+"sorters",
+"filters"
+],
+"sorters": [
+"identitiesWithAccess",
+"name"
+]
+},
+"GET /role-insights/v1/{insightId}/entitlement-changes/download": {
+"experimental": true,
+"filters": {
+"description": [
+"sw"
+],
+"name": [
+"sw"
+]
+},
+"query": [
+"sorters",
+"filters"
+],
+"sorters": [
+"identitiesWithAccess"
+]
+},
+"GET /role-insights/v1/{insightId}/entitlement-changes/{entitlementId}/identities": {
+"experimental": true,
+"filters": {
+"name": [
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"hasEntitlement",
+"offset",
+"limit",
+"count",
+"sorters",
+"filters"
+],
+"sorters": [
+"name"
+]
+},
+"GET /role-mining-potential-roles/v1": {
+"experimental": true,
+"filters": {
+"createdById": [
+"eq",
+"sw",
+"co"
+],
+"createdByName": [
+"eq",
+"sw",
+"co"
+],
+"description": [
+"sw",
+"co"
+],
+"endDate": [
+"le",
+"lt"
+],
+"freshness": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"identityAttribute": [
+"co"
+],
+"name": [
+"eq",
+"sw",
+"co",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"quality": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"saved": [
+"eq"
+],
+"scopingMethod": [
+"eq"
+],
+"sessionState": [
+"eq"
+],
+"startDate": [
+"ge",
+"gt"
+],
+"type": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+]
+},
+"limitMax": 250,
+"query": [
+"sorters",
+"filters",
+"offset",
+"limit",
+"count"
+],
+"sorters": [
+"createdDate",
+"identityCount",
+"entitlementCount",
+"freshness",
+"quality"
+]
+},
+"GET /role-mining-potential-roles/v1/saved": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"sorters",
+"offset",
+"limit",
+"count"
+],
+"sorters": [
+"modified"
+]
+},
+"GET /role-mining-potential-roles/v1/{potentialRoleId}": {
+"experimental": true,
+"query": []
+},
+"GET /role-mining-potential-roles/v1/{potentialRoleId}/sources/{sourceId}/identityUsage": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"sorters",
+"offset",
+"limit",
+"count"
+],
+"sorters": [
+"displayName",
+"email",
+"usageCount"
+]
+},
+"GET /role-mining-sessions/v1": {
+"experimental": true,
+"filters": {
+"name": [
+"eq",
+"sw"
+],
+"saved": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"offset",
+"limit",
+"count"
+],
+"sorters": [
+"createdBy",
+"createdDate"
+]
+},
+"GET /role-mining-sessions/v1/{sessionId}": {
+"experimental": true,
+"query": []
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-role-summaries": {
+"experimental": true,
+"filters": {
+"createdById": [
+"eq",
+"sw",
+"co"
+],
+"createdByName": [
+"eq",
+"sw",
+"co"
+],
+"description": [
+"sw",
+"co"
+],
+"endDate": [
+"le",
+"lt"
+],
+"freshness": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"name": [
+"eq",
+"sw",
+"co"
+],
+"quality": [
+"eq",
+"ge",
+"gt",
+"le",
+"lt"
+],
+"saved": [
+"eq"
+],
+"startDate": [
+"ge",
+"gt"
+],
+"type": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"sorters",
+"filters",
+"offset",
+"limit",
+"count"
+],
+"sorters": [
+"createdDate"
+]
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-role-summaries/{potentialRoleId}": {
+"experimental": true,
+"query": []
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-role-summaries/{potentialRoleId}/applications": {
+"experimental": true,
+"filters": {
+"applicationName": [
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"offset",
+"limit",
+"count"
+]
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-role-summaries/{potentialRoleId}/entitlements": {
+"experimental": true,
+"filters": {
+"entitlementRef.name": [
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"offset",
+"limit",
+"count"
+]
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/entitlement-popularities": {
+"experimental": true,
+"filters": {
+"applicationName": [
+"sw"
+],
+"entitlementRef.name": [
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"includeCommonAccess",
+"sorters",
+"filters",
+"offset",
+"limit",
+"count"
+],
+"sorters": [
+"popularity",
+"entitlementName",
+"applicationName"
+]
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/entitlement-popularity-distribution": {
+"experimental": true,
+"query": [
+"includeCommonAccess"
+]
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/excluded-entitlements": {
+"experimental": true,
+"filters": {
+"applicationName": [
+"sw"
+],
+"entitlementRef.name": [
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"sorters",
+"filters",
+"offset",
+"limit",
+"count"
+],
+"sorters": [
+"popularity"
+]
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/export": {
+"experimental": true,
+"query": []
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/export-async/{exportId}": {
+"experimental": true,
+"query": []
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/export-async/{exportId}/download": {
+"experimental": true,
+"query": []
+},
+"GET /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/identities": {
+"experimental": true,
+"filters": {
+"name": [
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"sorters",
+"filters",
+"offset",
+"limit",
+"count"
+],
+"sorters": [
+"name"
+]
+},
+"GET /role-mining-sessions/v1/{sessionId}/status": {
+"experimental": true,
+"query": []
+},
+"GET /role-propagation-config/v1": {
+"experimental": true,
+"query": []
+},
+"GET /role-propagation/v1/is-running": {
+"experimental": true,
+"query": []
+},
+"GET /role-propagation/v1/{rolePropagationId}/status": {
+"experimental": true,
+"query": []
+},
+"GET /roles/v1": {
+"experimental": false,
+"filters": {
+"created": [
+"gt",
+"ge",
+"le"
+],
+"dimensional": [
+"eq"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"requestable": [
+"eq"
+]
+},
+"limitMax": 50,
+"query": [
+"for-subadmin",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters",
+"for-segment-ids",
+"include-unsegmented"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"GET /roles/v1/access-model-metadata/bulk-update": {
+"experimental": false,
+"query": []
+},
+"GET /roles/v1/access-model-metadata/bulk-update/id": {
+"experimental": false,
+"query": []
+},
+"GET /roles/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /roles/v1/{id}/assigned-identities": {
+"experimental": false,
+"filters": {
+"aliasName": [
+"eq",
+"sw"
+],
+"email": [
+"eq",
+"sw"
+],
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"aliasName",
+"email"
+]
+},
+"GET /roles/v1/{id}/entitlements": {
+"experimental": false,
+"filters": {
+"attribute": [
+"eq",
+"sw"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"source.id": [
+"eq",
+"in"
+],
+"value": [
+"eq",
+"sw"
+]
+},
+"limitMax": 50,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"attribute",
+"value",
+"created",
+"modified"
+]
+},
+"GET /roles/v1/{roleId}/dimensions": {
+"experimental": false,
+"filters": {
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+]
+},
+"limitMax": 50,
+"query": [
+"for-subadmin",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"GET /roles/v1/{roleId}/dimensions/{dimensionId}": {
+"experimental": false,
+"query": []
+},
+"GET /roles/v1/{roleId}/dimensions/{dimensionId}/access-profiles": {
+"experimental": false,
+"filters": {
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"source.id": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"GET /roles/v1/{roleId}/dimensions/{dimensionId}/entitlements": {
+"experimental": false,
+"filters": {
+"attribute": [
+"eq",
+"sw"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"source.id": [
+"eq",
+"in"
+],
+"value": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"attribute",
+"value",
+"created",
+"modified"
+]
+},
+"GET /roles/v2": {
+"experimental": true,
+"filters": {
+"accessProfile.id": [
+"eq",
+"in"
+],
+"accessProfile.name": [
+"eq",
+"sw",
+"co"
+],
+"additionalOwners.id": [
+"eq",
+"in"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"dimensional": [
+"eq"
+],
+"entitlement.id": [
+"eq",
+"in"
+],
+"entitlement.name": [
+"eq",
+"sw",
+"co"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw",
+"co"
+],
+"owner.id": [
+"eq",
+"in"
+],
+"privilegeLevel.effective": [
+"eq",
+"in"
+],
+"requestable": [
+"eq"
+],
+"source.id": [
+"eq",
+"in"
+],
+"type": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"for-subadmin",
+"limit",
+"offset",
+"count",
+"cursor",
+"filters",
+"sorters",
+"for-segment-ids",
+"include-unsegmented"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"privilegeLevel.effective"
+]
+},
+"GET /roles/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /roles/v2/{id}/entitlements": {
+"experimental": true,
+"filters": {
+"attribute": [
+"eq",
+"sw",
+"co"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"sw",
+"co"
+],
+"privilegeLevel.effective": [
+"eq",
+"in"
+],
+"value": [
+"eq",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"cursor",
+"filters",
+"sorters",
+"for-segment-ids",
+"segmented-for-identity",
+"include-unsegmented"
+],
+"sorters": [
+"id",
+"name",
+"attribute",
+"value",
+"created",
+"modified",
+"privilegeLevel.effective"
+]
+},
+"GET /saved-searches/v1": {
+"experimental": false,
+"filters": {
+"owner.id": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count",
+"filters"
+]
+},
+"GET /saved-searches/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /scheduled-searches/v1": {
+"experimental": false,
+"filters": {
+"owner.id": [
+"eq"
+],
+"savedSearchId": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count",
+"filters"
+]
+},
+"GET /scheduled-searches/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /search/v1/{index}/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /segments/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /segments/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /service-desk-integrations/v1": {
+"experimental": false,
+"filters": {
+"cluster": [
+"eq",
+"in"
+],
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq"
+],
+"type": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"sorters",
+"filters",
+"count"
+],
+"sorters": [
+"name"
+]
+},
+"GET /service-desk-integrations/v1/status-check-configuration": {
+"experimental": false,
+"query": []
+},
+"GET /service-desk-integrations/v1/templates/{scriptName}": {
+"experimental": false,
+"query": []
+},
+"GET /service-desk-integrations/v1/types": {
+"experimental": false,
+"query": []
+},
+"GET /service-desk-integrations/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /sim-integrations/v1": {
+"experimental": true,
+"query": []
+},
+"GET /sim-integrations/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /sod-policies/v1": {
+"experimental": false,
+"filters": {
+"description": [
+"eq",
+"co",
+"sw"
+],
+"id": [
+"eq",
+"in"
+],
+"level": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"in",
+"sw",
+"co"
+],
+"ownerRef.name": [
+"eq",
+"sw"
+],
+"state": [
+"eq",
+"in"
+],
+"type": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"description",
+"ownerRef.name"
+]
+},
+"GET /sod-policies/v1/sod-violation-report-status/{reportResultId}": {
+"experimental": false,
+"query": []
+},
+"GET /sod-policies/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /sod-policies/v1/{id}/schedule": {
+"experimental": false,
+"query": []
+},
+"GET /sod-policies/v1/{id}/violation-report": {
+"experimental": false,
+"query": []
+},
+"GET /sod-violation-report/v1": {
+"experimental": false,
+"query": []
+},
+"GET /sod-violation-report/v1/{reportResultId}/download": {
+"experimental": false,
+"query": []
+},
+"GET /sod-violation-report/v1/{reportResultId}/download/{fileName}": {
+"experimental": false,
+"query": []
+},
+"GET /source-apps/v1": {
+"experimental": true,
+"filters": {
+"accountSource.id": [
+"eq",
+"in"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"co",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"count",
+"offset",
+"sorters",
+"filters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"owner.id",
+"accountSource.id"
+]
+},
+"GET /source-apps/v1/all": {
+"experimental": true,
+"filters": {
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"enabled": [
+"eq"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"co",
+"sw"
+],
+"owner.id": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"count",
+"offset",
+"sorters",
+"filters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"owner.id",
+"accountSource.id"
+]
+},
+"GET /source-apps/v1/assigned": {
+"experimental": true,
+"filters": {
+"accountSource.id": [
+"eq",
+"in"
+],
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in",
+"co",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"count",
+"offset",
+"sorters",
+"filters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"accountSource.id"
+]
+},
+"GET /source-apps/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /source-apps/v1/{id}/access-profiles": {
+"experimental": true,
+"filters": {
+"created": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"id": [
+"eq",
+"in"
+],
+"modified": [
+"gt",
+"lt",
+"ge",
+"le"
+],
+"name": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"filters"
+]
+},
+"GET /source-subtypes/v1": {
+"experimental": true,
+"filters": {
+"displayName": [
+"eq",
+"sw"
+],
+"id": [
+"eq",
+"in",
+"sw"
+],
+"source.id": [
+"eq",
+"in"
+],
+"technicalName": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"displayName",
+"technicalName"
+]
+},
+"GET /source-subtypes/v1/machine-account-create-access": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"offset",
+"limit"
+]
+},
+"GET /source-subtypes/v1/{subtypeId}": {
+"experimental": true,
+"query": []
+},
+"GET /source-subtypes/v1/{subtypeId}/machine-config": {
+"experimental": true,
+"query": []
+},
+"GET /source-subtypes/v2": {
+"experimental": true,
+"filters": {
+"classification": [
+"eq",
+"ne",
+"in",
+"sw",
+"co"
+],
+"created": [
+"gt",
+"ge",
+"lt",
+"le"
+],
+"displayName": [
+"eq",
+"ne",
+"in",
+"sw",
+"co"
+],
+"id": [
+"eq",
+"ne",
+"in"
+],
+"modified": [
+"gt",
+"ge",
+"lt",
+"le"
+],
+"source.id": [
+"eq",
+"ne",
+"in",
+"sw",
+"co"
+],
+"targetId": [
+"eq",
+"ne",
+"in",
+"sw",
+"co"
+],
+"targetName": [
+"eq",
+"ne",
+"in",
+"sw",
+"co",
+"isnull"
+],
+"targetType": [
+"eq",
+"ne",
+"in",
+"sw",
+"co"
+],
+"technicalName": [
+"eq",
+"ne",
+"in",
+"sw",
+"co"
+],
+"type": [
+"eq",
+"ne",
+"in",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"sourceId",
+"effectiveSet",
+"targetType",
+"includeConfigs",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"technicalName",
+"displayName",
+"source.id",
+"targetType",
+"targetId",
+"targetName",
+"classification",
+"type",
+"created",
+"modified"
+]
+},
+"GET /source-subtypes/v2/targets": {
+"experimental": true,
+"filters": {
+"targetName": [
+"eq",
+"sw"
+],
+"targetType": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"targetType",
+"targetName",
+"subtypeCount",
+"sourceCount"
+]
+},
+"GET /source-subtypes/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /source-subtypes/v2/{id}/provisioning-policy": {
+"experimental": true,
+"query": [
+"sourceId"
+]
+},
+"GET /source-usages/v1/{sourceId}/status": {
+"experimental": false,
+"query": []
+},
+"GET /source-usages/v1/{sourceId}/summaries": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"sorters"
+],
+"sorters": [
+"date"
+]
+},
+"GET /sources/v1": {
+"experimental": false,
+"filters": {
+"authoritative": [
+"eq",
+"ne",
+"isnull"
+],
+"category": [
+"co",
+"eq",
+"ge",
+"gt",
+"in",
+"le",
+"lt",
+"ne",
+"sw"
+],
+"connectionType": [
+"eq",
+"ge",
+"gt",
+"in",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+],
+"connectorName": [
+"eq",
+"ge",
+"gt",
+"in",
+"ne",
+"isnull",
+"sw"
+],
+"created": [
+"eq",
+"ge",
+"gt",
+"in",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+],
+"description": [
+"eq",
+"sw"
+],
+"features": [
+"ca",
+"co"
+],
+"healthy": [
+"isnull"
+],
+"id": [
+"eq",
+"in",
+"ge",
+"gt",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+],
+"managementWorkgroup.id": [
+"eq",
+"ge",
+"gt",
+"in",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+],
+"modified": [
+"eq",
+"ge",
+"gt",
+"in",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+],
+"name": [
+"co",
+"eq",
+"in",
+"sw",
+"ge",
+"gt",
+"ne",
+"isnull"
+],
+"owner.id": [
+"eq",
+"in",
+"ge",
+"gt",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+],
+"status": [
+"eq",
+"in",
+"ge",
+"gt",
+"le",
+"lt",
+"ne",
+"isnull",
+"sw"
+],
+"type": [
+"eq",
+"in",
+"ge",
+"gt",
+"ne",
+"isnull",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters",
+"for-subadmin",
+"includeIDNSource"
+],
+"sorters": [
+"type",
+"created",
+"modified",
+"name",
+"owner.name",
+"healthy",
+"status",
+"id",
+"description",
+"owner.id",
+"accountCorrelationConfig.id",
+"accountCorrelationConfig.name",
+"managerCorrelationRule.type",
+"managerCorrelationRule.id",
+"managerCorrelationRule.name",
+"authoritative",
+"managementWorkgroup.id",
+"connectorName",
+"connectionType"
+]
+},
+"GET /sources/v1/subtypes/{subtypeId}": {
+"experimental": true,
+"query": []
+},
+"GET /sources/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{id}/attribute-sync-config": {
+"experimental": true,
+"query": []
+},
+"GET /sources/v1/{id}/connectors/source-config": {
+"experimental": false,
+"query": [
+"locale"
+]
+},
+"GET /sources/v1/{id}/correlation-config": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{id}/entitlement-request-config": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{id}/schemas/accounts": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{id}/schemas/entitlements": {
+"experimental": false,
+"query": [
+"schemaName"
+]
+},
+"GET /sources/v1/{sourceId}/approval-config/account-delete": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{sourceId}/approval-config/machine-account-delete": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{sourceId}/classify": {
+"experimental": true,
+"query": []
+},
+"GET /sources/v1/{sourceId}/connections": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{sourceId}/datasets": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /sources/v1/{sourceId}/datasets/{datasetId}": {
+"experimental": true,
+"query": []
+},
+"GET /sources/v1/{sourceId}/machine-account-mappings": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /sources/v1/{sourceId}/machine-classification-config": {
+"experimental": true,
+"query": []
+},
+"GET /sources/v1/{sourceId}/native-change-detection-config": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{sourceId}/password-policies": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count"
+]
+},
+"GET /sources/v1/{sourceId}/provisioning-policies": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"offset",
+"limit"
+]
+},
+"GET /sources/v1/{sourceId}/provisioning-policies/{usageType}": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{sourceId}/resources": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /sources/v1/{sourceId}/resources/mappings": {
+"experimental": true,
+"query": []
+},
+"GET /sources/v1/{sourceId}/resources/{resourceId}": {
+"experimental": true,
+"query": []
+},
+"GET /sources/v1/{sourceId}/resources/{resourceId}/correlation-configs": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"type",
+"count",
+"limit",
+"offset"
+]
+},
+"GET /sources/v1/{sourceId}/resources/{resourceId}/correlation-configs/{configId}": {
+"experimental": true,
+"query": []
+},
+"GET /sources/v1/{sourceId}/resources/{resourceId}/reprocess-correlations": {
+"experimental": true,
+"query": [
+"type"
+]
+},
+"GET /sources/v1/{sourceId}/schedules": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{sourceId}/schedules/{scheduleType}": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{sourceId}/schemas": {
+"experimental": false,
+"query": [
+"include-types",
+"include-names"
+]
+},
+"GET /sources/v1/{sourceId}/schemas/{schemaId}": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{sourceId}/service-desk-integrations": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /sources/v1/{sourceId}/source-health": {
+"experimental": false,
+"query": []
+},
+"GET /sources/v1/{sourceId}/subtypes": {
+"experimental": true,
+"filters": {
+"displayName": [
+"eq",
+"sw"
+],
+"technicalName": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"sorters",
+"count",
+"limit",
+"offset"
+],
+"sorters": [
+"displayName",
+"technicalName"
+]
+},
+"GET /sources/v1/{sourceId}/subtypes/{technicalName}": {
+"experimental": true,
+"query": []
+},
+"GET /sources/v2/{sourceId}/provisioning-policies": {
+"experimental": true,
+"filters": {
+"subtypeId": [
+"eq"
+],
+"usageType": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"filters",
+"offset",
+"limit"
+]
+},
+"GET /sources/v2/{sourceId}/provisioning-policies/{id}": {
+"experimental": true,
+"query": []
+},
+"GET /sp-config/v1/config-objects": {
+"experimental": false,
+"query": []
+},
+"GET /sp-config/v1/export/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /sp-config/v1/export/{id}/download": {
+"experimental": false,
+"query": []
+},
+"GET /sp-config/v1/import/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /sp-config/v1/import/{id}/download": {
+"experimental": false,
+"query": []
+},
+"GET /ssf/v1/jwks": {
+"experimental": false,
+"query": []
+},
+"GET /ssf/v1/streams": {
+"experimental": false,
+"query": [
+"stream_id"
+]
+},
+"GET /ssf/v1/streams/status": {
+"experimental": false,
+"query": [
+"stream_id"
+]
+},
+"GET /suggested-entitlement-description-batches/v1": {
+"experimental": false,
+"query": [
+"offset",
+"limit",
+"count",
+"count-only",
+"status"
+]
+},
+"GET /suggested-entitlement-description-batches/v1/{batchId}/stats": {
+"experimental": false,
+"query": []
+},
+"GET /suggested-entitlement-descriptions/v1": {
+"experimental": false,
+"filters": {
+"batchId": [
+"eq",
+"ne"
+],
+"displayName": [
+"eq",
+"ne",
+"co"
+],
+"fullText": [
+"co"
+],
+"sourceId": [
+"eq",
+"ne"
+],
+"sourceName": [
+"eq",
+"ne",
+"co"
+],
+"status": [
+"eq",
+"ne"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters",
+"count-only",
+"requested-by-anyone",
+"show-pending-status-only"
+],
+"sorters": [
+"displayName",
+"sourceName",
+"status"
+]
+},
+"GET /suggested-entitlement-descriptions/v1/auto-write-settings": {
+"experimental": false,
+"query": []
+},
+"GET /tagged-objects/v1": {
+"experimental": false,
+"filters": {
+"objectRef.id": [
+"eq",
+"in"
+],
+"objectRef.type": [
+"eq",
+"in"
+],
+"tagName": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters"
+]
+},
+"GET /tagged-objects/v1/{type}": {
+"experimental": false,
+"filters": {
+"objectRef.id": [
+"eq"
+],
+"objectRef.type": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters"
+]
+},
+"GET /tagged-objects/v1/{type}/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /tags/v1": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"in",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified"
+]
+},
+"GET /tags/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /task-status/v1": {
+"experimental": false,
+"filters": {
+"completionStatus": [
+"eq",
+"in",
+"isnull"
+],
+"id": [
+"eq",
+"in"
+],
+"launcher": [
+"eq",
+"in"
+],
+"sourceId": [
+"eq",
+"in"
+],
+"type": [
+"eq",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"created"
+]
+},
+"GET /task-status/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /tenant-context/v1": {
+"experimental": false,
+"query": []
+},
+"GET /tenant/v1": {
+"experimental": false,
+"query": []
+},
+"GET /transforms/v1": {
+"experimental": false,
+"filters": {
+"internal": [
+"eq"
+],
+"name": [
+"eq",
+"sw"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count",
+"name",
+"filters"
+]
+},
+"GET /transforms/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /trigger-invocations/v1/status": {
+"experimental": false,
+"filters": {
+"subscriptionId": [
+"eq"
+],
+"triggerId": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"triggerId",
+"subscriptionName",
+"created",
+"completed"
+]
+},
+"GET /trigger-subscriptions/v1": {
+"experimental": false,
+"filters": {
+"id": [
+"eq"
+],
+"triggerId": [
+"eq"
+],
+"type": [
+"eq",
+"le"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"triggerId",
+"triggerName"
+]
+},
+"GET /triggers/v1": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"ge",
+"le"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"id",
+"name"
+]
+},
+"GET /ui-metadata/v1/tenant": {
+"experimental": true,
+"query": []
+},
+"GET /ui-plugin-slots/v1": {
+"experimental": true,
+"filters": {
+"state": [
+"eq"
+]
+},
+"query": [
+"filters",
+"allLangs"
+]
+},
+"GET /ui-plugins/v1": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /ui-plugins/v1/resolve-alias": {
+"experimental": true,
+"query": [
+"alias"
+]
+},
+"GET /ui-plugins/v1/validate-alias": {
+"experimental": true,
+"query": [
+"alias"
+]
+},
+"GET /ui-plugins/v1/{pluginInstanceId}": {
+"experimental": true,
+"query": []
+},
+"GET /ui-plugins/v1/{pluginInstanceId}/asset-bundles": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"GET /user-apps/v1": {
+"experimental": true,
+"filters": {
+"accountId": [
+"eq"
+],
+"id": [
+"eq"
+],
+"ownerAlias": [
+"eq",
+"sw"
+],
+"ownerName": [
+"eq",
+"sw"
+],
+"sourceAppId": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"count",
+"offset",
+"filters"
+]
+},
+"GET /user-apps/v1/all": {
+"experimental": true,
+"filters": {
+"accountId": [
+"eq"
+],
+"id": [
+"eq"
+],
+"ownerAlias": [
+"eq",
+"sw"
+],
+"ownerId": [
+"eq"
+],
+"ownerName": [
+"eq",
+"sw"
+],
+"sourceAppId": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"count",
+"offset",
+"filters"
+]
+},
+"GET /user-apps/v1/{id}/available-accounts": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"count"
+]
+},
+"GET /verified-domains/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /verified-from-addresses/v1": {
+"experimental": false,
+"filters": {
+"email": [
+"eq",
+"ge",
+"le",
+"gt",
+"lt"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"email"
+]
+},
+"GET /violations/v1": {
+"experimental": false,
+"filters": {
+"level": [
+"eq",
+"in"
+],
+"ownerId": [
+"eq"
+],
+"ownerName": [
+"eq",
+"in",
+"sw",
+"co"
+],
+"policyId": [
+"eq"
+],
+"policyName": [
+"eq",
+"in",
+"sw",
+"co"
+],
+"status": [
+"eq",
+"in"
+],
+"targetId": [
+"eq",
+"in"
+],
+"targetName": [
+"eq",
+"in",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"level"
+]
+},
+"GET /violations/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /work-items/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"ownerId"
+]
+},
+"GET /work-items/v1/completed": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"ownerId",
+"limit",
+"offset",
+"count"
+]
+},
+"GET /work-items/v1/completed/count": {
+"experimental": false,
+"query": [
+"ownerId"
+]
+},
+"GET /work-items/v1/count": {
+"experimental": false,
+"query": [
+"ownerId"
+]
+},
+"GET /work-items/v1/summary": {
+"experimental": false,
+"query": [
+"ownerId"
+]
+},
+"GET /work-items/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /workflow-executions/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /workflow-executions/v1/{id}/history": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /workflow-executions/v1/{id}/history-v2": {
+"experimental": false,
+"query": []
+},
+"GET /workflow-library/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /workflow-library/v1/actions": {
+"experimental": false,
+"filters": {
+"id": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"filters"
+]
+},
+"GET /workflow-library/v1/operators": {
+"experimental": false,
+"query": []
+},
+"GET /workflow-library/v1/triggers": {
+"experimental": false,
+"filters": {
+"id": [
+"eq"
+],
+"name": [
+"eq"
+],
+"type": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"filters"
+]
+},
+"GET /workflows/v1": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"limit",
+"offset"
+]
+},
+"GET /workflows/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /workflows/v1/{id}/executions": {
+"experimental": false,
+"filters": {
+"start_time": [
+"eq",
+"lt",
+"le",
+"gt",
+"ge"
+],
+"status": [
+"eq"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"filters"
+]
+},
+"GET /workgroups/v1": {
+"experimental": false,
+"filters": {
+"id": [
+"eq",
+"in",
+"sw"
+],
+"memberships.identityId": [
+"eq",
+"in"
+],
+"name": [
+"eq",
+"sw",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"created",
+"modified",
+"id",
+"description"
+]
+},
+"GET /workgroups/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"GET /workgroups/v1/{workgroupId}/connections": {
+"experimental": false,
+"limitMax": 50,
+"query": [
+"offset",
+"limit",
+"count",
+"sorters"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"GET /workgroups/v1/{workgroupId}/members": {
+"experimental": false,
+"limitMax": 50,
+"query": [
+"offset",
+"limit",
+"count",
+"sorters"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"PATCH /access-model-metadata/v1/attributes/{key}": {
+"experimental": false,
+"query": []
+},
+"PATCH /access-model-metadata/v1/attributes/{key}/values/{value}": {
+"experimental": false,
+"query": []
+},
+"PATCH /access-profiles/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /access-profiles/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /accounts/v1/search-attribute-config/{name}": {
+"experimental": false,
+"query": []
+},
+"PATCH /accounts/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /auth-org/v1/lockout-config": {
+"experimental": false,
+"query": []
+},
+"PATCH /auth-org/v1/network-config": {
+"experimental": false,
+"query": []
+},
+"PATCH /auth-org/v1/service-provider-config": {
+"experimental": false,
+"query": []
+},
+"PATCH /auth-org/v1/session-config": {
+"experimental": false,
+"query": []
+},
+"PATCH /auth-profiles/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /auth-users/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /authorization/v1/custom-user-levels/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /business-applications/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /campaign-templates/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /campaigns/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /capabilities/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /certification-campaigns/v1/campaign-templates/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /certification-campaigns/v1/campaigns/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /configuration-hub/v1/scheduled-actions/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /connectors/v1/{scriptName}": {
+"experimental": false,
+"query": []
+},
+"PATCH /credentials/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /criteria-config/v1/privilege/{criteriaConfigId}": {
+"experimental": false,
+"query": []
+},
+"PATCH /data-segments/v1/{segmentId}": {
+"experimental": true,
+"query": []
+},
+"PATCH /devices/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /entitlement-connections/v1/{connectionId}": {
+"experimental": false,
+"query": []
+},
+"PATCH /entitlement-recommendations/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /entitlements/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /form-definitions/v1/{formDefinitionID}": {
+"experimental": false,
+"query": []
+},
+"PATCH /form-instances/v1/{formInstanceID}": {
+"experimental": false,
+"query": []
+},
+"PATCH /generic-request-approval-config/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /identity-profiles/v1/{identity-profile-id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /identity-profiles/v1/{identity-profile-id}/lifecycle-states/{lifecycle-state-id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /jit-activation-config/v1/{configType}": {
+"experimental": true,
+"query": []
+},
+"PATCH /jit-activations/v1/{activationId}/frictions": {
+"experimental": true,
+"query": []
+},
+"PATCH /machine-accounts/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /machine-accounts/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /machine-identities/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /machine-identities/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /managed-clients/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /managed-cluster-types/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /managed-clusters/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /multihosts/v1/{multihostId}": {
+"experimental": false,
+"query": []
+},
+"PATCH /non-employee-records/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /non-employee-sources/v1/{sourceId}": {
+"experimental": false,
+"query": []
+},
+"PATCH /non-employee-sources/v1/{sourceId}/schema-attributes/{attributeId}": {
+"experimental": false,
+"query": []
+},
+"PATCH /oauth-clients/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /org-config/v1": {
+"experimental": false,
+"query": []
+},
+"PATCH /parameter-storage/v1/parameters/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /personal-access-tokens/v1/bulk-update": {
+"experimental": false,
+"query": []
+},
+"PATCH /personal-access-tokens/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /role-mining-potential-roles/v1/{potentialRoleId}": {
+"experimental": true,
+"query": []
+},
+"PATCH /role-mining-sessions/v1/{sessionId}": {
+"experimental": true,
+"query": []
+},
+"PATCH /role-mining-sessions/v1/{sessionId}/potential-role-summaries/{potentialRoleId}": {
+"experimental": true,
+"query": []
+},
+"PATCH /roles/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /roles/v1/{roleId}/dimensions/{dimensionId}": {
+"experimental": false,
+"query": []
+},
+"PATCH /segments/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /service-desk-integrations/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /sim-integrations/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /sim-integrations/v1/{id}/beforeProvisioningRule": {
+"experimental": true,
+"query": []
+},
+"PATCH /sod-policies/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /source-apps/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /source-subtypes/v1/{subtypeId}": {
+"experimental": true,
+"query": []
+},
+"PATCH /source-subtypes/v1/{subtypeId}/machine-config": {
+"experimental": true,
+"query": []
+},
+"PATCH /source-subtypes/v2/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /source-subtypes/v2/{id}/provisioning-policy": {
+"experimental": true,
+"query": []
+},
+"PATCH /sources/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /sources/v1/{sourceId}/approval-config/account-delete": {
+"experimental": false,
+"query": []
+},
+"PATCH /sources/v1/{sourceId}/approval-config/machine-account-delete": {
+"experimental": false,
+"query": []
+},
+"PATCH /sources/v1/{sourceId}/datasets/{datasetId}": {
+"experimental": true,
+"query": []
+},
+"PATCH /sources/v1/{sourceId}/password-policies": {
+"experimental": false,
+"query": []
+},
+"PATCH /sources/v1/{sourceId}/provisioning-policies/{usageType}": {
+"experimental": false,
+"query": []
+},
+"PATCH /sources/v1/{sourceId}/resources/{resourceId}": {
+"experimental": true,
+"query": []
+},
+"PATCH /sources/v1/{sourceId}/resources/{resourceId}/correlation-configs/{configId}": {
+"experimental": true,
+"query": []
+},
+"PATCH /sources/v1/{sourceId}/schedules/{scheduleType}": {
+"experimental": false,
+"query": []
+},
+"PATCH /sources/v1/{sourceId}/schemas/{schemaId}": {
+"experimental": false,
+"query": []
+},
+"PATCH /sources/v1/{sourceId}/subtypes/{technicalName}": {
+"experimental": true,
+"query": []
+},
+"PATCH /sources/v2/{sourceId}/provisioning-policies/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /ssf/v1/streams": {
+"experimental": false,
+"query": []
+},
+"PATCH /suggested-entitlement-descriptions/v1": {
+"experimental": false,
+"query": []
+},
+"PATCH /suggested-entitlement-descriptions/v1/auto-write-settings": {
+"experimental": false,
+"query": []
+},
+"PATCH /task-status/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /tenant-context/v1": {
+"experimental": false,
+"query": []
+},
+"PATCH /trigger-subscriptions/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /ui-plugins/v1/{pluginInstanceId}": {
+"experimental": true,
+"query": []
+},
+"PATCH /user-apps/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PATCH /workflows/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PATCH /workgroups/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"POST /access-model-metadata/v1/attributes": {
+"experimental": false,
+"query": []
+},
+"POST /access-model-metadata/v1/attributes/{key}/values": {
+"experimental": false,
+"query": []
+},
+"POST /access-model-metadata/v1/bulk-update/filter": {
+"experimental": false,
+"query": []
+},
+"POST /access-model-metadata/v1/bulk-update/ids": {
+"experimental": false,
+"query": []
+},
+"POST /access-model-metadata/v1/bulk-update/query": {
+"experimental": false,
+"query": []
+},
+"POST /access-profiles/v1": {
+"experimental": false,
+"query": []
+},
+"POST /access-profiles/v1/access-model-metadata/bulk-update/filter": {
+"experimental": false,
+"query": []
+},
+"POST /access-profiles/v1/access-model-metadata/bulk-update/ids": {
+"experimental": false,
+"query": []
+},
+"POST /access-profiles/v1/access-model-metadata/bulk-update/query": {
+"experimental": false,
+"query": []
+},
+"POST /access-profiles/v1/bulk-delete": {
+"experimental": false,
+"query": []
+},
+"POST /access-profiles/v1/bulk-update-requestable": {
+"experimental": false,
+"query": []
+},
+"POST /access-profiles/v1/filter": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"for-subadmin",
+"limit",
+"offset",
+"count",
+"sorters",
+"for-segment-ids",
+"include-unsegmented"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"POST /access-profiles/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}": {
+"experimental": false,
+"query": []
+},
+"POST /access-profiles/v2": {
+"experimental": true,
+"query": []
+},
+"POST /access-profiles/v2/bulk-delete": {
+"experimental": true,
+"query": []
+},
+"POST /access-profiles/v2/bulk-update-requestable": {
+"experimental": true,
+"query": []
+},
+"POST /access-profiles/v2/filter": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"for-subadmin",
+"limit",
+"offset",
+"count",
+"sorters",
+"for-segment-ids",
+"include-unsegmented",
+"cursor"
+],
+"sorters": [
+"name",
+"created",
+"modified",
+"id",
+"privilegeLevel.effective"
+]
+},
+"POST /access-request-approvals/v1/bulk-approve": {
+"experimental": false,
+"query": []
+},
+"POST /access-request-approvals/v1/{approvalId}/approve": {
+"experimental": false,
+"query": []
+},
+"POST /access-request-approvals/v1/{approvalId}/forward": {
+"experimental": false,
+"query": []
+},
+"POST /access-request-approvals/v1/{approvalId}/reject": {
+"experimental": false,
+"query": []
+},
+"POST /access-requests/v1": {
+"experimental": false,
+"query": []
+},
+"POST /access-requests/v1/accounts-selection": {
+"experimental": true,
+"query": []
+},
+"POST /access-requests/v1/bulk-cancel": {
+"experimental": false,
+"query": []
+},
+"POST /access-requests/v1/cancel": {
+"experimental": false,
+"query": []
+},
+"POST /access-requests/v1/close": {
+"experimental": false,
+"query": []
+},
+"POST /account-requests/v1/account/{accountId}/delete": {
+"experimental": false,
+"query": []
+},
+"POST /account-requests/v1/machine-account-create": {
+"experimental": true,
+"query": []
+},
+"POST /account-requests/v2/machine-account-create": {
+"experimental": true,
+"query": []
+},
+"POST /accounts/v1": {
+"experimental": false,
+"query": []
+},
+"POST /accounts/v1/bulk-classify": {
+"experimental": true,
+"query": [
+"classificationMode"
+]
+},
+"POST /accounts/v1/search-attribute-config": {
+"experimental": false,
+"query": []
+},
+"POST /accounts/v1/{id}/classify": {
+"experimental": true,
+"query": [
+"classificationMode"
+]
+},
+"POST /accounts/v1/{id}/disable": {
+"experimental": false,
+"query": []
+},
+"POST /accounts/v1/{id}/enable": {
+"experimental": false,
+"query": []
+},
+"POST /accounts/v1/{id}/reload": {
+"experimental": false,
+"query": []
+},
+"POST /accounts/v1/{id}/remove": {
+"experimental": false,
+"query": []
+},
+"POST /accounts/v1/{id}/unlock": {
+"experimental": false,
+"query": []
+},
+"POST /ai-access-request-recommendations/v1/ignored-items": {
+"experimental": true,
+"query": []
+},
+"POST /ai-access-request-recommendations/v1/requested-items": {
+"experimental": true,
+"query": []
+},
+"POST /ai-access-request-recommendations/v1/viewed-items": {
+"experimental": true,
+"query": []
+},
+"POST /ai-access-request-recommendations/v1/viewed-items/bulk-create": {
+"experimental": true,
+"query": []
+},
+"POST /auth-org/v1/network-config": {
+"experimental": false,
+"query": []
+},
+"POST /authorization/v1/custom-user-levels": {
+"experimental": true,
+"query": []
+},
+"POST /authorization/v1/custom-user-levels/{id}/publish": {
+"experimental": true,
+"query": []
+},
+"POST /authorization/v1/user-levels/get-identity-count": {
+"experimental": true,
+"query": []
+},
+"POST /brandings/v1": {
+"experimental": false,
+"query": []
+},
+"POST /business-applications/v1": {
+"experimental": true,
+"query": []
+},
+"POST /campaign-filters/v1": {
+"experimental": false,
+"query": []
+},
+"POST /campaign-filters/v1/delete": {
+"experimental": false,
+"query": []
+},
+"POST /campaign-filters/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"POST /campaign-templates/v1": {
+"experimental": false,
+"query": []
+},
+"POST /campaign-templates/v1/{id}/generate": {
+"experimental": false,
+"query": []
+},
+"POST /campaigns/v1": {
+"experimental": false,
+"query": []
+},
+"POST /campaigns/v1/delete": {
+"experimental": false,
+"query": []
+},
+"POST /campaigns/v1/{id}/activate": {
+"experimental": false,
+"query": []
+},
+"POST /campaigns/v1/{id}/complete": {
+"experimental": false,
+"query": []
+},
+"POST /campaigns/v1/{id}/reassign": {
+"experimental": false,
+"query": []
+},
+"POST /campaigns/v1/{id}/run-remediation-scan": {
+"experimental": false,
+"query": []
+},
+"POST /campaigns/v1/{id}/run-report/{type}": {
+"experimental": false,
+"query": []
+},
+"POST /certification-campaigns/v1/campaign-filters": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/campaign-filters/delete": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/campaign-templates": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/campaign-templates/search": {
+"experimental": true,
+"filters": {
+"id": [
+"eq",
+"ne",
+"in",
+"gt",
+"ge",
+"lt",
+"le",
+"sw",
+"co"
+],
+"name": [
+"eq",
+"ne",
+"in",
+"gt",
+"ge",
+"lt",
+"le",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"sorters",
+"filters"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"POST /certification-campaigns/v1/campaign-templates/{id}/generate": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/campaigns": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/campaigns/delete": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/campaigns/{campaignId}/reassign": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/campaigns/{campaignId}/reports": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/campaigns/{id}/activate": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/campaigns/{id}/complete": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/certifications/search": {
+"experimental": true,
+"filters": {
+"campaignRef.campaignType": [
+"eq",
+"in"
+],
+"campaignRef.id": [
+"eq",
+"in"
+],
+"completed": [
+"eq"
+],
+"id": [
+"eq",
+"in"
+],
+"phase": [
+"eq"
+],
+"reviewProgress": [
+"eq",
+"in"
+],
+"reviewerDeleted": [
+"eq"
+],
+"reviewerName": [
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"reviewer-identity",
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"name",
+"dueDate",
+"dateSigned"
+]
+},
+"POST /certification-campaigns/v1/certifications/{certificationId}/decide": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/certifications/{certificationId}/reassign": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/certifications/{certificationId}/reassign-async": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/certifications/{certificationId}/review-items/search": {
+"experimental": true,
+"filters": {
+"accountName": [
+"eq",
+"sw",
+"co"
+],
+"certificationSubjectSummary.id": [
+"eq",
+"ne",
+"in"
+],
+"certificationSubjectSummary.identityState": [
+"eq",
+"in",
+"ne"
+],
+"certificationSubjectSummary.subjectEmail": [
+"eq",
+"sw",
+"co"
+],
+"certificationSubjectSummary.subjectManagerName": [
+"eq",
+"sw",
+"co"
+],
+"certificationSubjectSummary.subjectName": [
+"eq",
+"sw",
+"co"
+],
+"completed": [
+"eq",
+"ne"
+],
+"id": [
+"eq",
+"ne",
+"in"
+],
+"reauthRequired": [
+"eq",
+"ne"
+],
+"reviewData.entitlement.provisioningType": [
+"eq",
+"ne",
+"in"
+],
+"reviewData.targetReference.id": [
+"eq",
+"ne",
+"in"
+],
+"reviewData.targetReference.name": [
+"eq",
+"sw",
+"co"
+],
+"reviewData.targetReference.type": [
+"eq"
+],
+"sourceName": [
+"eq",
+"sw",
+"co"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters",
+"activity-data"
+],
+"sorters": [
+"certificationSubjectSummary.subjectName",
+"certificationSubjectSummary.subjectManagerName",
+"reviewData.targetReference.id",
+"reviewData.targetReference.name",
+"sourceName",
+"accountName"
+]
+},
+"POST /certification-campaigns/v1/certifications/{certificationId}/sign-off": {
+"experimental": true,
+"query": []
+},
+"POST /certification-campaigns/v1/certifications/{certificationId}/subject-summaries/search": {
+"experimental": true,
+"filters": {
+"completed": [
+"eq",
+"ne"
+],
+"id": [
+"eq",
+"in"
+],
+"subjectName": [
+"eq",
+"sw",
+"co"
+],
+"targetId": [
+"eq",
+"ne",
+"in"
+]
+},
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count",
+"filters",
+"sorters"
+],
+"sorters": [
+"subjectName",
+"targetDisplayName"
+]
+},
+"POST /certification-campaigns/v1/insights/access-summary": {
+"experimental": true,
+"query": []
+},
+"POST /certifications/v1/{id}/decide": {
+"experimental": false,
+"query": []
+},
+"POST /certifications/v1/{id}/reassign": {
+"experimental": false,
+"query": []
+},
+"POST /certifications/v1/{id}/reassign-async": {
+"experimental": false,
+"query": []
+},
+"POST /certifications/v1/{id}/sign-off": {
+"experimental": false,
+"query": []
+},
+"POST /common-access/v1": {
+"experimental": true,
+"query": []
+},
+"POST /common-access/v1/update-status": {
+"experimental": true,
+"query": []
+},
+"POST /configuration-hub/v1/backups/uploads": {
+"experimental": false,
+"query": []
+},
+"POST /configuration-hub/v1/deploys": {
+"experimental": false,
+"query": []
+},
+"POST /configuration-hub/v1/object-mappings/{sourceOrg}": {
+"experimental": false,
+"query": []
+},
+"POST /configuration-hub/v1/object-mappings/{sourceOrg}/bulk-create": {
+"experimental": false,
+"query": []
+},
+"POST /configuration-hub/v1/object-mappings/{sourceOrg}/bulk-patch": {
+"experimental": false,
+"query": []
+},
+"POST /configuration-hub/v1/scheduled-actions": {
+"experimental": false,
+"query": []
+},
+"POST /connector-customizers/v1": {
+"experimental": false,
+"query": []
+},
+"POST /connector-customizers/v1/{id}/versions": {
+"experimental": false,
+"query": []
+},
+"POST /connector-rules/v1": {
+"experimental": false,
+"query": []
+},
+"POST /connector-rules/v1/validate": {
+"experimental": false,
+"query": []
+},
+"POST /connectors/v1": {
+"experimental": false,
+"query": []
+},
+"POST /controls/v1": {
+"experimental": false,
+"query": []
+},
+"POST /convert-entitlement-connection/v1": {
+"experimental": true,
+"query": []
+},
+"POST /criteria/v1/privilege": {
+"experimental": false,
+"query": []
+},
+"POST /custom-password-instructions/v1": {
+"experimental": true,
+"query": []
+},
+"POST /das/v1/applications": {
+"experimental": false,
+"query": []
+},
+"POST /das/v1/identity-collectors": {
+"experimental": false,
+"query": []
+},
+"POST /das/v1/owners/assign": {
+"experimental": false,
+"query": []
+},
+"POST /das/v1/owners/reelect": {
+"experimental": false,
+"query": []
+},
+"POST /das/v1/owners/{sourceIdentityId}/reassign/{destinationIdentityId}": {
+"experimental": false,
+"query": []
+},
+"POST /das/v1/permissions/fields": {
+"experimental": false,
+"query": []
+},
+"POST /das/v1/tasks/cancel/{id}": {
+"experimental": false,
+"query": []
+},
+"POST /das/v1/tasks/rerun/{id}": {
+"experimental": false,
+"query": []
+},
+"POST /das/v1/tasks/schedules": {
+"experimental": false,
+"query": []
+},
+"POST /data-segments/v1": {
+"experimental": true,
+"query": []
+},
+"POST /data-segments/v1/{segmentId}": {
+"experimental": true,
+"query": [
+"publishAll"
+]
+},
+"POST /entitlement-recommendations/v1/assign": {
+"experimental": true,
+"query": []
+},
+"POST /entitlement-recommendations/v1/bulk-approve": {
+"experimental": true,
+"query": []
+},
+"POST /entitlements/v1/access-model-metadata/bulk-update/filter": {
+"experimental": false,
+"query": []
+},
+"POST /entitlements/v1/access-model-metadata/bulk-update/ids": {
+"experimental": false,
+"query": []
+},
+"POST /entitlements/v1/access-model-metadata/bulk-update/query": {
+"experimental": false,
+"query": []
+},
+"POST /entitlements/v1/aggregate/sources/{id}": {
+"experimental": false,
+"query": []
+},
+"POST /entitlements/v1/bulk-update": {
+"experimental": false,
+"query": []
+},
+"POST /entitlements/v1/reset/sources/{id}": {
+"experimental": false,
+"query": []
+},
+"POST /entitlements/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}": {
+"experimental": false,
+"query": []
+},
+"POST /form-definitions/v1": {
+"experimental": false,
+"query": []
+},
+"POST /form-definitions/v1/forms-action-dynamic-schema": {
+"experimental": false,
+"query": []
+},
+"POST /form-definitions/v1/import": {
+"experimental": false,
+"query": []
+},
+"POST /form-definitions/v1/{formDefinitionID}/data-source": {
+"experimental": false,
+"filters": {
+"value": [
+"eq",
+"ne",
+"in"
+]
+},
+"query": [
+"limit",
+"filters",
+"query"
+]
+},
+"POST /form-definitions/v1/{formDefinitionID}/upload": {
+"experimental": false,
+"query": []
+},
+"POST /form-instances/v1": {
+"experimental": false,
+"query": []
+},
+"POST /generate-password-reset-token/v1/digit": {
+"experimental": true,
+"query": []
+},
+"POST /generic-approvals/v1/bulk-approve": {
+"experimental": false,
+"query": []
+},
+"POST /generic-approvals/v1/bulk-cancel": {
+"experimental": false,
+"query": []
+},
+"POST /generic-approvals/v1/bulk-reassign": {
+"experimental": false,
+"query": []
+},
+"POST /generic-approvals/v1/bulk-reject": {
+"experimental": false,
+"query": []
+},
+"POST /generic-approvals/v1/{id}/approve": {
+"experimental": false,
+"query": []
+},
+"POST /generic-approvals/v1/{id}/attributes": {
+"experimental": false,
+"query": []
+},
+"POST /generic-approvals/v1/{id}/cancel": {
+"experimental": false,
+"query": []
+},
+"POST /generic-approvals/v1/{id}/comments": {
+"experimental": false,
+"query": []
+},
+"POST /generic-approvals/v1/{id}/reassign": {
+"experimental": false,
+"query": []
+},
+"POST /generic-approvals/v1/{id}/reject": {
+"experimental": false,
+"query": []
+},
+"POST /identities-accounts/v1/disable": {
+"experimental": false,
+"query": []
+},
+"POST /identities-accounts/v1/enable": {
+"experimental": false,
+"query": []
+},
+"POST /identities-accounts/v1/{id}/disable": {
+"experimental": false,
+"query": []
+},
+"POST /identities-accounts/v1/{id}/enable": {
+"experimental": false,
+"query": []
+},
+"POST /identities/v1/invite": {
+"experimental": true,
+"query": []
+},
+"POST /identities/v1/process": {
+"experimental": true,
+"query": []
+},
+"POST /identities/v1/{identity-id}/set-lifecycle-state": {
+"experimental": false,
+"query": []
+},
+"POST /identities/v1/{identityId}/synchronize-attributes": {
+"experimental": true,
+"query": []
+},
+"POST /identities/v1/{id}/reset": {
+"experimental": false,
+"query": []
+},
+"POST /identities/v1/{id}/verification/account/send": {
+"experimental": true,
+"query": []
+},
+"POST /identity-attributes/v1": {
+"experimental": false,
+"query": []
+},
+"POST /identity-profiles/v1": {
+"experimental": false,
+"query": []
+},
+"POST /identity-profiles/v1/bulk-delete": {
+"experimental": false,
+"query": []
+},
+"POST /identity-profiles/v1/identity-preview": {
+"experimental": false,
+"query": []
+},
+"POST /identity-profiles/v1/import": {
+"experimental": false,
+"query": []
+},
+"POST /identity-profiles/v1/{identity-profile-id}/lifecycle-states": {
+"experimental": false,
+"query": []
+},
+"POST /identity-profiles/v1/{identity-profile-id}/process-identities": {
+"experimental": false,
+"query": []
+},
+"POST /intelligence/v1/response-actions": {
+"experimental": false,
+"query": []
+},
+"POST /jit-activations/v1/activate": {
+"experimental": true,
+"query": []
+},
+"POST /jit-activations/v1/deactivate": {
+"experimental": true,
+"query": []
+},
+"POST /jit-activations/v1/extend": {
+"experimental": true,
+"query": []
+},
+"POST /launchers/v1": {
+"experimental": false,
+"query": []
+},
+"POST /launchers/v1/{launcherID}/launch": {
+"experimental": false,
+"query": []
+},
+"POST /machine-accounts/v1/bulk-disable": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v1/bulk-enable": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v1/bulk-reload": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v1/bulk-reload-async": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v1/bulk-update": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v1/{id}/delete": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v1/{id}/disable": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v1/{id}/enable": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v1/{id}/reload": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v1/{id}/remove": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v1/{id}/unlock": {
+"experimental": true,
+"query": []
+},
+"POST /machine-accounts/v2/machine-account-create": {
+"experimental": true,
+"query": []
+},
+"POST /machine-identities/v1": {
+"experimental": true,
+"query": []
+},
+"POST /machine-identities/v1/lifecycle-actions/{requestId}/cancel": {
+"experimental": true,
+"query": []
+},
+"POST /machine-identities/v1/{id}/lifecycle-actions": {
+"experimental": true,
+"query": []
+},
+"POST /machine-identities/v2": {
+"experimental": true,
+"query": []
+},
+"POST /machine-identities/v2/bulk-delete": {
+"experimental": true,
+"query": []
+},
+"POST /machine-identities/v2/bulk-update": {
+"experimental": true,
+"query": []
+},
+"POST /managed-clients/v1": {
+"experimental": false,
+"query": []
+},
+"POST /managed-cluster-types/v1": {
+"experimental": false,
+"query": []
+},
+"POST /managed-clusters/v1": {
+"experimental": false,
+"query": []
+},
+"POST /managed-clusters/v1/{id}/manualUpgrade": {
+"experimental": false,
+"query": []
+},
+"POST /manual-discover-applications/v1": {
+"experimental": false,
+"query": []
+},
+"POST /mfa/v1/kba/config/answers": {
+"experimental": false,
+"query": []
+},
+"POST /multihosts/v1": {
+"experimental": false,
+"query": []
+},
+"POST /multihosts/v1/{multiHostId}/sources/bulk-delete": {
+"experimental": false,
+"query": []
+},
+"POST /multihosts/v1/{multihostId}": {
+"experimental": false,
+"query": []
+},
+"POST /multihosts/v1/{multihostId}/sources/testConnection": {
+"experimental": false,
+"query": []
+},
+"POST /non-employee-approvals/v1/{id}/approve": {
+"experimental": false,
+"query": []
+},
+"POST /non-employee-approvals/v1/{id}/reject": {
+"experimental": false,
+"query": []
+},
+"POST /non-employee-records/v1": {
+"experimental": false,
+"query": []
+},
+"POST /non-employee-records/v1/bulk-delete": {
+"experimental": false,
+"query": []
+},
+"POST /non-employee-requests/v1": {
+"experimental": false,
+"query": []
+},
+"POST /non-employee-sources/v1": {
+"experimental": false,
+"query": []
+},
+"POST /non-employee-sources/v1/{id}/non-employee-bulk-upload": {
+"experimental": false,
+"query": []
+},
+"POST /non-employee-sources/v1/{sourceId}/schema-attributes": {
+"experimental": false,
+"query": []
+},
+"POST /notification-templates/v1": {
+"experimental": false,
+"query": []
+},
+"POST /notification-templates/v1/bulk-delete": {
+"experimental": false,
+"query": []
+},
+"POST /oauth-clients/v1": {
+"experimental": false,
+"query": []
+},
+"POST /outliers/v1/ignore": {
+"experimental": true,
+"query": []
+},
+"POST /outliers/v1/unignore": {
+"experimental": true,
+"query": []
+},
+"POST /parameter-storage/v1/parameters": {
+"experimental": false,
+"query": []
+},
+"POST /password-org-config/v1": {
+"experimental": false,
+"query": []
+},
+"POST /password-policies/v1": {
+"experimental": true,
+"query": []
+},
+"POST /password-sync-groups/v1": {
+"experimental": false,
+"query": []
+},
+"POST /personal-access-tokens/v1": {
+"experimental": false,
+"query": []
+},
+"POST /public-identities/v2/search": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit",
+"offset",
+"count"
+]
+},
+"POST /query-password-info/v1": {
+"experimental": false,
+"query": []
+},
+"POST /reassignment-configurations/v1": {
+"experimental": true,
+"query": []
+},
+"POST /recommendations/v1/request": {
+"experimental": true,
+"query": []
+},
+"POST /reminder-escalations/v1/config/tenants": {
+"experimental": true,
+"query": []
+},
+"POST /reports/v1/run": {
+"experimental": false,
+"query": []
+},
+"POST /reports/v1/{id}/cancel": {
+"experimental": false,
+"query": []
+},
+"POST /role-insights/v1/requests": {
+"experimental": true,
+"query": []
+},
+"POST /role-mining-sessions/v1": {
+"experimental": true,
+"query": []
+},
+"POST /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/edit-entitlements": {
+"experimental": true,
+"query": []
+},
+"POST /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/export-async": {
+"experimental": true,
+"query": []
+},
+"POST /role-mining-sessions/v1/{sessionId}/potential-roles/{potentialRoleId}/provision": {
+"experimental": true,
+"query": [
+"min-entitlement-popularity",
+"include-common-access"
+]
+},
+"POST /role-propagation/v1": {
+"experimental": true,
+"query": [
+"skipRoleRefresh"
+]
+},
+"POST /role-propagation/v1/terminate": {
+"experimental": true,
+"query": []
+},
+"POST /roles/v1": {
+"experimental": false,
+"query": []
+},
+"POST /roles/v1/access-model-metadata/bulk-update/filter": {
+"experimental": false,
+"query": []
+},
+"POST /roles/v1/access-model-metadata/bulk-update/ids": {
+"experimental": false,
+"query": []
+},
+"POST /roles/v1/access-model-metadata/bulk-update/query": {
+"experimental": false,
+"query": []
+},
+"POST /roles/v1/bulk-delete": {
+"experimental": false,
+"query": []
+},
+"POST /roles/v1/filter": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"for-subadmin",
+"limit",
+"offset",
+"count",
+"sorters",
+"for-segment-ids",
+"include-unsegmented"
+],
+"sorters": [
+"name",
+"created",
+"modified"
+]
+},
+"POST /roles/v1/{id}/access-model-metadata/{attributeKey}/values/{attributeValue}": {
+"experimental": false,
+"query": []
+},
+"POST /roles/v1/{roleId}/dimensions": {
+"experimental": false,
+"query": []
+},
+"POST /roles/v1/{roleId}/dimensions/bulk-delete": {
+"experimental": false,
+"query": []
+},
+"POST /roles/v2/filter": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"for-subadmin",
+"limit",
+"offset",
+"count",
+"cursor",
+"sorters",
+"for-segment-ids",
+"include-unsegmented"
+],
+"sorters": [
+"id",
+"name",
+"created",
+"modified",
+"privilegeLevel.effective"
+]
+},
+"POST /saved-searches/v1": {
+"experimental": false,
+"query": []
+},
+"POST /saved-searches/v1/{id}/execute": {
+"experimental": false,
+"query": []
+},
+"POST /scheduled-searches/v1": {
+"experimental": false,
+"query": []
+},
+"POST /scheduled-searches/v1/{id}/unsubscribe": {
+"experimental": false,
+"query": []
+},
+"POST /search/v1": {
+"experimental": false,
+"limitMax": 10000,
+"query": [
+"offset",
+"limit",
+"count"
+]
+},
+"POST /search/v1/aggregate": {
+"experimental": false,
+"limitMax": 250,
+"query": [
+"offset",
+"limit",
+"count"
+]
+},
+"POST /search/v1/count": {
+"experimental": false,
+"query": []
+},
+"POST /segments/v1": {
+"experimental": false,
+"query": []
+},
+"POST /send-test-notification/v1": {
+"experimental": false,
+"query": []
+},
+"POST /service-desk-integrations/v1": {
+"experimental": false,
+"query": []
+},
+"POST /set-password/v1": {
+"experimental": false,
+"query": []
+},
+"POST /sim-integrations/v1": {
+"experimental": true,
+"query": []
+},
+"POST /sod-policies/v1": {
+"experimental": false,
+"query": []
+},
+"POST /sod-policies/v1/{id}/evaluate": {
+"experimental": false,
+"query": []
+},
+"POST /sod-policies/v1/{id}/violation-report/run": {
+"experimental": false,
+"query": []
+},
+"POST /sod-violation-report/v1/run": {
+"experimental": false,
+"query": []
+},
+"POST /sod-violations/v1/check": {
+"experimental": false,
+"query": []
+},
+"POST /sod-violations/v1/predict": {
+"experimental": false,
+"query": []
+},
+"POST /source-apps/v1": {
+"experimental": true,
+"query": []
+},
+"POST /source-apps/v1/bulk-update": {
+"experimental": true,
+"query": []
+},
+"POST /source-apps/v1/{id}/access-profiles/bulk-remove": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"limit"
+]
+},
+"POST /source-subtypes/v1": {
+"experimental": true,
+"query": []
+},
+"POST /source-subtypes/v1/bulk-retrieve": {
+"experimental": true,
+"query": []
+},
+"POST /source-subtypes/v2": {
+"experimental": true,
+"query": []
+},
+"POST /source-subtypes/v2/{id}/overrides": {
+"experimental": true,
+"query": []
+},
+"POST /source-subtypes/v2/{id}/provisioning-policy": {
+"experimental": true,
+"query": [
+"useDefaultFields"
+]
+},
+"POST /sources/v1": {
+"experimental": false,
+"query": [
+"provisionAsCsv"
+]
+},
+"POST /sources/v1/{id}/agents-delete": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{id}/load-accounts": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{id}/load-uncorrelated-accounts": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{id}/remove-accounts": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{id}/schemas/accounts": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{id}/schemas/entitlements": {
+"experimental": false,
+"query": [
+"schemaName"
+]
+},
+"POST /sources/v1/{id}/synchronize-attributes": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/aggregate-agents": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/classify": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/connector/check-connection": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{sourceId}/connector/peek-resource-objects": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{sourceId}/connector/ping-cluster": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{sourceId}/connector/test-configuration": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{sourceId}/datasets": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/datasets/{datasetId}/aggregate": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/datasets/{datasetId}/delete-objects": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/declassify": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/discover-applications": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/load-entitlements": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{sourceId}/machine-account-mappings": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/provisioning-policies": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{sourceId}/provisioning-policies/bulk-update": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{sourceId}/resources": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/resources/{resourceId}/reprocess-correlations": {
+"experimental": true,
+"query": [
+"type"
+]
+},
+"POST /sources/v1/{sourceId}/schedules": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{sourceId}/schemas": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v1/{sourceId}/subtypes": {
+"experimental": true,
+"query": []
+},
+"POST /sources/v1/{sourceId}/upload-connector-file": {
+"experimental": false,
+"query": []
+},
+"POST /sources/v2/{sourceId}/provisioning-policies": {
+"experimental": true,
+"query": [
+"useDefaultFields"
+]
+},
+"POST /sp-config/v1/export": {
+"experimental": false,
+"query": []
+},
+"POST /sp-config/v1/import": {
+"experimental": false,
+"query": [
+"preview"
+]
+},
+"POST /ssf/v1/streams": {
+"experimental": false,
+"query": []
+},
+"POST /ssf/v1/streams/status": {
+"experimental": false,
+"query": []
+},
+"POST /ssf/v1/streams/verify": {
+"experimental": false,
+"query": []
+},
+"POST /suggested-entitlement-description-approvals/v1": {
+"experimental": false,
+"query": []
+},
+"POST /suggested-entitlement-description-assignments/v1": {
+"experimental": false,
+"query": []
+},
+"POST /suggested-entitlement-description-batches/v1": {
+"experimental": false,
+"query": []
+},
+"POST /suggested-entitlement-descriptions/v1/auto-write-settings": {
+"experimental": false,
+"query": []
+},
+"POST /tagged-objects/v1": {
+"experimental": false,
+"query": []
+},
+"POST /tagged-objects/v1/bulk-add": {
+"experimental": false,
+"query": []
+},
+"POST /tagged-objects/v1/bulk-remove": {
+"experimental": false,
+"query": []
+},
+"POST /tags/v1": {
+"experimental": false,
+"query": []
+},
+"POST /transforms/v1": {
+"experimental": false,
+"query": []
+},
+"POST /trigger-invocations/v1/test": {
+"experimental": false,
+"query": []
+},
+"POST /trigger-invocations/v1/{id}/complete": {
+"experimental": false,
+"query": []
+},
+"POST /trigger-subscriptions/v1": {
+"experimental": false,
+"query": []
+},
+"POST /trigger-subscriptions/v1/validate-filter": {
+"experimental": false,
+"query": []
+},
+"POST /ui-plugins/v1": {
+"experimental": true,
+"query": []
+},
+"POST /ui-plugins/v1/{pluginInstanceId}/asset-bundles": {
+"experimental": true,
+"query": []
+},
+"POST /ui-plugins/v1/{pluginInstanceId}/link": {
+"experimental": true,
+"query": []
+},
+"POST /verified-domains/v1": {
+"experimental": false,
+"query": []
+},
+"POST /verified-from-addresses/v1": {
+"experimental": false,
+"query": []
+},
+"POST /violations/v1/{id}/controls": {
+"experimental": false,
+"query": []
+},
+"POST /violations/v1/{id}/reassign": {
+"experimental": false,
+"query": []
+},
+"POST /work-items/v1/bulk-approve/{id}": {
+"experimental": false,
+"query": []
+},
+"POST /work-items/v1/bulk-reject/{id}": {
+"experimental": false,
+"query": []
+},
+"POST /work-items/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"POST /work-items/v1/{id}/approve/{approvalItemId}": {
+"experimental": false,
+"query": []
+},
+"POST /work-items/v1/{id}/forward": {
+"experimental": false,
+"query": []
+},
+"POST /work-items/v1/{id}/reject/{approvalItemId}": {
+"experimental": false,
+"query": []
+},
+"POST /work-items/v1/{id}/submit-account-selection": {
+"experimental": false,
+"query": []
+},
+"POST /workflow-executions/v1/{id}/cancel": {
+"experimental": false,
+"query": []
+},
+"POST /workflows/v1": {
+"experimental": false,
+"query": []
+},
+"POST /workflows/v1/execute/external/{id}": {
+"experimental": false,
+"query": []
+},
+"POST /workflows/v1/execute/external/{id}/test": {
+"experimental": false,
+"query": []
+},
+"POST /workflows/v1/{id}/external/oauth-clients": {
+"experimental": false,
+"query": []
+},
+"POST /workflows/v1/{id}/test": {
+"experimental": false,
+"query": []
+},
+"POST /workgroups/v1": {
+"experimental": false,
+"query": []
+},
+"POST /workgroups/v1/bulk-delete": {
+"experimental": false,
+"query": []
+},
+"POST /workgroups/v1/{workgroupId}/members/bulk-add": {
+"experimental": false,
+"query": []
+},
+"POST /workgroups/v1/{workgroupId}/members/bulk-delete": {
+"experimental": false,
+"query": []
+},
+"PUT /access-request-config/v1": {
+"experimental": false,
+"query": []
+},
+"PUT /access-request-config/v2": {
+"experimental": true,
+"query": []
+},
+"PUT /accounts/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /ai-access-request-recommendations/v1/config": {
+"experimental": true,
+"query": []
+},
+"PUT /brandings/v1/{name}": {
+"experimental": false,
+"query": []
+},
+"PUT /campaign-templates/v1/{id}/schedule": {
+"experimental": false,
+"query": []
+},
+"PUT /campaigns/v1/reports-configuration": {
+"experimental": false,
+"query": []
+},
+"PUT /certification-campaigns/v1/campaign-filters/{id}": {
+"experimental": true,
+"query": []
+},
+"PUT /certification-campaigns/v1/campaign-templates/{id}/schedule": {
+"experimental": true,
+"query": []
+},
+"PUT /connector-customizers/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /connector-rules/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /connectors/v1/{scriptName}/correlation-config": {
+"experimental": false,
+"query": []
+},
+"PUT /connectors/v1/{scriptName}/source-config": {
+"experimental": false,
+"query": []
+},
+"PUT /connectors/v1/{scriptName}/source-template": {
+"experimental": false,
+"query": []
+},
+"PUT /connectors/v1/{scriptName}/translations/{locale}": {
+"experimental": false,
+"query": []
+},
+"PUT /controls/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /criteria/v1/privilege/{criteriaId}": {
+"experimental": false,
+"query": []
+},
+"PUT /das/v1/applications/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /das/v1/identity-collectors/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /das/v1/permissions/fields/{name}": {
+"experimental": false,
+"query": []
+},
+"PUT /das/v1/tasks/schedules/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /entitlements/v1/{id}/entitlement-request-config": {
+"experimental": false,
+"query": []
+},
+"PUT /generic-approvals/v1/config/{id}/{scope}": {
+"experimental": false,
+"query": []
+},
+"PUT /icons/v1/{objectType}/{objectId}": {
+"experimental": true,
+"query": []
+},
+"PUT /identity-attributes/v1/{name}": {
+"experimental": false,
+"query": []
+},
+"PUT /launchers/v1/{launcherID}": {
+"experimental": false,
+"query": []
+},
+"PUT /mail-from-attributes/v1": {
+"experimental": false,
+"query": []
+},
+"PUT /managed-clusters/v1/{id}/log-config": {
+"experimental": false,
+"query": []
+},
+"PUT /mfa/v1/duo-web/config": {
+"experimental": false,
+"query": []
+},
+"PUT /mfa/v1/okta-verify/config": {
+"experimental": false,
+"query": []
+},
+"PUT /non-employee-records/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /notification-preferences/v1/{key}": {
+"experimental": false,
+"query": []
+},
+"PUT /password-dictionary/v1": {
+"experimental": false,
+"query": []
+},
+"PUT /password-org-config/v1": {
+"experimental": false,
+"query": []
+},
+"PUT /password-policies/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PUT /password-sync-groups/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /public-identities-config/v1": {
+"experimental": false,
+"query": []
+},
+"PUT /reassignment-configurations/v1/tenant-config": {
+"experimental": true,
+"query": []
+},
+"PUT /reassignment-configurations/v1/{identityId}": {
+"experimental": true,
+"query": []
+},
+"PUT /recommendations/v1/config": {
+"experimental": true,
+"query": []
+},
+"PUT /reminder-escalations/v1/config/tenants/{domainObjectType}": {
+"experimental": true,
+"query": []
+},
+"PUT /role-propagation-config/v1": {
+"experimental": true,
+"query": []
+},
+"PUT /saved-searches/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /scheduled-searches/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /service-desk-integrations/v1/status-check-configuration": {
+"experimental": false,
+"query": []
+},
+"PUT /service-desk-integrations/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /sim-integrations/v1/{id}": {
+"experimental": true,
+"query": []
+},
+"PUT /sod-policies/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /sod-policies/v1/{id}/schedule": {
+"experimental": false,
+"query": []
+},
+"PUT /sources/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /sources/v1/{id}/attribute-sync-config": {
+"experimental": true,
+"query": []
+},
+"PUT /sources/v1/{id}/correlation-config": {
+"experimental": false,
+"query": []
+},
+"PUT /sources/v1/{id}/entitlement-request-config": {
+"experimental": false,
+"query": []
+},
+"PUT /sources/v1/{sourceId}/datasets/{datasetId}": {
+"experimental": true,
+"query": []
+},
+"PUT /sources/v1/{sourceId}/machine-account-mappings": {
+"experimental": true,
+"query": []
+},
+"PUT /sources/v1/{sourceId}/machine-classification-config": {
+"experimental": true,
+"query": []
+},
+"PUT /sources/v1/{sourceId}/native-change-detection-config": {
+"experimental": false,
+"query": []
+},
+"PUT /sources/v1/{sourceId}/provisioning-policies/{usageType}": {
+"experimental": false,
+"query": []
+},
+"PUT /sources/v1/{sourceId}/resources/{resourceId}": {
+"experimental": true,
+"query": []
+},
+"PUT /sources/v1/{sourceId}/schemas/{schemaId}": {
+"experimental": false,
+"query": []
+},
+"PUT /sources/v2/{sourceId}/provisioning-policies/{id}": {
+"experimental": true,
+"query": []
+},
+"PUT /ssf/v1/streams": {
+"experimental": false,
+"query": []
+},
+"PUT /tagged-objects/v1/{type}/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /transforms/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /trigger-subscriptions/v1/{id}": {
+"experimental": false,
+"query": []
+},
+"PUT /ui-metadata/v1/tenant": {
+"experimental": true,
+"query": []
+},
+"PUT /workflows/v1/{id}": {
+"experimental": false,
+"query": []
+}
+}
+}

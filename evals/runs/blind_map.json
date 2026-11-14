@@ -1,0 +1,162 @@
+{
+ "api-01": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "api-02": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "api-03": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "api-04": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "api-05": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "api-06": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "api-07": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "api-08": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "wf-01": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "wf-02": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "wf-03": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "wf-04": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "wf-05": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "wf-06": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "wf-07": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "wf-08": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "wf-09": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "wf-10": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "et-01": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "et-02": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "et-03": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "et-04": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "et-05": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "nt-01": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "nt-02": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "nt-03": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "nt-04": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "nt-05": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "nt-06": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "tr-01": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "tr-02": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "tr-03": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "tr-04": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "ru-01": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "ru-02": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "ru-03": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "ru-04": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "se-01": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "se-02": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "se-03": {
+  "A": "skills",
+  "B": "baseline"
+ }
+}

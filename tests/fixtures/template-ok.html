@@ -1,0 +1,5 @@
+<p>Hello ${requesterName},</p>
+<p>Your request for <strong>${requestedObjectName}</strong> was #if($approved)approved#{else}denied#end.</p>
+#if($reviewerComment)<p style="color:#555">Comment: ${reviewerComment}</p>#end
+<ul>#foreach($i in $accessibleItems)<li>${i}</li>#end</ul>
+<p>${PRODUCT_NAME}</p>
