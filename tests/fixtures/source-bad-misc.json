@@ -1,0 +1,8 @@
+[
+  { "name": "Corporate LDAP", "owner": { "type": "IDENTITY", "id": "2c91808568c529c60168cca6f90c1324" },
+    "connector": "ldap", "deleteThreshold": 150, "features": ["PROVISIONING", "PROVISION"],
+    "connectorAttributes": { "host": "ldap.example.com", "password": "Summer2026!" } },
+  { "attributeAssignments": [ { "property": "employeeNumber", "value": "empId", "operation": "LIKE" } ] },
+  { "enabled": true, "operations": ["ACCOUNT_UPDATED"], "allEntitlements": false, "allNonEntitlementAttributes": false },
+  { "type": "ACCOUNT_AGGREGATION", "cronExpression": "0 5 * * *" }
+]

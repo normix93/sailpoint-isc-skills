@@ -474,6 +474,131 @@ def build_multi_schema_ref(spec: Spec, names, dest: Path, sha: str) -> None:
     write(dest, "# API schemas\n\n" + "\n".join(schema_block(spec, n) for n in names), "sailpoint-oss/api-specs", sha)
 
 
+# --------------------------------------------------------------------------- isc-sources
+
+SOURCE_SCHEMAS = ["source", "sourcefeature", "schema", "attributedefinition", "attributedefinitiontype",
+                  "provisioningpolicydto", "provisioningpolicydtov2", "fielddetailsdto", "usagetype",
+                  "correlationconfig-2", "managercorrelationmapping", "schedule-3", "nativechangedetectionconfig",
+                  "attrsyncsourceconfig", "attrsyncsourceattributeconfig", "sourcehealthdto", "sourceconnectionsdto",
+                  "connectordetail", "sourceusage", "loadaccountstask", "sourceentitlementrequestconfig",
+                  "passwordpolicyv3dto"]
+SOURCE_SERVICES = ("sources", "connectors", "account-aggregations", "source-usages", "source-subtypes",
+                   "connector-rules", "connector-customizers", "source-apps", "identity-profiles",
+                   "accounts", "entitlements", "non-employee-sources")
+
+
+def enum_values(spec: Spec, schema) -> list:
+    s = spec.res(schema or {})
+    if not isinstance(s, dict):
+        return []
+    if s.get("enum"):
+        return [e for e in s["enum"] if e is not None]
+    if s.get("type") == "array":
+        return enum_values(spec, s.get("items"))
+    return []
+
+
+def full_schema_block(spec: Spec, name: str) -> str:
+    """Like schema_block, but keeps enum-only schemas and long descriptions (feature lists, usage types)."""
+    comps = spec.d["components"]["schemas"]
+    if name not in comps:
+        return f"## {name}\n\n(not in this spec version)\n"
+    s = spec.res(comps[name])
+    lines = [f"## {name}", "", (s.get("description") or "").strip(), ""]
+    vals = enum_values(spec, s)
+    if vals:
+        lines += ["Values: " + ", ".join(f"`{v}`" for v in vals), ""]
+    req = set(s.get("required", []))
+    for k, v in spec.props(s).items():
+        vv = spec.res(v)
+        t = spec.type_name(v)
+        desc = short(vv.get("description", "") if isinstance(vv, dict) else "", 400)
+        ev = enum_values(spec, v)
+        extra = f" One of: {', '.join(str(e) for e in ev)}." if ev else ""
+        ex = vv.get("example") if isinstance(vv, dict) else None
+        exs = f" Example: `{json.dumps(ex)[:200]}`" if ex not in (None, "", [], {}) else ""
+        lines.append(f"- `{k}`{' (required)' if k in req else ''} — {t}. {desc}{extra}{exs}")
+        target = vv
+        if isinstance(vv, dict) and vv.get("type") == "array":
+            target = spec.res(vv.get("items") or {})
+        sub = spec.props(target) if isinstance(target, dict) and target.get("type") in ("object", None) and not ev else {}
+        if sub and t in ("object", "array of object"):
+            for sk, sv in sub.items():
+                svv = spec.res(sv)
+                sev = enum_values(spec, sv)
+                lines.append(f"  - `{k}.{sk}` — {spec.type_name(sv)}. "
+                             f"{short(svv.get('description', '') if isinstance(svv, dict) else '', 200)}"
+                             + (f" One of: {', '.join(map(str, sev))}." if sev else ""))
+    return "\n".join(lines) + "\n"
+
+
+def build_source_refs(specs: Path, docs: Path) -> None:
+    sha = git_sha(specs)
+    spec = Spec(specs / "dereferenced/deref-sailpoint-api.json")
+    skill = SKILLS / "isc-sources"
+    comps = spec.d["components"]["schemas"]
+    write(skill / "references/source-api-schemas.md",
+          "# Source configuration objects (API schemas)\n\nGenerated from the dereferenced OpenAPI spec. Field names are "
+          "exact; enums are complete for the current spec.\n\n" + "\n".join(full_schema_block(spec, n) for n in SOURCE_SCHEMAS),
+          "sailpoint-oss/api-specs", sha)
+
+    # endpoint index for everything a source admin touches
+    rows: dict[str, list[str]] = {}
+    for path, item in spec.d["paths"].items():
+        service = path.strip("/").split("/")[0]
+        if service not in SOURCE_SERVICES:
+            continue
+        for method, op in item.items():
+            if method not in ("get", "post", "put", "patch", "delete") or not isinstance(op, dict):
+                continue
+            params = list(item.get("parameters", [])) + list(op.get("parameters", []))
+            exp = any(isinstance(spec.res(q), dict) and spec.res(q).get("name", "").lower() == "x-sailpoint-experimental"
+                      for q in params)
+            flag = " *(experimental)*" if exp else (" *(deprecated)*" if op.get("deprecated") else "")
+            rows.setdefault(service, []).append(f"| {method.upper()} | `{path}` | {op.get('summary', '')}{flag} |")
+    idx = ["# Endpoints for sources, connectors and aggregation", "",
+           "Every operation a source administrator uses, grouped by service. Details (scopes, user levels, filters, "
+           "bodies): `../isc-api/references/endpoints/<service>.md`.", ""]
+    for service in sorted(rows):
+        idx += [f"## {service} ({len(rows[service])})", "", "| Verb | Path | Summary |", "|---|---|---|",
+                *sorted(rows[service], key=lambda r: (r.split("`")[1], r)), ""]
+    write(skill / "references/source-endpoint-index.md", "\n".join(idx), "sailpoint-oss/api-specs", sha)
+
+    # enums for the validator
+    src_props = spec.props(comps["source"])
+    data = {
+        "_generated": f"tools/build_references.py from sailpoint-oss/api-specs ({sha})",
+        "features": enum_values(spec, comps["sourcefeature"]),
+        "usageTypes": enum_values(spec, comps["usagetype"]),
+        "usageTypesV2": [u for u in enum_values(spec, comps.get("usagetypev2", {})) if u not in enum_values(spec, comps["usagetype"])],
+        "fieldTypes": enum_values(spec, spec.props(comps["fielddetailsdto"]).get("type")),
+        "fieldKeys": sorted(spec.props(comps["fielddetailsdto"])),
+        "policyKeys": sorted(set(spec.props(comps["provisioningpolicydto"])) | set(spec.props(comps["provisioningpolicydtov2"]))),
+        "sourceStatuses": enum_values(spec, src_props.get("status")),
+        "sourceKeys": sorted(src_props),
+        "sourceRequired": sorted(spec.res(comps["source"]).get("required", [])),
+        "attributeTypes": enum_values(spec, comps["attributedefinitiontype"]),
+        "scheduleTypes": enum_values(spec, spec.props(comps["schedule-3"]).get("type")),
+    }
+    out = skill / "scripts/source_api.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(data, indent=1) + "\n", encoding="utf-8")
+
+    # SaaS connectivity docs (custom connectors, connector customizers), MIT
+    d = docs / "docs"
+    sc = d / "connectivity/saas-connectivity"
+    dsha = git_sha(docs)
+    dest = skill / "references/saas-connectivity"
+    copy_pages([sc / "index.md"], dest, d, dsha, rename=lambda f: "overview")
+    copy_pages([sc / "connector-spec/index.md"], dest, d, dsha, rename=lambda f: "connector-spec")
+    cmds = copy_pages([p for p in (sc / "connector-commands").glob("*.md") if p.name != "index.md"], dest / "commands", d, dsha)
+    custom = [p for p in (sc / "connector-customizers").glob("*.md") if p.name != "index.md"]
+    copy_pages(custom, dest / "customizers", d, dsha)
+    rows = "\n".join(f"| `commands/{n}.md` | {t} | {x} |" for n, t, x in cmds)
+    write(dest / "commands-index.md", "# SaaS connector commands\n\n| File | Command | What it does |\n|---|---|---|\n" + rows,
+          "developer.sailpoint.com", dsha)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--specs", type=Path, required=True, help="clone of sailpoint-oss/api-specs")
@@ -481,6 +606,7 @@ def main() -> None:
     a = ap.parse_args()
     build_doc_refs(a.docs)
     build_endpoint_refs(a.specs)
+    build_source_refs(a.specs, a.docs)
     print("references rebuilt")
 
 

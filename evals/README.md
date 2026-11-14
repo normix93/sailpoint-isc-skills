@@ -1,6 +1,6 @@
 # Evaluation
 
-`questions.jsonl` — questions an ISC engineer actually asks, one per line (the `user-*` ones come from real day-to-day work and were added after the first graded run of the first 40):
+`questions.jsonl` — questions an ISC engineer actually asks, one per line (the `user-*` ones come from real day-to-day work and were added after the first graded run of the first 40; the `src-*` ones were added in 0.2.0 with the `isc-sources` skill and graded separately: `runs-sources/`, `results-sources.md`):
 
 - `q` — the question;
 - `must` — facts a correct answer has to contain;

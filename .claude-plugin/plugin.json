@@ -1,11 +1,28 @@
 {
   "name": "sailpoint-isc-skills",
   "displayName": "SailPoint ISC Skills (unofficial)",
-  "version": "0.1.0",
-  "description": "Generic reference skills for SailPoint Identity Security Cloud (IdentityNow): REST API (endpoints, filters, pagination), Workflows, Event Triggers, email Notifications, Transforms, Rules (cloud and connector) and Search. Built from SailPoint's public MIT-licensed docs and OpenAPI specs. Never calls a tenant. Not affiliated with SailPoint.",
-  "author": { "name": "normix", "url": "https://github.com/normix93" },
+  "version": "0.2.0",
+  "description": "Generic reference skills for SailPoint Identity Security Cloud (IdentityNow): REST API (endpoints, filters, pagination), Workflows, Event Triggers, email Notifications, Transforms, Rules (cloud and connector), Search and Sources (aggregation, correlation, create profile, attribute sync, native change detection). Built from SailPoint's public MIT-licensed docs and OpenAPI specs. Never calls a tenant. Not affiliated with SailPoint.",
+  "author": {
+    "name": "normix",
+    "url": "https://github.com/normix93"
+  },
   "homepage": "https://github.com/normix93/sailpoint-isc-skills",
   "repository": "https://github.com/normix93/sailpoint-isc-skills",
   "license": "MIT",
-  "keywords": ["sailpoint", "identitynow", "identity-security-cloud", "isc", "iam", "iga", "workflows", "transforms", "rules", "event-triggers"]
+  "keywords": [
+    "aggregation",
+    "correlation",
+    "event-triggers",
+    "iam",
+    "identity-security-cloud",
+    "identitynow",
+    "iga",
+    "isc",
+    "rules",
+    "sailpoint",
+    "sources",
+    "transforms",
+    "workflows"
+  ]
 }
