@@ -20,6 +20,7 @@ Generic by design: no tenant data, no credentials, no calls to any tenant. Every
 | `isc-transforms` | every transform operation with attributes and examples, Velocity tools, identity vs account transforms |
 | `isc-rules` | cloud rules and connector rules: signatures, templates, IdnRuleUtil, forbidden code, review process, connector rule API, attaching to sources |
 | `isc-search` | query syntax, searchable fields per index, `POST /search/v1`, `searchAfter` paging, audit events |
+| `isc-sources` | source object and connector settings, account schema, aggregation (optimized, delta, delete threshold, schedules), correlation and manager correlation, uncorrelated accounts, create profile / provisioning policies, attribute sync, native change detection, health statuses, SaaS connector commands and customizers |
 
 Each skill is a short `SKILL.md` (how to answer + the core rules) plus `references/` that Claude opens only when needed. The API skill ships a generated page for every service (~1,100 operations) listing scopes, user levels and the exact filterable/sortable fields.
 
@@ -34,6 +35,7 @@ Every skill comes with a script Claude runs before handing you something (Python
 | `isc-api/scripts/check_filter.py` | fields/operators an endpoint doesn't accept, uppercase operators, single quotes; prints the encoded query string; maps legacy paths |
 | `isc-rules/scripts/lint_rule.py` | SailPoint's forbidden code list, deprecated/unsupported rule types, file naming, sensitive logging, hard-coded credentials |
 | `isc-notifications/scripts/check_template.py` | unbalanced `#if/#end`, variables the template doesn't have, `$user` in v2 templates, HTML the sanitizer strips, subjects that disable the email |
+| `isc-sources/scripts/check_source_config.py` | create-profile fields computed in the wrong order, invalid usage types and field types, duplicate fields, broken field transforms, unknown source features, delete threshold outside 0–100, plain-text secrets in connector attributes, correlation operators other than EQ, native change detection that can never fire, non-Quartz cron schedules |
 | `isc-search/scripts/lint_query.py` | API filter syntax in search queries, lowercase boolean operators, split nested conditions, `.exact` on unsupported fields |
 
 The forbidden-code list, transform types and endpoint filters are generated from SailPoint's own sources, so they stay current with the weekly refresh. `tests/` runs every validator against SailPoint's published examples (they must pass) and against deliberately broken fixtures (they must fail).
@@ -43,6 +45,8 @@ The forbidden-code list, transform types and endpoint filters are generated from
 On a 40-question set ([`evals/`](evals/)) graded blind by a separate agent, the same model scored **35/80 (44%) without the skills and 80/80 (100%) with them** (no web access in either run). Without them it invented filter fields, said `EQ` works, said ISC's rate limit is per token, read the wrong payload field in Access Request Submitted workflows, and missed the `no_send` switch for emails. Per-skill table: [`evals/results.md`](evals/results.md); side-by-side answers: [`evals/demo.md`](evals/demo.md).
 
 Honest caveat: the questions were written from the same sources the skills use, so this shows the skills deliver what SailPoint documents, not that they cover everything. Real-world questions are the most useful contribution.
+
+Added in 0.2.0: 10 questions on sources (`src-*`), same protocol: **9/20 (45%) without the skills, 20/20 (100%) with them**. Without them the model said a UI option disables optimized aggregation, said a delete-threshold breach fails the aggregation (it skips the delete phase with a warning), missed every real attribute-sync limit and used legacy `/beta` and `/v3` paths. Details: [`evals/results-sources.md`](evals/results-sources.md).
 
 ## Install
 
