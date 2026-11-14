@@ -1,0 +1,13 @@
+{
+  "name": "Account",
+  "usageType": "Create",
+  "fields": [
+    { "name": "mail", "type": "string", "isRequired": false, "isMultiValued": false, "attributes": {},
+      "transform": { "type": "static", "attributes": { "value": "$uid@example.com" } } },
+    { "name": "uid", "type": "text", "isRequired": true, "isMultiValued": false,
+      "transform": { "type": "rule", "attributes": { "name": "Create Unique Account ID" } },
+      "attributes": { "template": "$(firstname).$(lastname)$(uniqueCounter)", "cloudMaxUniqueChecks": "50" } },
+    { "name": "uid", "type": "string", "isRequired": false, "isMultiValued": false, "attributes": {},
+      "transform": { "type": "Lower", "attributes": { "input": "x" } } }
+  ]
+}

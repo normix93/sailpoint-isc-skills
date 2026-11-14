@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.0 — 2026-11-14
+
+- New skill `isc-sources`: source anatomy (UI ↔ API), onboarding order, aggregation (optimized vs unoptimized,
+  delta, delete threshold, schedules), correlation and manager correlation, uncorrelated accounts, create profile /
+  provisioning policies with generators, attribute sync, native change detection, source health statuses.
+- Generated for it from the OpenAPI spec: source configuration schemas with complete enums
+  (`references/source-api-schemas.md`), an endpoint index for sources/connectors/aggregations, and the enums used
+  by the new checker; SailPoint's SaaS connectivity docs (connector spec, commands, customizers).
+- New checker `isc-sources/scripts/check_source_config.py` (provisioning policies, source objects, correlation,
+  native change detection and schedule JSON), with regression tests on SailPoint's documented policies.
+- 10 new evaluation questions for sources.
+
 ## 0.1.0 — 2026-11
 
 First public release.

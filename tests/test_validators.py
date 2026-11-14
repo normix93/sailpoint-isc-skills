@@ -149,6 +149,47 @@ class Search(unittest.TestCase):
         self.assertIn("not a nested object", out)
 
 
+class Sources(unittest.TestCase):
+    V = "isc-sources/scripts/check_source_config.py"
+
+    def test_bad_policy(self):
+        code, out = run(self.V, os.path.join(FIX, "source-bad-policy.json"))
+        self.assertEqual(code, 1)
+        for needle in ("did you mean 'CREATE'", "comes later", "type 'text' is not valid", "duplicate field 'uid'",
+                       "did you mean 'lower'"):
+            self.assertIn(needle, out)
+
+    def test_bad_source_correlation_ncd_schedule(self):
+        code, out = run(self.V, os.path.join(FIX, "source-bad-misc.json"))
+        self.assertEqual(code, 1)
+        for needle in ("unknown feature 'PROVISION'", "deleteThreshold must be an integer 0-100", "plain-text secret",
+                       "only does EQ", "without any attribute selected", "Quartz cron"):
+            self.assertIn(needle, out)
+
+    def test_documented_policies_pass(self):
+        # JSON policies in this skill's references and in SailPoint's provisioning-policy transform guide
+        import re
+        import tempfile
+        files = glob.glob(os.path.join(S, "isc-sources/references/*.md")) + \
+            glob.glob(os.path.join(S, "isc-transforms/references/guides/provisioning-policy-transform.md"))
+        checked = 0
+        for f in files:
+            for blk in re.findall(r"```json\n(.*?)```", open(f, encoding="utf-8").read(), re.S):
+                try:
+                    j = json.loads(blk)
+                except ValueError:
+                    continue
+                with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as fh:
+                    json.dump(j, fh)
+                code, out = run(self.V, fh.name)
+                os.unlink(fh.name)
+                errs = [l for l in out.splitlines() if "ERROR" in l
+                        and not any(k in f and k2 in l for k, k2 in KNOWN_DOC_ISSUES)]
+                self.assertEqual(errs, [], f"{f}: {out}")
+                checked += 1
+        self.assertGreaterEqual(checked, 4)
+
+
 class SkillFiles(unittest.TestCase):
     def test_frontmatter_and_links(self):
         import re

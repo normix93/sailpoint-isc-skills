@@ -1,12 +1,15 @@
 {
   "name": "sailpoint-isc-skills",
-  "owner": { "name": "normix", "url": "https://github.com/normix93" },
+  "owner": {
+    "name": "normix",
+    "url": "https://github.com/normix93"
+  },
   "plugins": [
     {
       "name": "sailpoint-isc-skills",
       "source": "./",
-      "description": "Reference skills for SailPoint Identity Security Cloud: API, Workflows, Event Triggers, Notifications, Transforms, Rules, Search.",
-      "version": "0.1.0"
+      "description": "Reference skills for SailPoint Identity Security Cloud: API, Workflows, Event Triggers, Notifications, Transforms, Rules, Search, Sources.",
+      "version": "0.2.0"
     }
   ]
 }
