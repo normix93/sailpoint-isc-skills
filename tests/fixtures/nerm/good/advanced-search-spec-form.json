@@ -1,0 +1,9 @@
+{"advanced_search": {"condition_rules_attributes": [
+  {"type": "ProfileTypeRule", "comparison_operator": "==", "value": "1bd99a83-57e1-4e3c-bbb0-861b4700cff6"},
+  {"type": "ProfileStatusRule", "comparison_operator": "!=", "value": "Terminated"},
+  {"type": "ProfileAttributeRule", "condition_object_type": "TextFieldAttribute",
+   "condition_object_id": "4ba5be36-3c4d-11ee-be56-0242ac120002", "comparison_operator": "start_with?", "value": "a"},
+  {"type": "ProfileAttributeRule", "condition_object_type": "ProfileSelectAttribute",
+   "condition_object_id": "5ca5be36-3c4d-11ee-be56-0242ac120002", "comparison_operator": "include?",
+   "value": "59ed1cb6-9977-4965-9bfe-f2bcc242523e"},
+  {"type": "RiskRule", "comparison_operator": ">", "value": "7", "secondary_value": "OverallRisk"}]}}

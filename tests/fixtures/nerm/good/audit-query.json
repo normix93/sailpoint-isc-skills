@@ -1,0 +1,2 @@
+{"audit_events": {"limit": 100, "offset": 0, "sort_by": "created_at", "order": "desc",
+  "filters": {"subject_type": "Profile", "type": "AuditableProfileUpdate", "created_at": {"gt": "2026-11-01"}}}}

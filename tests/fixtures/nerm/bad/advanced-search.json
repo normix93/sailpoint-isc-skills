@@ -1,0 +1,7 @@
+{"advanced_search": {"condition_rules_attributes": [
+  {"type": "ProfileStatusRule", "comparison_operator": "=", "value": "Active"},
+  {"type": "ProfileTypeRule", "comparison_operator": "==", "value": "Contractors"},
+  {"type": "ProfileAttributeRule", "condition_object_type": "TextFieldAttribute", "comparison_operator": "contains", "value": "x"},
+  {"type": "ProfileAttributeRule", "condition_object_type": "ProfileSearchAttribute", "condition_object_id": "4ba5be36-3c4d-11ee-be56-0242ac120002", "comparison_operator": "==", "value": "y"},
+  {"type": "RiskRule", "comparison_operator": ">", "value": "5", "secondary_value": "ImpactRisk"},
+  {"type": "StatusRule", "value": "Active"}]}}

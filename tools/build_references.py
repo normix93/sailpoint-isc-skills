@@ -599,6 +599,185 @@ def build_source_refs(specs: Path, docs: Path) -> None:
           "developer.sailpoint.com", dsha)
 
 
+# --------------------------------------------------------------------------- isc-nerm (Non-Employee Risk Management)
+
+NERM_SCHEMAS = ["Profile", "Profile-2", "Profile-3", "Profiles-2", "ProfileType-2", "Attribute-2", "AttributeOption", "Form", "Page",
+                "AdvancedSearch-2", "ProfileStatusRule", "ProfileTypeRule", "ProfileAttributeRuleString",
+                "ProfileAttributeRuleDate", "ProfileAttributeRuleId", "RiskRule", "RiskScore", "RiskLevel",
+                "WorkflowSession", "WorkflowSession-2", "WorkflowSession-3", "CreateWorkflow", "UpdateWorkflow", "BatchWorkflow",
+                "AutomatedWorkflow", "WorkflowAction", "User", "User-2", "Role", "Delegation", "SyncedAttribute",
+                "AuditEvent", "Job", "Metadata", "MetadataWithAfterId", "InvalidJson", "ValidationErrors"]
+VERBS = ("get", "post", "put", "patch", "delete")
+
+
+def _nerm_body(spec: Spec, op) -> tuple[str, str] | None:
+    """(wrapper key, item type) of a NERM request body: every NERM body is wrapped, e.g. {"profile": {...}}."""
+    rb = op.get("requestBody")
+    if not rb:
+        return None
+    rb = spec.res(rb)
+    c = (rb.get("content") or {}).get("application/json") or next(iter((rb.get("content") or {}).values()), {})
+    props = spec.props(c.get("schema"))
+    if len(props) == 1:
+        k, v = next(iter(props.items()))
+        return k, spec.type_name(v)
+    return "", spec.type_name(c.get("schema"))
+
+
+def _nerm_returns(spec: Spec, op) -> str:
+    for code in ("200", "201", "202", "204"):
+        r = (op.get("responses") or {}).get(code)
+        if r:
+            r = spec.res(r)
+            c = (r.get("content") or {}).get("application/json")
+            if not c:
+                return f"{code}, no body"
+            props = spec.props(c.get("schema"))
+            if props:
+                return f"{code}: {{{', '.join(f'{k}: {spec.type_name(v)}' for k, v in props.items())}}}"
+            return f"{code}: {spec.type_name(c.get('schema'))}"
+    return "?"
+
+
+def _scope_matrix(md: str) -> dict:
+    """Parse the access matrix of the NERM authorization page into {scope: {resource: [levels]}}."""
+    out: dict = {}
+    m = re.search(r"\| Scope \| Profiles \|.*?\n\|[-| ]+\n((?:\|.*\n)+)", md)
+    if not m:
+        return out
+    header = [h.strip() for h in re.search(r"(\| Scope \| Profiles \|.*)\n", md).group(1).strip("|").split("|")]
+    for row in m.group(1).strip().split("\n"):
+        cells = [c.strip().strip("`") for c in row.strip().strip("|").split("|")]
+        out[cells[0]] = {header[i]: [lvl.strip("\\*") for lvl in cells[i].replace("—", "").split("/") if lvl.strip()]
+                         for i in range(1, len(cells))}
+    return out
+
+
+def build_nerm_refs(specs: Path, docs: Path) -> None:
+    sha = git_sha(specs)
+    skill = SKILLS / "isc-nerm"
+    ref = skill / "references"
+    versions = [("v1", "https://{tenant}.nonemployee.com/api", Spec(specs / "dereferenced/deref-sailpoint-api.nerm.json")),
+                ("v2025", "https://{tenant}.nonemployee.com/api/v2025",
+                 Spec(specs / "dereferenced/deref-sailpoint-api.nerm.v2025.json"))]
+    index = ["# NERM endpoint index", "",
+             "Every operation in SailPoint's NERM OpenAPI specs, by tag. Details (parameters, body wrapper, response): "
+             "`endpoints.md`. Base URL of each version is given in its heading; the tenant is the one in your "
+             "browser URL (`https://{tenant}.nonemployee.com`), never `{tenant}.api.identitynow.com`.", ""]
+    details = ["# NERM endpoints in detail", "",
+               "Every NERM request and response body is wrapped in a key named after the resource "
+               "(`{\"profile\": {...}}`, `{\"profiles\": [...]}`, `{\"advanced_search\": {...}}`). The wrapper is "
+               "shown as `Body: {key: Type}`.", ""]
+    endpoints: dict = {}
+    for ver, base, spec in versions:
+        tags: dict[str, list] = {}
+        for path, item in spec.d["paths"].items():
+            for method, op in item.items():
+                if method not in VERBS or not isinstance(op, dict):
+                    continue
+                tag = (op.get("tags") or ["other"])[0].strip()
+                tag = re.sub(r"\s+", " ", tag)
+                params = list(item.get("parameters", [])) + list(op.get("parameters", []))
+                body = _nerm_body(spec, op)
+                flag = " *(deprecated)*" if op.get("deprecated") else ""
+                tags.setdefault(tag, []).append((path, method, op, params, body, flag))
+                q = {}
+                for p in params:
+                    p = spec.res(p)
+                    if isinstance(p, dict) and p.get("in") == "query":
+                        sch = spec.res(p.get("schema", {})) or {}
+                        q[p["name"]] = {k: sch[k] for k in ("type", "enum", "minimum", "maximum", "format") if k in sch}
+                endpoints[f"{method.upper()} {'/v2025' if ver == 'v2025' else ''}{path}"] = {
+                    "query": q, "body": list(body) if body else None, "tag": tag}
+        index += [f"## {ver} — base `{base}`", ""]
+        details += [f"## {ver} — base `{base}`", ""]
+        for tag in sorted(tags):
+            ops = sorted(tags[tag], key=lambda t: (t[0], VERBS.index(t[1])))
+            index += [f"### {tag} ({len(ops)})", "", "| Verb | Path | Summary |", "|---|---|---|"]
+            index += [f"| {m.upper()} | `{p}` | {op.get('summary', '')}{fl} |" for p, m, op, _, _, fl in ops]
+            index.append("")
+            details += [f"### {tag}", ""]
+            for p, m, op, params, body, fl in ops:
+                details += [f"#### {m.upper()} {p}", "", f"`{op.get('operationId', '')}` — {op.get('summary', '')}{fl}", ""]
+                desc = short(op.get("description", ""), 500)
+                if desc and desc != op.get("summary"):
+                    details += [desc, ""]
+                pl = param_lines(spec, params)
+                if pl:
+                    details += ["- Parameters:", *pl]
+                if body:
+                    details.append(f"- Body: `{{{body[0]}: {body[1]}}}`" if body[0] else f"- Body: {body[1]}")
+                details += [f"- Returns {_nerm_returns(spec, op)}", ""]
+    write(ref / "endpoint-index.md", "\n".join(index), "sailpoint-oss/api-specs nerm specs", sha)
+    write(ref / "endpoints.md", "\n".join(details), "sailpoint-oss/api-specs nerm specs", sha)
+
+    spec = versions[0][2]
+    write(ref / "schemas.md",
+          "# NERM API schemas\n\nGenerated from the v1 spec. `-2` variants are the request shapes (what you send); "
+          "unsuffixed ones are mostly what you get back. Field names and enums are exact.\n\n"
+          + "\n".join(full_schema_block(spec, n) for n in NERM_SCHEMAS if n in spec.d["components"]["schemas"]),
+          "sailpoint-oss/api-specs dereferenced/deref-sailpoint-api.nerm.json", sha)
+
+    # API guide pages (MIT), v1
+    d = docs / "docs"
+    dsha = git_sha(docs)
+    guide = d / "api/nerm/v1"
+    copy_pages(sorted(guide.glob("*.md")), ref / "api-guide", d, dsha)
+
+    # data for the validator
+    comps = spec.d["components"]["schemas"]
+    P = lambda name: spec.props(comps[name])  # noqa: E731
+    rule_types = {}
+    for n in ("ProfileStatusRule", "ProfileTypeRule", "ProfileAttributeRuleString", "ProfileAttributeRuleDate",
+              "ProfileAttributeRuleId", "RiskRule"):
+        props = P(n)
+        rule_types[n] = {
+            "type": enum_values(spec, props.get("type"))[0],
+            "required": spec.res(comps[n]).get("required", []),
+            "keys": sorted(props),
+            "operators": enum_values(spec, props.get("comparison_operator")),
+            "values": enum_values(spec, props.get("value")),
+            "objectTypes": enum_values(spec, props.get("condition_object_type")),
+        }
+    audit_q = spec.props(spec.props(spec.res(spec.d["components"]["requestBodies"]["AuditEvents"])["content"]
+                                    ["application/json"]["schema"])["audit_events"])
+    workflow_actions = sorted({p.split("/")[2] for p in spec.d["paths"] if p.startswith("/workflow_actions/")})
+    workflow_types = sorted({p.split("/")[2] for p in spec.d["paths"] if p.startswith("/workflows/")})
+    auth_md = (guide / "authorization.md").read_text(encoding="utf-8")
+    data = {
+        "_generated": f"tools/build_references.py from sailpoint-oss/api-specs ({sha}) and developer.sailpoint.com ({dsha})",
+        "profileStatuses": enum_values(spec, P("Profile-2").get("status")),
+        "profileRequired": spec.res(comps["Profile-2"]).get("required", []),
+        "profileKeys": sorted(P("Profile-2")),
+        "idProofingStatuses": enum_values(spec, P("Profile-2").get("id_proofing_status")),
+        "profileTypeCategories": enum_values(spec, P("ProfileType-2").get("category")),
+        "attributeTypes": enum_values(spec, P("Attribute-2").get("type")),
+        "attributeDataTypes": enum_values(spec, P("Attribute-2").get("data_type")),
+        "dateFormats": enum_values(spec, P("Attribute-2").get("date_format")),
+        "ruleTypes": rule_types,
+        "workflowSession": {"required": spec.res(comps["WorkflowSession-2"]).get("required", []),
+                            "keys": sorted(P("WorkflowSession-2")),
+                            "requesterTypes": enum_values(spec, P("WorkflowSession-2").get("requester_type")),
+                            "statuses": enum_values(spec, P("WorkflowSession").get("status"))},
+        "user": {"required": spec.res(comps["User"]).get("required", []), "keys": sorted(P("User")),
+                 "types": enum_values(spec, P("User").get("type")),
+                 "statuses": enum_values(spec, P("User").get("status"))},
+        "auditQuery": {k: {kk: vv for kk, vv in spec.res(v).items() if kk in ("type", "enum", "maximum")}
+                       for k, v in audit_q.items()},
+        "auditFilterKeys": sorted(P("AuditEvent")),
+        "auditSubjectTypes": enum_values(spec, P("AuditEvent").get("subject_type")),
+        "auditTypes": sorted(set(enum_values(spec, P("AuditEvent").get("type")))),
+        "riskObjectTypes": enum_values(spec, P("RiskScore").get("object_type")),
+        "workflowTypes": workflow_types,
+        "workflowActionTypes": workflow_actions,
+        "scopes": _scope_matrix(auth_md),
+        "endpoints": endpoints,
+    }
+    out = skill / "scripts/nerm_api.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--specs", type=Path, required=True, help="clone of sailpoint-oss/api-specs")
@@ -607,6 +786,7 @@ def main() -> None:
     build_doc_refs(a.docs)
     build_endpoint_refs(a.specs)
     build_source_refs(a.specs, a.docs)
+    build_nerm_refs(a.specs, a.docs)
     print("references rebuilt")
 
 
