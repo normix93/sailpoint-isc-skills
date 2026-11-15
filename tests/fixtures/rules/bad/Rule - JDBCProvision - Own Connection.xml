@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="Own Connection" type="JDBCProvision">
+  <Description>Provisions to the HR database.</Description>
+  <Source><![CDATA[
+import java.sql.*;
+Connection c = DriverManager.getConnection("jdbc:oracle:thin:@db:1521/HR", "hr", "pw");
+c.close();
+  ]]></Source>
+</Rule>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="Employee Number" type="Correlation">
+  <Description>Correlates accounts whose employee ID has leading zeros to the identity attribute employeeNumber,
+  which HR stores without them.</Description>
+  <Source><![CDATA[
+import java.util.HashMap;
+import java.util.Map;
+
+Map returnMap = new HashMap();
+String raw = account.getStringAttribute("EMPLOYEE_ID");
+if (raw != null) {
+  String normalized = raw.replaceFirst("^0+(?!$)", "");
+  returnMap.put("identityAttributeName", "employeeNumber");
+  returnMap.put("identityAttributeValue", normalized);
+}
+return returnMap;
+  ]]></Source>
+</Rule>

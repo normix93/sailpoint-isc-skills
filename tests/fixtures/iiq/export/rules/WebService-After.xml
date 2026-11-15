@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="REST - After - Map Users" type="WebServiceAfterOperationRule">
+  <Source><![CDATA[
+Map updatedMapInfo = new HashMap();
+updatedMapInfo.put("data", processedResponseObject);
+return updatedMapInfo;
+  ]]></Source>
+</Rule>

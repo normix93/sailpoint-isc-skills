@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="Department Code" type="IdentityAttribute">
+  <Description>Returns the department code (text before the first dash of the HR department). A rule is used because
+  the HR value mixes formats that a transform chain cannot split reliably.</Description>
+  <Source><![CDATA[
+import org.apache.commons.lang.StringUtils;
+
+String department = identity.getStringAttribute("department");
+if (StringUtils.isBlank(department)) {
+  log.debug("Department Code: no department, keeping old value");
+  return oldValue;
+}
+int dash = department.indexOf("-");
+String code = dash > 0 ? department.substring(0, dash) : department;
+return StringUtils.upperCase(StringUtils.trim(code));
+  ]]></Source>
+</Rule>

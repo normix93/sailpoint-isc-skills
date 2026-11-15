@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="Lookup Manager" type="IdentityAttribute">
+  <Description>Finds the manager email.</Description>
+  <Source><![CDATA[
+import sailpoint.object.Identity;
+Identity mgr = context.getObjectByName(Identity.class, identity.getAttribute("managerId"));
+System.out.println("manager " + mgr.toXml());
+return mgr.getEmail();
+  ]]></Source>
+</Rule>

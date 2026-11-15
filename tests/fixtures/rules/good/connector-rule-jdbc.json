@@ -1,0 +1,3 @@
+{"name": "HR JDBC BuildMap", "type": "JDBCBuildMap", "description": "Joins first and last name into displayName.",
+ "signature": {"input": [{"name": "result", "type": "java.sql.ResultSet"}], "output": {"name": "map", "type": "java.util.Map"}},
+ "sourceCode": {"version": "1.0", "script": "import sailpoint.connector.JDBCConnector;\nimport java.util.Map;\n\nMap map = JDBCConnector.buildMapFromResultSet(result, schema);\nif (map != null) {\n  map.put(\"displayName\", map.get(\"FIRST\") + \" \" + map.get(\"LAST\"));\n}\nreturn map;"}}

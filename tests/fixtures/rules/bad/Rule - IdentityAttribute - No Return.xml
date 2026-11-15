@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rule language="javascript" name="No Return" type="IdentityAttribute">
+  <Source>
+String s = identity.getStringAttribute("x");
+if (s != null &amp;&amp; s.length() > 2) { log.error("value ok"); }
+  </Source>
+</Rule>

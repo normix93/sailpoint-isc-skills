@@ -287,6 +287,126 @@ class Nerm(unittest.TestCase):
             self.assertIn(needle, out, f"{scopes} {req}")
 
 
+class RuleReview(unittest.TestCase):
+    V = "isc-cloud-rule-review/scripts/review_rule.py"
+    D = os.path.join(FIX, "rules")
+    # Findings on SailPoint's own documented example rules (see README "Findings"): (page, block) -> codes
+    KNOWN_DOC_ISSUES = {
+        ("your-first-rule.md", 3): {"R080"},           # tutorial step: method skeleton without a return
+        ("account-profile-attribute-generator-from-template.md", 2): {"R074"},  # uses 'application', not in Input table
+        ("web-services-after-operation-rule.md", 1): {"R030", "R052"},           # log.error for info, log after return
+    }
+
+    @staticmethod
+    def codes(out):
+        import re
+        return {m for m in re.findall(r"^(?:ERROR|WARNING)\s+(R\d+)", out, re.M)}
+
+    def test_good_rules_are_clean(self):
+        files = glob.glob(os.path.join(self.D, "good", "*"))
+        self.assertGreaterEqual(len(files), 5)
+        for f in files:
+            code, out = run(self.V, f)
+            self.assertEqual(code, 0, f"{f}: {out}")
+            self.assertIn("0 error(s), 0 warning(s)", out, f)
+
+    def test_bad_rules_report_exactly_the_expected_checks(self):
+        files = glob.glob(os.path.join(self.D, "bad", "*.xml")) + glob.glob(os.path.join(self.D, "bad", "*.json"))
+        self.assertGreaterEqual(len(files), 9)
+        for f in files:
+            code, out = run(self.V, f)
+            expected = set(open(f.rsplit(".", 1)[0] + ".expected", encoding="utf-8").read().split())
+            self.assertEqual(self.codes(out), expected, f"{f}:\n{out}")
+            errors = any(c for c in expected if __import__("re").search(rf"^ERROR\s+{c}", out, __import__("re").M))
+            self.assertEqual(code, 1 if errors else 0, f)
+
+    def test_sailpoint_documented_rules(self):
+        import re
+        import tempfile
+        pages = glob.glob(os.path.join(S, "isc-rules/references/cloud/*.md")) + \
+            glob.glob(os.path.join(S, "isc-rules/references/connector/*.md")) + \
+            glob.glob(os.path.join(S, "isc-rules/references/*.md"))
+        checked, found = 0, {}
+        for page in pages:
+            for i, blk in enumerate(re.findall(r"```\w*\n(.*?)```", open(page, encoding="utf-8").read(), re.S)):
+                if "<Rule " not in blk or "<Source>" not in blk:
+                    continue
+                rtype = re.search(r'type="([^"]+)"', blk).group(1)
+                name = re.search(r'name="([^"]+)"', blk).group(1)
+                d = tempfile.mkdtemp()
+                f = os.path.join(d, f"Rule - {rtype} - {name}.xml")
+                open(f, "w", encoding="utf-8").write(blk)
+                code, out = run(self.V, f)
+                if "R012" in out:      # empty template
+                    continue
+                checked += 1
+                got = self.codes(out) - {"R006"}   # connector-rule pages show XML; deployment is via the API
+                if got:
+                    found[(os.path.basename(page), i)] = got
+        self.assertGreaterEqual(checked, 15)
+        self.assertEqual(found, self.KNOWN_DOC_ISSUES)
+
+    def test_report_and_codes(self):
+        import tempfile
+        rep = os.path.join(tempfile.mkdtemp(), "review.md")
+        run(self.V, os.path.join(self.D, "bad", "Rule - Correlation - Loop.xml"), "--report", rep)
+        text = open(rep, encoding="utf-8").read()
+        self.assertIn("Fix before submitting", text)
+        self.assertIn("rule-code-restrictions", text)
+        code, out = run(self.V, "--codes")
+        self.assertEqual(code, 0)
+        self.assertIn("R020", out)
+
+
+class IiqMigration(unittest.TestCase):
+    V = "iiq-to-isc-migration/scripts/analyze_iiq.py"
+    D = os.path.join(FIX, "iiq")
+
+    def analyze(self, *extra):
+        code, out = run(self.V, os.path.join(self.D, "export"), "--json", *extra)
+        self.assertEqual(code, 0, out)
+        return json.loads(out)
+
+    def test_classification_matches_expected(self):
+        got = {o["name"]: {"class": o["class"], "level": o["level"]} for o in self.analyze()["objects"]}
+        expected = json.load(open(os.path.join(self.D, "expected.json"), encoding="utf-8"))
+        self.assertEqual(got, expected)
+
+    def test_iiq_apis_and_review_link(self):
+        objs = {o["name"]: o for o in self.analyze()["objects"]}
+        corr = objs["HR - Correlation - Employee ID"]
+        self.assertTrue(any("getObjectByName" in a["api"] for a in corr["iiqApis"]))
+        self.assertTrue(any(e.startswith("R021") for e in corr["reviewErrors"]))
+        self.assertTrue(any(e.startswith("R082") for e in corr["reviewErrors"]))
+        mgr = objs["HR - ManagerCorrelation - By Manager ID"]
+        self.assertTrue(any("QueryOptions" in a["api"] for a in mgr["iiqApis"]))
+        after = objs["AD - AfterProvisioning - Ticket"]
+        self.assertIn("Provisioning Completed", after["isc"])
+        self.assertTrue(any("rule libraries" in a["api"] for a in after["iiqApis"]))
+        self.assertEqual(objs["AD - BeforeProvisioning - Move OU"]["level"], "direct")
+        self.assertEqual(objs["AD - BeforeProvisioning - Move OU"]["reviewErrors"], [])
+        self.assertEqual(objs["HR Feed"]["iscConnector"], "Delimited File")
+        self.assertIn("HR Feed (CorrelationRule)", corr["usedBy"])
+
+    def test_plan(self):
+        import tempfile
+        plan = os.path.join(tempfile.mkdtemp(), "plan.md")
+        code, out = run(self.V, os.path.join(self.D, "export"), "--plan", plan)
+        self.assertEqual(code, 0)
+        text = open(plan, encoding="utf-8").read()
+        for heading in ("## Inventory", "## Mapping", "## Rules to rewrite by hand", "## Risks", "## Recommended order"):
+            self.assertIn(heading, text)
+        self.assertLess(text.index("**1. Sources**"), text.index("**5. Provisioning**"))
+        self.assertIn("SailPoint's review would reject", text)
+
+    def test_unreadable(self):
+        import tempfile
+        bad = os.path.join(tempfile.mkdtemp(), "bad.xml")
+        open(bad, "w").write("<sailpoint><Rule></sailpoint>")
+        code, out = run(self.V, bad)
+        self.assertEqual(code, 2)
+
+
 class SkillFiles(unittest.TestCase):
     def test_frontmatter_and_links(self):
         import re

@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.4.0 — 2026-11-15
+
+- New skill `isc-cloud-rule-review`: pre-submission review of ISC rules. `scripts/review_rule.py` runs 42 checks,
+  each tied to a section of SailPoint's rule guidelines, separates ERROR (rejected/blocked) from WARNING, and writes
+  a Markdown report to attach to the review ticket. Rule types, inputs/outputs and IdnRuleUtil signatures are
+  generated from developer.sailpoint.com (`scripts/rule_catalog.json`); the forbidden-code list is shared with
+  `isc-rules`. Tests: clean good rules, bad rules with the exact expected checks, and every SailPoint example rule
+  (doc issues kept as known issues).
+- New skill `iiq-to-isc-migration`: curated IIQ → ISC mapping (rule types, IIQ APIs, objects) and
+  `scripts/analyze_iiq.py`, which reads IIQ XML exports, classifies each object, flags IIQ-only APIs, sends future ISC
+  rules to the reviewer and writes a migration plan. Tests on a fictional IIQ export.
+- 10 new evaluation questions (`rev-*`, `mig-*`).
+
 ## 0.3.0 — 2026-11-15
 
 - New skill `isc-nerm` for SailPoint Non-Employee Risk Management: NERM vs ISC Non-Employee Lifecycle Management,

@@ -1,0 +1,1 @@
+{"name": "WS After", "type": "WebServiceAfterOperationRule", "sourceCode": {"version": "1.0", "script": "Map m = new HashMap();\nreturn m;"}}

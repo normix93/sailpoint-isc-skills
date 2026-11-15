@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="Call API" type="BeforeProvisioning">
+  <Description>Posts the plan to a ticketing API.</Description>
+  <Source><![CDATA[
+import java.net.URL;
+import java.io.File;
+String apiKey = "s3cr3t-abc";
+log.info("calling with apiKey " + apiKey);
+URL u = new URL("https://tickets.example.com/api");
+java.io.FileWriter w = new java.io.FileWriter("/tmp/plan.txt");
+log.debug(plan);
+// TODO remove before go-live
+// plan.setArguments(null);
+return plan;
+  ]]></Source>
+</Rule>
