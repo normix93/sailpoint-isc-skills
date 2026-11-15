@@ -1,0 +1,7 @@
+comparison_operator '=' is not valid
+must be the profile type id
+'condition_object_id' is required
+comparison_operator 'contains' is not valid
+comparison_operator '==' is not valid
+secondary_value 'ImpactRisk'
+type 'StatusRule' is not valid

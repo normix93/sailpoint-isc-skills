@@ -190,6 +190,103 @@ class Sources(unittest.TestCase):
         self.assertGreaterEqual(checked, 4)
 
 
+class Nerm(unittest.TestCase):
+    V = "isc-nerm/scripts/check_nerm.py"
+    D = os.path.join(FIX, "nerm")
+    # Defects in SailPoint's NERM API guide examples (see README "Findings"): (block index, expected outcome)
+    KNOWN_GUIDE_ISSUES = {1: "invalid JSON", 2: "invalid JSON", 5: "comparison_operator 'includes?' is not valid"}
+
+    def test_good_bodies(self):
+        files = glob.glob(os.path.join(self.D, "good", "*.json"))
+        self.assertGreaterEqual(len(files), 6)
+        for f in files:
+            code, out = run(self.V, f)
+            self.assertEqual(code, 0, f"{f}: {out}")
+            self.assertIn("0 error(s), 0 warning(s)", out, f)
+
+    def test_bad_bodies(self):
+        files = glob.glob(os.path.join(self.D, "bad", "*.json"))
+        self.assertGreaterEqual(len(files), 9)
+        for f in files:
+            args = ["--patch", f] if "bulk-patch" in f else [f]
+            code, out = run(self.V, *args)
+            self.assertEqual(code, 1, f"{f}: {out}")
+            expected = [l for l in open(f[:-5] + ".expected", encoding="utf-8").read().splitlines() if l.strip()]
+            errors = [l for l in out.splitlines() if l.startswith(("ERROR", "WARNING"))]
+            for needle in expected:
+                self.assertTrue(any(needle in l for l in errors), f"{f}: missing '{needle}' in\n{out}")
+
+    def test_guide_examples(self):
+        import re
+        import tempfile
+        page = os.path.join(S, "isc-nerm/references/api-guide/pagination-metadata-filtering.md")
+        blocks = re.findall(r"```(?:json)?\n(.*?)```", open(page, encoding="utf-8").read(), re.S)
+        seen = {}
+        for i, b in enumerate(blocks):
+            if "advanced_search" not in b:
+                continue
+            try:
+                j = json.loads(b)
+            except ValueError:
+                seen[i] = "invalid JSON"
+                continue
+            with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as fh:
+                json.dump(j, fh)
+            code, out = run(self.V, fh.name)
+            os.unlink(fh.name)
+            errs = [l for l in out.splitlines() if l.startswith("ERROR")]
+            if errs:
+                seen[i] = errs[0]
+        self.assertEqual(set(seen), set(self.KNOWN_GUIDE_ISSUES), seen)
+        for i, needle in self.KNOWN_GUIDE_ISSUES.items():
+            self.assertIn(needle, seen[i])
+
+    def test_urls(self):
+        base = "https://acme.nonemployee.com/api"
+        uid = "4eaa719f-4312-4c5b-9264-d0eb04d4a02a"
+        cases = [
+            (f"GET {base}/profiles?after_id={uid}&offset=10", 1, "cannot be combined with offset"),
+            (f"GET {base}/profiles?after_id={uid}&status=Active", 1, "would be ignored or rejected"),
+            (f"GET {base}/profiles?limit=1000", 1, "maximum of 500"),
+            (f"GET {base}/profiles?filters=status eq \"Active\"", 1, "no ISC-style filters"),
+            (f"GET {base}/profiles?status=active", 1, "did you mean 'Active'"),
+            ("GET https://acme.api.identitynow.com/api/profiles", 1, "is ISC"),
+            (f"GET {base}/v1/non-employee-sources", 1, "ISC Non-Employee Lifecycle Management"),
+            (f"DELETE {base}/profile_types", 1, "DELETE is not defined"),
+            (f"GET {base}/profile/{uid}", 1, "closest"),
+            (f"POST {base}/workflow_sessions", 0, "not started"),
+            (f"GET {base}/profiles?count=true", 0, "metadata=true"),
+            (f"GET {base}/v1/profiles", 0, "no /v1 segment"),
+            (f"GET {base}/profiles?after_id={uid}&updated_after=2026-11-01&limit=500&metadata=true", 0, "0 error(s), 0 warning"),
+            (f"POST {base}/workflow_sessions?run=true", 0, "0 error(s), 0 warning"),
+            (f"GET {base}/v2025/delegations", 0, "0 error(s), 0 warning"),
+        ]
+        for url, exp, needle in cases:
+            code, out = run(self.V, "--url", url)
+            self.assertEqual(code, exp, f"{url}: {out}")
+            self.assertIn(needle, out, url)
+
+    def test_scopes(self):
+        cases = [
+            ("nerm:api:profile-reader", "POST /profiles", 1, "needs write on 'Profiles'"),
+            ("nerm:api:integration-partner", "POST /profiles", 0, "0 error(s)"),
+            ("nerm:api:integration-partner", "PATCH /profiles", 1, "needs write"),
+            ("nerm:api:integration-partner", "GET /profiles", 1, "needs read"),
+            ("nerm:api:workflow-operator", "POST /workflow_sessions", 0, "0 error(s)"),
+            ("nerm:api:profile-manager", "POST /workflow_sessions", 1, "needs execute"),
+            ("nerm:api:profile-reader", "POST /advanced_search/run", 0, "0 error(s)"),
+            ("nerm:api:profile-manager", "POST /audit_events/query", 1, "needs read on 'Audit'"),
+            ("nerm:api:configuration-manager", "POST /ne_attributes", 0, "0 error(s)"),
+            ("nerm:api:read-only", "DELETE /profiles/x", 1, "needs delete"),
+            ("nerm:general:manage", "DELETE /profiles/x", 0, "0 error(s)"),
+            ("nerm:profiles:read", "GET /profiles", 1, "unknown NERM scope"),
+        ]
+        for scopes, req, exp, needle in cases:
+            code, out = run(self.V, "--scopes", scopes, "--request", req)
+            self.assertEqual(code, exp, f"{scopes} {req}: {out}")
+            self.assertIn(needle, out, f"{scopes} {req}")
+
+
 class SkillFiles(unittest.TestCase):
     def test_frontmatter_and_links(self):
         import re

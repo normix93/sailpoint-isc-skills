@@ -6,6 +6,7 @@ A set of [Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-s
 > *"Which workflow trigger should I use when a user's department changes?"*
 > *"Which email goes out when an access request is denied? How do I edit it and which variables can I use?"*
 > *"Write a BeforeProvisioning rule that moves terminated users to the Disabled OU."*
+> *"How do I page through all NERM profiles, and which scope does my integration need?"*
 
 Generic by design: no tenant data, no credentials, no calls to any tenant. Everything comes from SailPoint's public documentation and OpenAPI specs.
 
@@ -21,6 +22,7 @@ Generic by design: no tenant data, no credentials, no calls to any tenant. Every
 | `isc-rules` | cloud rules and connector rules: signatures, templates, IdnRuleUtil, forbidden code, review process, connector rule API, attaching to sources |
 | `isc-search` | query syntax, searchable fields per index, `POST /search/v1`, `searchAfter` paging, audit events |
 | `isc-sources` | source object and connector settings, account schema, aggregation (optimized, delta, delete threshold, schedules), correlation and manager correlation, uncorrelated accounts, create profile / provisioning policies, attribute sync, native change detection, health statuses, SaaS connector commands and customizers |
+| `isc-nerm` | Non-Employee Risk Management (separate product on `{tenant}.nonemployee.com`): NERM vs ISC Non-Employee Lifecycle Management, profiles and profile types, workflows and actions, workflow sessions, risk scoring, ISC connectors, the NERM API (ISC tokens, `nerm:` scopes, wrapped bodies, `after_id` paging, advanced search) |
 
 Each skill is a short `SKILL.md` (how to answer + the core rules) plus `references/` that Claude opens only when needed. The API skill ships a generated page for every service (~1,100 operations) listing scopes, user levels and the exact filterable/sortable fields.
 
@@ -36,6 +38,7 @@ Every skill comes with a script Claude runs before handing you something (Python
 | `isc-rules/scripts/lint_rule.py` | SailPoint's forbidden code list, deprecated/unsupported rule types, file naming, sensitive logging, hard-coded credentials |
 | `isc-notifications/scripts/check_template.py` | unbalanced `#if/#end`, variables the template doesn't have, `$user` in v2 templates, HTML the sanitizer strips, subjects that disable the email |
 | `isc-sources/scripts/check_source_config.py` | create-profile fields computed in the wrong order, invalid usage types and field types, duplicate fields, broken field transforms, unknown source features, delete threshold outside 0–100, plain-text secrets in connector attributes, correlation operators other than EQ, native change detection that can never fire, non-Quartz cron schedules |
+| `isc-nerm/scripts/check_nerm.py` | NERM bodies sent unwrapped, ISC NELM payloads or URLs used against NERM, unknown paths/methods, invalid statuses and enums, names where ids are required, advanced-search operators that don't fit the attribute type, `after_id` mixed with `offset`, `limit` over 500, ISC-only `filters`/`count`, workflow sessions that won't start, and whether a token's `nerm:` scopes allow a call |
 | `isc-search/scripts/lint_query.py` | API filter syntax in search queries, lowercase boolean operators, split nested conditions, `.exact` on unsupported fields |
 
 The forbidden-code list, transform types and endpoint filters are generated from SailPoint's own sources, so they stay current with the weekly refresh. `tests/` runs every validator against SailPoint's published examples (they must pass) and against deliberately broken fixtures (they must fail).
@@ -47,6 +50,8 @@ On a 40-question set ([`evals/`](evals/)) graded blind by a separate agent, the 
 Honest caveat: the questions were written from the same sources the skills use, so this shows the skills deliver what SailPoint documents, not that they cover everything. Real-world questions are the most useful contribution.
 
 Added in 0.2.0: 10 questions on sources (`src-*`), same protocol: **9/20 (45%) without the skills, 20/20 (100%) with them**. Without them the model said a UI option disables optimized aggregation, said a delete-threshold breach fails the aggregation (it skips the delete phase with a warning), missed every real attribute-sync limit and used legacy `/beta` and `/v3` paths. Details: [`evals/results-sources.md`](evals/results-sources.md).
+
+Added in 0.3.0: 10 questions on NERM (`nerm-*`): **3/20 (15%) without the skills, 20/20 (100%) with them**. Without them the model said ISC personal access tokens don't work with NERM, invented scopes such as `nerm:profiles:read`, paged 200,000 profiles with `offset`, missed that workflow sessions need `?run=true`, used a `starts_with` operator, described risk as a weighted sum and assumed email correlation. Details: [`evals/results-nerm.md`](evals/results-nerm.md).
 
 ## Install
 
@@ -80,6 +85,8 @@ The other references (workflow triggers/actions/operators, email template catalo
 
 - SailPoint's provisioning-policy guide shows a `substring` transform with `start`/`end`, while the operation reference requires `begin` — the transform validator flags it (kept as a known issue in the tests).
 - An early draft of these skills said trigger filters allow at most 5 conditions; running the workflow validator on SailPoint's own exported workflows (one uses 7) showed the limit applies to the basic editor only. Fixed.
+
+- NERM's API guide examples call `/api/v1/non-employee-sources` (an ISC endpoint name), two advanced-search examples are invalid JSON (missing quote), one uses the operator `includes?` instead of `include?`, and the examples use `object_type: NeAttribute` where the OpenAPI spec defines `condition_object_type`. The guide says `offset` starts at 0, the spec says minimum 1; the rule enum says `Leave of absence`, profiles say `On Leave`; the v2025 pagination page is a copy of the ISC page. All kept as known issues in the tests and explained in `isc-nerm/references/api-gotchas.md`.
 
 ## Accuracy
 

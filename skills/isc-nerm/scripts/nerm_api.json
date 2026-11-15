@@ -1,0 +1,2715 @@
+{
+ "_generated": "tools/build_references.py from sailpoint-oss/api-specs (febca5c) and developer.sailpoint.com (fe42feb)",
+ "attributeDataTypes": [
+  "text field",
+  "text area",
+  "drop-down",
+  "radio buttons",
+  "check boxes",
+  "date",
+  "tags",
+  "attachment",
+  "profile select",
+  "profile search",
+  "owner select",
+  "owner search",
+  "contributor select",
+  "contributor search"
+ ],
+ "attributeTypes": [
+  "AttachmentAttribute",
+  "CheckBoxesAttribute",
+  "ContributorSearchAttribute",
+  "ContributorSelectAttribute",
+  "DateAttribute",
+  "DropDownAttribute",
+  "OwnerSearchAttribute",
+  "OwnerSelectAttribute",
+  "ProfileSearchAttribute",
+  "ProfileSelectAttribute",
+  "RadioButtonsAttribute",
+  "TagsAttribute",
+  "TextAreaAttribute",
+  "TextFieldAttribute"
+ ],
+ "auditFilterKeys": [
+  "created_at",
+  "data",
+  "subject_id",
+  "subject_type",
+  "type"
+ ],
+ "auditQuery": {
+  "filters": {
+   "type": "object"
+  },
+  "limit": {
+   "maximum": 100,
+   "type": "integer"
+  },
+  "offset": {
+   "type": "integer"
+  },
+  "order": {
+   "enum": [
+    "asc",
+    "desc"
+   ],
+   "type": "string"
+  },
+  "sort_by": {
+   "type": "string"
+  }
+ },
+ "auditSubjectTypes": [
+  "ApprovalAction",
+  "AutomatedUser",
+  "AutomatedWorkflow",
+  "BatchWorkflow",
+  "CreateWorkflow",
+  "DelegateUser",
+  "Delegation",
+  "Delete",
+  "Email",
+  "ExpirationWorkflow",
+  "Form",
+  "FormAttribute",
+  "FormAttributeForm",
+  "Get",
+  "IdentityProofingResult",
+  "IdproxyPermission",
+  "IdproxyRole",
+  "InvitationWorkflow",
+  "LoginWorkflow",
+  "NeaccessRole",
+  "NeaccessUser",
+  "NeAttribute",
+  "NeAttributeOption",
+  "NeprofileRole",
+  "NeprofileUser",
+  "Notification",
+  "Page",
+  "PasswordResetWorkflow",
+  "Patch",
+  "Permission",
+  "Portal",
+  "PortalRegistrationWorkflow",
+  "Post",
+  "Profile",
+  "ProfilePage",
+  "ProfileType",
+  "ProfileTypeRole",
+  "RegistrationWorkflow",
+  "Role",
+  "RoleProfile",
+  "SamlConfiguration",
+  "SchemaMapping",
+  "SchemaMappingField",
+  "SecurityQuestion",
+  "UpdateWorkflow",
+  "User",
+  "UserManager",
+  "UserProfile",
+  "UserRole",
+  "Validation",
+  "VerificationEmail",
+  "Workflow",
+  "WorkflowAction",
+  "WorkflowPage",
+  "WorkflowSession"
+ ],
+ "auditTypes": [
+  "ActiveRecordCreate",
+  "ActiveRecordDestroy",
+  "ActiveRecordUpdate",
+  "AuditableApiEvent",
+  "AuditableBulkProfileUpdate",
+  "AuditableProfileContributorAdd",
+  "AuditableProfileContributorRemove",
+  "AuditableProfileContributorRoleAdd",
+  "AuditableProfileContributorRoleRemove",
+  "AuditableProfileCreate",
+  "AuditableProfileDestroy",
+  "AuditableProfileOwnerUpdate",
+  "AuditableProfileUpdate",
+  "AuditableProfileWorkflowEvent",
+  "AuditableWorkflowActionSkippedEvent",
+  "AuditableWorkflowApprovedEvent",
+  "AuditableWorkflowAssignedEvent",
+  "AuditableWorkflowAutoAssignedEvent",
+  "AuditableWorkflowBatchCompleteEvent",
+  "AuditableWorkflowClosedEvent",
+  "AuditableWorkflowDuplicateCheckStartEvent",
+  "AuditableWorkflowDuplicateResolutionEvent",
+  "AuditableWorkflowFailedEvent",
+  "AuditableWorkflowFulfilledEvent",
+  "AuditableWorkflowIdentityProofedEvent",
+  "AuditableWorkflowInvitationSentEvent",
+  "AuditableWorkflowLdapProvidedEvent",
+  "AuditableWorkflowNotificationSentEvent",
+  "AuditableWorkflowPendingApprovalEvent",
+  "AuditableWorkflowPendingAssignmentEvent",
+  "AuditableWorkflowPendingFulfillmentEvent",
+  "AuditableWorkflowPendingIdentityProofEvent",
+  "AuditableWorkflowPendingLdapEvent",
+  "AuditableWorkflowPendingRequestEvent",
+  "AuditableWorkflowPendingReviewEvent",
+  "AuditableWorkflowProfileCreatedEvent",
+  "AuditableWorkflowProfileSelectEvent",
+  "AuditableWorkflowProfileUpdatedEvent",
+  "AuditableWorkflowRejectedEvent",
+  "AuditableWorkflowRequestMadeEvent",
+  "AuditableWorkflowRestApiEvent",
+  "AuditableWorkflowReviewedEvent",
+  "AuditableWorkflowRunningWorkflowEvent",
+  "AuditableWorkflowSoapApiEvent",
+  "AuditableWorkflowStatusChangedEvent",
+  "AuditableWorkflowStepCreatedEvent",
+  "AuditableWorkflowStepUpdatedEvent",
+  "AuditableWorkflowStoredProcedureEvent",
+  "AuditableWorkflowUnassignEvent",
+  "AuditableWorkflowVersionCreatedEvent",
+  "AuditableWorkflowVersionDeletedEvent",
+  "AuditableWorkflowVersionDeprecatedEvent",
+  "AuditableWorkflowVersionForkedEvent",
+  "AuditableWorkflowWaitingForWorkflowEvent",
+  "AuditableWorkflowWorkflowChangedEvent"
+ ],
+ "dateFormats": [
+  "mm/dd/yyyy",
+  "mm-dd-yyyy",
+  "dd/mm/yyyy",
+  "dd-mm-yyyy",
+  "yyyy/mm/dd",
+  "yyyy-mm-dd"
+ ],
+ "endpoints": {
+  "DELETE /delegations/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "delegations"
+  },
+  "DELETE /form_attributes/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "form attributes"
+  },
+  "DELETE /form_attributes/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "form attributes"
+  },
+  "DELETE /forms/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "forms"
+  },
+  "DELETE /forms/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "forms"
+  },
+  "DELETE /idproxy/identities/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "consolidation"
+  },
+  "DELETE /ne_attribute_options/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "attribute options"
+  },
+  "DELETE /ne_attribute_options/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "attribute options"
+  },
+  "DELETE /ne_attributes/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "attributes"
+  },
+  "DELETE /ne_attributes/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "attributes"
+  },
+  "DELETE /page_content_translations/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "page content translations"
+  },
+  "DELETE /page_content_translations/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "page content translations"
+  },
+  "DELETE /page_contents/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "page contents"
+  },
+  "DELETE /page_contents/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "page contents"
+  },
+  "DELETE /page_elements/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "page elements"
+  },
+  "DELETE /page_elements/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "page elements"
+  },
+  "DELETE /profile_types/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "profile types"
+  },
+  "DELETE /profile_types/{profile_type_id}/synced_attributes/{ne_attribute_id}": {
+   "body": null,
+   "query": {},
+   "tag": "synced attributes"
+  },
+  "DELETE /profile_types/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "profile types"
+  },
+  "DELETE /profiles": {
+   "body": [
+    "profiles",
+    "array of object"
+   ],
+   "query": {},
+   "tag": "profiles"
+  },
+  "DELETE /profiles/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "profiles"
+  },
+  "DELETE /role_profile/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "role profiles"
+  },
+  "DELETE /user_profile/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "user profiles"
+  },
+  "DELETE /user_profiles": {
+   "body": [
+    "user_profiles",
+    "array of object"
+   ],
+   "query": {},
+   "tag": "user profiles"
+  },
+  "DELETE /user_role/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "user roles"
+  },
+  "DELETE /users/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "users"
+  },
+  "DELETE /v2025/delegations/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "delegations"
+  },
+  "GET /advanced_search": {
+   "body": null,
+   "query": {},
+   "tag": "advanced search"
+  },
+  "GET /advanced_search/{id}/run": {
+   "body": null,
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    }
+   },
+   "tag": "advanced search"
+  },
+  "GET /delegations": {
+   "body": null,
+   "query": {
+    "delegate_id": {
+     "type": "string"
+    },
+    "delegator_id": {
+     "type": "string"
+    },
+    "expired": {
+     "type": "boolean"
+    },
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    }
+   },
+   "tag": "delegations"
+  },
+  "GET /delegations/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "delegations"
+  },
+  "GET /form_attributes": {
+   "body": null,
+   "query": {},
+   "tag": "form attributes"
+  },
+  "GET /form_attributes/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "form attributes"
+  },
+  "GET /form_attributes/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "form attributes"
+  },
+  "GET /forms": {
+   "body": null,
+   "query": {},
+   "tag": "forms"
+  },
+  "GET /forms/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "forms"
+  },
+  "GET /forms/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "forms"
+  },
+  "GET /identity_proofing_results": {
+   "body": null,
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    },
+    "profile_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "result": {
+     "enum": [
+      "pass",
+      "fail"
+     ],
+     "type": "string"
+    },
+    "workflow_session_id": {
+     "format": "uuid",
+     "type": "string"
+    }
+   },
+   "tag": "identity proofing results"
+  },
+  "GET /isc/accounts": {
+   "body": null,
+   "query": {
+    "category": {
+     "enum": [
+      "non-employee",
+      "assignment"
+     ],
+     "type": "string"
+    },
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "override_sync_toggle": {
+     "type": "boolean"
+    },
+    "status": {
+     "enum": [
+      "active",
+      "inactive",
+      "on leave",
+      "terminated"
+     ],
+     "type": "string"
+    },
+    "use_schema": {
+     "type": "boolean"
+    }
+   },
+   "tag": "isc accounts"
+  },
+  "GET /isc/accounts/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "isc accounts"
+  },
+  "GET /job_status": {
+   "body": null,
+   "query": {
+    "job_id": {
+     "type": "string"
+    }
+   },
+   "tag": "job status"
+  },
+  "GET /ne_attribute_options": {
+   "body": null,
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "ne_attribute_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    }
+   },
+   "tag": "attribute options"
+  },
+  "GET /ne_attribute_options/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "attribute options"
+  },
+  "GET /ne_attribute_options/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "attribute options"
+  },
+  "GET /ne_attributes": {
+   "body": null,
+   "query": {
+    "data_type": {
+     "enum": [
+      "text field",
+      "text area",
+      "drop-down",
+      "radio buttons",
+      "check boxes",
+      "date",
+      "tags",
+      "attachment",
+      "profile select",
+      "profile search",
+      "owner select",
+      "owner search",
+      "contributor select",
+      "contributor search"
+     ],
+     "type": "string"
+    },
+    "label": {
+     "type": "string"
+    },
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    }
+   },
+   "tag": "attributes"
+  },
+  "GET /ne_attributes/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "attributes"
+  },
+  "GET /ne_attributes/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "attributes"
+  },
+  "GET /page_content_translations": {
+   "body": null,
+   "query": {},
+   "tag": "page content translations"
+  },
+  "GET /page_content_translations/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "page content translations"
+  },
+  "GET /page_content_translations/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "page content translations"
+  },
+  "GET /page_contents": {
+   "body": null,
+   "query": {},
+   "tag": "page contents"
+  },
+  "GET /page_contents/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "page contents"
+  },
+  "GET /page_contents/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "page contents"
+  },
+  "GET /page_elements": {
+   "body": null,
+   "query": {},
+   "tag": "page elements"
+  },
+  "GET /page_elements/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "page elements"
+  },
+  "GET /page_elements/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "page elements"
+  },
+  "GET /profile_types": {
+   "body": null,
+   "query": {
+    "archived": {
+     "type": "boolean"
+    },
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "name": {
+     "type": "string"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    }
+   },
+   "tag": "profile types"
+  },
+  "GET /profile_types/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "profile types"
+  },
+  "GET /profile_types/{profile_type_id}/ne_attributes": {
+   "body": null,
+   "query": {
+    "active_filter": {
+     "enum": [
+      "synced",
+      "unsynced",
+      "all"
+     ],
+     "type": "string"
+    },
+    "page": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "search": {
+     "type": "string"
+    },
+    "sort": {
+     "type": "object"
+    }
+   },
+   "tag": "synced attributes"
+  },
+  "GET /profile_types/{uid}": {
+   "body": null,
+   "query": {},
+   "tag": "profile types"
+  },
+  "GET /profiles": {
+   "body": null,
+   "query": {
+    "after_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "exclude_attributes": {
+     "type": "boolean"
+    },
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "name": {
+     "type": "string"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    },
+    "profile_type_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "status": {
+     "enum": [
+      "Active",
+      "Inactive",
+      "On Leave",
+      "Terminated"
+     ],
+     "type": "string"
+    },
+    "updated_after": {
+     "format": "date",
+     "type": "string"
+    }
+   },
+   "tag": "profiles"
+  },
+  "GET /profiles/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "profiles"
+  },
+  "GET /profiles/{id}/avatar": {
+   "body": null,
+   "query": {},
+   "tag": "profiles"
+  },
+  "GET /profiles/{id}/upload/{attribute_id}": {
+   "body": null,
+   "query": {},
+   "tag": "profiles"
+  },
+  "GET /risk_levels": {
+   "body": null,
+   "query": {
+    "label": {
+     "type": "string"
+    },
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    }
+   },
+   "tag": "risk levels"
+  },
+  "GET /risk_levels/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "risk levels"
+  },
+  "GET /risk_scores": {
+   "body": null,
+   "query": {
+    "impact_risk_level_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "object_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "object_type": {
+     "enum": [
+      "Profile",
+      "WorkflowSession"
+     ],
+     "type": "string"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    },
+    "overall_risk_level_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "probability_risk_level_id": {
+     "format": "uuid",
+     "type": "string"
+    }
+   },
+   "tag": "risk scores"
+  },
+  "GET /risk_scores/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "risk scores"
+  },
+  "GET /role_profiles": {
+   "body": null,
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    },
+    "profile_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "role_id": {
+     "format": "uuid",
+     "type": "string"
+    }
+   },
+   "tag": "role profiles"
+  },
+  "GET /role_profiles/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "role profiles"
+  },
+  "GET /roles": {
+   "body": null,
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    },
+    "type": {
+     "enum": [
+      "NeprofileRole",
+      "NeaccessRole",
+      "IdproxyRole"
+     ],
+     "type": "string"
+    }
+   },
+   "tag": "roles"
+  },
+  "GET /roles/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "roles"
+  },
+  "GET /system_roles": {
+   "body": null,
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    }
+   },
+   "tag": "system roles"
+  },
+  "GET /user_managers": {
+   "body": null,
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "manager_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    },
+    "user_id": {
+     "format": "uuid",
+     "type": "string"
+    }
+   },
+   "tag": "user managers"
+  },
+  "GET /user_managers/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "user managers"
+  },
+  "GET /user_profiles": {
+   "body": null,
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "ne_attribute_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    },
+    "profile_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "relationship_type": {
+     "enum": [
+      "owner",
+      "contributor"
+     ],
+     "type": "string"
+    },
+    "user_id": {
+     "format": "uuid",
+     "type": "string"
+    }
+   },
+   "tag": "user profiles"
+  },
+  "GET /user_profiles/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "user profiles"
+  },
+  "GET /user_roles": {
+   "body": null,
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    },
+    "role_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "user_id": {
+     "format": "uuid",
+     "type": "string"
+    }
+   },
+   "tag": "user roles"
+  },
+  "GET /user_roles/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "user roles"
+  },
+  "GET /users": {
+   "body": null,
+   "query": {
+    "email": {
+     "format": "email",
+     "type": "string"
+    },
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "login": {
+     "type": "string"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "name": {
+     "type": "string"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    },
+    "sailpoint_identity_id": {
+     "type": "string"
+    },
+    "title": {
+     "type": "string"
+    },
+    "type": {
+     "enum": [
+      "NeprofileUser",
+      "NeaccessUser"
+     ],
+     "type": "string"
+    },
+    "user_status": {
+     "enum": [
+      "Active",
+      "Pending",
+      "Disabled"
+     ],
+     "type": "string"
+    }
+   },
+   "tag": "users"
+  },
+  "GET /users/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "users"
+  },
+  "GET /users/{id}/avatar": {
+   "body": null,
+   "query": {},
+   "tag": "users"
+  },
+  "GET /v2025/delegations": {
+   "body": null,
+   "query": {
+    "delegate_id": {
+     "type": "string"
+    },
+    "delegator_id": {
+     "type": "string"
+    },
+    "expired": {
+     "type": "boolean"
+    },
+    "include": {
+     "type": "string"
+    },
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    }
+   },
+   "tag": "delegations"
+  },
+  "GET /v2025/delegations/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "delegations"
+  },
+  "GET /workflow_actions": {
+   "body": null,
+   "query": {
+    "workflow_id": {
+     "format": "uuid",
+     "type": "string"
+    }
+   },
+   "tag": "workflow actions"
+  },
+  "GET /workflow_sessions": {
+   "body": null,
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "metadata": {
+     "type": "boolean"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    },
+    "profile_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "requester_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "status": {
+     "enum": [
+      "waiting on workflow",
+      "identity proofing completed",
+      "new",
+      "closing",
+      "pending request",
+      "requested",
+      "pending approval",
+      "approved",
+      "pending notification",
+      "notified",
+      "pending review",
+      "reviewed",
+      "pending trigger",
+      "stored procedure",
+      "pending status change",
+      "status changed",
+      "pending update",
+      "non employee updated",
+      "non employee created",
+      "pending creation",
+      "rejected",
+      "pending assignment",
+      "assigned",
+      "default",
+      "failed",
+      "un assigned",
+      "auto assigned",
+      "ldap provided",
+      "pending ldap",
+      "pending fulfillment",
+      "pending stored procedure",
+      "pending courion add",
+      "fulfilled",
+      "pending courion update",
+      "courion add",
+      "pending courion_extend",
+      "courion update",
+      "pending courion terminate",
+      "courion extend",
+      "pending profile select",
+      "courion terminate",
+      "batch completed",
+      "profiles selected",
+      "answered questions",
+      "pending questions",
+      "attempting to start workflow",
+      "started workflow",
+      "profile check complete",
+      "completed",
+      "processing",
+      "pending set attribute",
+      "invitation sent",
+      "action skipped",
+      "api request sent",
+      "attribute set",
+      "disabled",
+      "duplicates resolved",
+      "soap request sent",
+      "checking for duplicates",
+      "pending identity proofing",
+      "closed",
+      "workflow changed"
+     ],
+     "type": "string"
+    },
+    "uid": {
+     "type": "string"
+    },
+    "workflow_id": {
+     "format": "uuid",
+     "type": "string"
+    }
+   },
+   "tag": "workflow sessions"
+  },
+  "GET /workflow_sessions/{id}": {
+   "body": null,
+   "query": {},
+   "tag": "workflow sessions"
+  },
+  "GET /workflow_sessions/{id}/upload/{attribute_id}": {
+   "body": null,
+   "query": {},
+   "tag": "workflow sessions"
+  },
+  "PATCH /advanced_search/{id}": {
+   "body": [
+    "advanced_search",
+    "AdvancedSearch-3"
+   ],
+   "query": {},
+   "tag": "advanced search"
+  },
+  "PATCH /delegations/{id}": {
+   "body": [
+    "delegation",
+    "object"
+   ],
+   "query": {},
+   "tag": "delegations"
+  },
+  "PATCH /form_attributes/{id}": {
+   "body": [
+    "form_attribute",
+    "FormAttribute-2"
+   ],
+   "query": {},
+   "tag": "form attributes"
+  },
+  "PATCH /form_attributes/{uid}": {
+   "body": [
+    "form_attribute",
+    "FormAttribute-2"
+   ],
+   "query": {},
+   "tag": "form attributes"
+  },
+  "PATCH /forms/{id}": {
+   "body": [
+    "role",
+    "Form-2"
+   ],
+   "query": {},
+   "tag": "forms"
+  },
+  "PATCH /forms/{uid}": {
+   "body": [
+    "role",
+    "Form-2"
+   ],
+   "query": {},
+   "tag": "forms"
+  },
+  "PATCH /idproxy/data_records/{id}/reassign": {
+   "body": [
+    "master_record_id",
+    "string"
+   ],
+   "query": {},
+   "tag": "consolidation"
+  },
+  "PATCH /isc/accounts/{id}": {
+   "body": [
+    "profile",
+    "object"
+   ],
+   "query": {},
+   "tag": "isc accounts"
+  },
+  "PATCH /languages/{locale}": {
+   "body": [
+    "language",
+    "Language"
+   ],
+   "query": {},
+   "tag": "languages"
+  },
+  "PATCH /ne_attribute_options": {
+   "body": [
+    "ne_attribute_options",
+    "array of AttributeOptions-2"
+   ],
+   "query": {},
+   "tag": "attribute options"
+  },
+  "PATCH /ne_attribute_options/{id}": {
+   "body": [
+    "ne_attribute_option",
+    "AttributeOption"
+   ],
+   "query": {},
+   "tag": "attribute options"
+  },
+  "PATCH /ne_attribute_options/{uid}": {
+   "body": [
+    "ne_attribute_option",
+    "AttributeOption"
+   ],
+   "query": {},
+   "tag": "attribute options"
+  },
+  "PATCH /ne_attributes/{id}": {
+   "body": [
+    "ne_attribute",
+    "Attribute-2"
+   ],
+   "query": {},
+   "tag": "attributes"
+  },
+  "PATCH /ne_attributes/{uid}": {
+   "body": [
+    "ne_attribute",
+    "Attribute-2"
+   ],
+   "query": {},
+   "tag": "attributes"
+  },
+  "PATCH /page_content_translations/{id}": {
+   "body": [
+    "page_content_translation",
+    "PageContent-2"
+   ],
+   "query": {},
+   "tag": "page content translations"
+  },
+  "PATCH /page_content_translations/{uid}": {
+   "body": [
+    "page_content_translation",
+    "PageContent-2"
+   ],
+   "query": {},
+   "tag": "page content translations"
+  },
+  "PATCH /page_contents/{id}": {
+   "body": [
+    "page_content",
+    "PageContent-2"
+   ],
+   "query": {},
+   "tag": "page contents"
+  },
+  "PATCH /page_contents/{uid}": {
+   "body": [
+    "page_content",
+    "PageContent-2"
+   ],
+   "query": {},
+   "tag": "page contents"
+  },
+  "PATCH /page_elements/{id}": {
+   "body": [
+    "page_element",
+    "PageElement-3"
+   ],
+   "query": {},
+   "tag": "page elements"
+  },
+  "PATCH /page_elements/{uid}": {
+   "body": [
+    "page_element",
+    "PageElement-3"
+   ],
+   "query": {},
+   "tag": "page elements"
+  },
+  "PATCH /profile_types/{id}": {
+   "body": [
+    "profile_type",
+    "ProfileType-3"
+   ],
+   "query": {},
+   "tag": "profile types"
+  },
+  "PATCH /profile_types/{uid}": {
+   "body": [
+    "profile_type",
+    "ProfileType-3"
+   ],
+   "query": {},
+   "tag": "profile types"
+  },
+  "PATCH /profiles": {
+   "body": [
+    "profiles",
+    "array of Profiles-2"
+   ],
+   "query": {},
+   "tag": "profiles"
+  },
+  "PATCH /profiles/{id}": {
+   "body": [
+    "profile",
+    "Profile-3"
+   ],
+   "query": {},
+   "tag": "profiles"
+  },
+  "PATCH /role_profiles": {
+   "body": [
+    "role_profiles",
+    "array of RoleProfiles-2"
+   ],
+   "query": {},
+   "tag": "role profiles"
+  },
+  "PATCH /role_profiles/{id}": {
+   "body": [
+    "role_profile",
+    "RoleProfile"
+   ],
+   "query": {},
+   "tag": "role profiles"
+  },
+  "PATCH /roles": {
+   "body": [
+    "roles",
+    "array of Role-3"
+   ],
+   "query": {},
+   "tag": "roles"
+  },
+  "PATCH /roles/{id}": {
+   "body": [
+    "role",
+    "Role-3"
+   ],
+   "query": {},
+   "tag": "roles"
+  },
+  "PATCH /user_managers": {
+   "body": [
+    "user_managers",
+    "array of UserManagers-2"
+   ],
+   "query": {},
+   "tag": "user managers"
+  },
+  "PATCH /user_managers/{id}": {
+   "body": [
+    "user_manager",
+    "UserManager"
+   ],
+   "query": {},
+   "tag": "user managers"
+  },
+  "PATCH /user_profiles": {
+   "body": [
+    "user_profiles",
+    "array of UserProfiles-2"
+   ],
+   "query": {},
+   "tag": "user profiles"
+  },
+  "PATCH /user_profiles/{id}": {
+   "body": [
+    "user_profile",
+    "UserProfile"
+   ],
+   "query": {},
+   "tag": "user profiles"
+  },
+  "PATCH /user_roles": {
+   "body": [
+    "user_roles",
+    "array of UserRoles-2"
+   ],
+   "query": {},
+   "tag": "user roles"
+  },
+  "PATCH /user_roles/{id}": {
+   "body": [
+    "user_role",
+    "UserRole"
+   ],
+   "query": {},
+   "tag": "user roles"
+  },
+  "PATCH /users": {
+   "body": [
+    "users",
+    "array of User-3"
+   ],
+   "query": {},
+   "tag": "users"
+  },
+  "PATCH /users/{id}": {
+   "body": [
+    "user",
+    "User-3"
+   ],
+   "query": {},
+   "tag": "users"
+  },
+  "PATCH /v2025/delegations/{id}": {
+   "body": [
+    "delegation",
+    "object"
+   ],
+   "query": {},
+   "tag": "delegations"
+  },
+  "PATCH /workflow_sessions/{id}": {
+   "body": [
+    "workflow_session",
+    "WorkflowSession-3"
+   ],
+   "query": {
+    "run": {
+     "type": "boolean"
+    }
+   },
+   "tag": "workflow sessions"
+  },
+  "POST /advanced_search": {
+   "body": [
+    "advanced_search",
+    "AdvancedSearch-2"
+   ],
+   "query": {},
+   "tag": "advanced search"
+  },
+  "POST /advanced_search/run": {
+   "body": [
+    "advanced_search",
+    "AdvancedSearch-2"
+   ],
+   "query": {
+    "limit": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "offset": {
+     "format": "int32",
+     "minimum": 1,
+     "type": "integer"
+    },
+    "order": {
+     "type": "string"
+    }
+   },
+   "tag": "advanced search"
+  },
+  "POST /audit_events/query": {
+   "body": [
+    "audit_events",
+    "object"
+   ],
+   "query": {},
+   "tag": "audits"
+  },
+  "POST /delegations": {
+   "body": [
+    "delegation",
+    "Delegation-2"
+   ],
+   "query": {},
+   "tag": "delegations"
+  },
+  "POST /form_attributes": {
+   "body": [
+    "form_attribute",
+    "FormAttributes"
+   ],
+   "query": {},
+   "tag": "form attributes"
+  },
+  "POST /forms": {
+   "body": [
+    "forms",
+    "array of Forms"
+   ],
+   "query": {},
+   "tag": "forms"
+  },
+  "POST /ne_attribute_option": {
+   "body": [
+    "ne_attribute_option",
+    "AttributeOption"
+   ],
+   "query": {},
+   "tag": "attribute options"
+  },
+  "POST /ne_attribute_options": {
+   "body": [
+    "ne_attribute_options",
+    "array of AttributeOption"
+   ],
+   "query": {},
+   "tag": "attribute options"
+  },
+  "POST /ne_attributes": {
+   "body": [
+    "ne_attribute",
+    "Attribute-2"
+   ],
+   "query": {},
+   "tag": "attributes"
+  },
+  "POST /page_content_translations": {
+   "body": [
+    "page_content_translation",
+    "PageContentTranslation-2"
+   ],
+   "query": {},
+   "tag": "page content translations"
+  },
+  "POST /page_contents": {
+   "body": [
+    "page_content",
+    "PageContent-2"
+   ],
+   "query": {},
+   "tag": "page contents"
+  },
+  "POST /page_elements": {
+   "body": [
+    "page_element",
+    "PageElement-2"
+   ],
+   "query": {},
+   "tag": "page elements"
+  },
+  "POST /pages/profile_pages": {
+   "body": [
+    "page",
+    "ProfilePage"
+   ],
+   "query": {},
+   "tag": "pages"
+  },
+  "POST /pages/workflow_pages": {
+   "body": [
+    "page",
+    "WorkflowPage"
+   ],
+   "query": {},
+   "tag": "pages"
+  },
+  "POST /permissions": {
+   "body": [
+    "permission",
+    "Permission"
+   ],
+   "query": {},
+   "tag": "permissions"
+  },
+  "POST /profile": {
+   "body": [
+    "profile",
+    "Profile-2"
+   ],
+   "query": {},
+   "tag": "profiles"
+  },
+  "POST /profile_type": {
+   "body": [
+    "profile_type",
+    "ProfileType"
+   ],
+   "query": {},
+   "tag": "profile types"
+  },
+  "POST /profile_type_roles": {
+   "body": [
+    "profile_type_role",
+    "ProfileTypeRoles"
+   ],
+   "query": {},
+   "tag": "profile type roles"
+  },
+  "POST /profile_types/{profile_type_id}/synced_attributes": {
+   "body": [
+    "ne_attribute_id",
+    "string"
+   ],
+   "query": {},
+   "tag": "synced attributes"
+  },
+  "POST /profiles": {
+   "body": [
+    "profiles",
+    "array of Profile-2"
+   ],
+   "query": {},
+   "tag": "profiles"
+  },
+  "POST /profiles/{id}/avatar": {
+   "body": [
+    "file",
+    "string"
+   ],
+   "query": {},
+   "tag": "profiles"
+  },
+  "POST /profiles/{id}/upload/{attribute_id}": {
+   "body": [
+    "file",
+    "string"
+   ],
+   "query": {},
+   "tag": "profiles"
+  },
+  "POST /role": {
+   "body": [
+    "role",
+    "Role-2"
+   ],
+   "query": {},
+   "tag": "roles"
+  },
+  "POST /role_profile": {
+   "body": [
+    "role_profile",
+    "RoleProfile"
+   ],
+   "query": {},
+   "tag": "role profiles"
+  },
+  "POST /role_profiles": {
+   "body": [
+    "role_profiles",
+    "array of RoleProfile"
+   ],
+   "query": {},
+   "tag": "role profiles"
+  },
+  "POST /roles": {
+   "body": [
+    "roles",
+    "array of Role-2"
+   ],
+   "query": {},
+   "tag": "roles"
+  },
+  "POST /system_role_permissions": {
+   "body": [
+    "system_role_permission",
+    "SystemRolePermission"
+   ],
+   "query": {},
+   "tag": "system role permissions"
+  },
+  "POST /user": {
+   "body": [
+    "user",
+    "User"
+   ],
+   "query": {},
+   "tag": "users"
+  },
+  "POST /user_manager": {
+   "body": [
+    "user_manager",
+    "UserManager"
+   ],
+   "query": {},
+   "tag": "user managers"
+  },
+  "POST /user_managers": {
+   "body": [
+    "user_managers",
+    "array of UserManager"
+   ],
+   "query": {},
+   "tag": "user managers"
+  },
+  "POST /user_profile": {
+   "body": [
+    "user_profile",
+    "UserProfile"
+   ],
+   "query": {},
+   "tag": "user profiles"
+  },
+  "POST /user_profiles": {
+   "body": [
+    "user_profiles",
+    "array of UserProfile"
+   ],
+   "query": {},
+   "tag": "user profiles"
+  },
+  "POST /user_role": {
+   "body": [
+    "user_role",
+    "UserRole"
+   ],
+   "query": {},
+   "tag": "user roles"
+  },
+  "POST /user_roles": {
+   "body": [
+    "user_roles",
+    "array of UserRole"
+   ],
+   "query": {},
+   "tag": "user roles"
+  },
+  "POST /users": {
+   "body": [
+    "users",
+    "array of User"
+   ],
+   "query": {},
+   "tag": "users"
+  },
+  "POST /users/{id}/avatar": {
+   "body": [
+    "file",
+    "string"
+   ],
+   "query": {},
+   "tag": "users"
+  },
+  "POST /v2025/delegations": {
+   "body": [
+    "delegation",
+    "Delegation-2"
+   ],
+   "query": {},
+   "tag": "delegations"
+  },
+  "POST /workflow_action_performers": {
+   "body": [
+    "workflow_action_performers",
+    "WorkflowActionPerformers"
+   ],
+   "query": {},
+   "tag": "workflow action performer"
+  },
+  "POST /workflow_actions/approval_actions": {
+   "body": [
+    "workflow_action",
+    "ApprovalAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/ask_security_question_actions": {
+   "body": [
+    "workflow_action",
+    "AskSecurityQuestionAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/auto_assign_actions": {
+   "body": [
+    "workflow_action",
+    "AutoAssignAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/batch_update_actions": {
+   "body": [
+    "workflow_action",
+    "BatchUpdateAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/close_session_actions": {
+   "body": [
+    "workflow_action",
+    "CloseSessionAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/contributors_actions": {
+   "body": [
+    "workflow_action",
+    "ContributorsAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/create_profile_actions": {
+   "body": [
+    "workflow_action",
+    "CreateProfileAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/duplicate_prevention_actions": {
+   "body": [
+    "workflow_action",
+    "DuplicatePreventionAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/email_verification_actions": {
+   "body": [
+    "workflow_action",
+    "EmailVerificationAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/fulfillment_actions": {
+   "body": [
+    "workflow_action",
+    "FulfillmentAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/identity_proofing_actions": {
+   "body": [
+    "workflow_action",
+    "IdentityProofingAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/invitation_actions": {
+   "body": [
+    "workflow_action",
+    "InvitationAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/ldap_actions": {
+   "body": [
+    "workflow_action",
+    "LdapAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/notification_actions": {
+   "body": [
+    "workflow_action",
+    "NotificationAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/password_reset_actions": {
+   "body": [
+    "workflow_action",
+    "PasswordResetAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/profile_check_actions": {
+   "body": [
+    "workflow_action",
+    "ProfileCheckAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/profile_select_actions": {
+   "body": [
+    "workflow_action",
+    "ProfileSelectAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/request_actions": {
+   "body": [
+    "workflow_action",
+    "RequestAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/rest_api_actions": {
+   "body": [
+    "workflow_action",
+    "RestApiAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/review_actions": {
+   "body": [
+    "workflow_action",
+    "ReviewAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/run_workflow_actions": {
+   "body": [
+    "workflow_action",
+    "RunWorkflowAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/set_attributes_actions": {
+   "body": [
+    "workflow_action",
+    "SetAttributesAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/set_security_question_actions": {
+   "body": [
+    "workflow_action",
+    "SetSecurityQuestionAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/soap_api_actions": {
+   "body": [
+    "workflow_action",
+    "SoapApiAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/status_change_actions": {
+   "body": [
+    "workflow_action",
+    "StatusChangeAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/unassign_actions": {
+   "body": [
+    "workflow_action",
+    "UnassignAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/update_profile_actions": {
+   "body": [
+    "workflow_action",
+    "UpdateProfileAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_actions/username_password_actions": {
+   "body": [
+    "workflow_action",
+    "UsernamePasswordAction"
+   ],
+   "query": {},
+   "tag": "workflow actions"
+  },
+  "POST /workflow_sessions": {
+   "body": [
+    "workflow_session",
+    "WorkflowSession-2"
+   ],
+   "query": {
+    "run": {
+     "type": "boolean"
+    }
+   },
+   "tag": "workflow sessions"
+  },
+  "POST /workflow_sessions/{id}/upload/{attribute_id}": {
+   "body": [
+    "file",
+    "string"
+   ],
+   "query": {},
+   "tag": "workflow sessions"
+  },
+  "POST /workflows/automated_workflows": {
+   "body": [
+    "workflow",
+    "AutomatedWorkflow"
+   ],
+   "query": {},
+   "tag": "workflows"
+  },
+  "POST /workflows/batch_workflows": {
+   "body": [
+    "workflow",
+    "BatchWorkflow"
+   ],
+   "query": {},
+   "tag": "workflows"
+  },
+  "POST /workflows/create_workflows": {
+   "body": [
+    "workflow",
+    "CreateWorkflow"
+   ],
+   "query": {},
+   "tag": "workflows"
+  },
+  "POST /workflows/login_workflows": {
+   "body": [
+    "workflow",
+    "LoginWorkflow"
+   ],
+   "query": {},
+   "tag": "workflows"
+  },
+  "POST /workflows/password_reset_workflows": {
+   "body": [
+    "workflow",
+    "LoginWorkflow"
+   ],
+   "query": {},
+   "tag": "workflows"
+  },
+  "POST /workflows/registration_workflows": {
+   "body": [
+    "workflow",
+    "CreateWorkflow"
+   ],
+   "query": {},
+   "tag": "workflows"
+  },
+  "POST /workflows/update_workflows": {
+   "body": [
+    "workflow",
+    "UpdateWorkflow"
+   ],
+   "query": {},
+   "tag": "workflows"
+  }
+ },
+ "idProofingStatuses": [
+  "pending",
+  "pass",
+  "fail"
+ ],
+ "profileKeys": [
+  "archived",
+  "attributes",
+  "id_proofing_status",
+  "name",
+  "profile_type_id",
+  "status"
+ ],
+ "profileRequired": [
+  "profile_type_id",
+  "status"
+ ],
+ "profileStatuses": [
+  "Active",
+  "Inactive",
+  "On Leave",
+  "Terminated"
+ ],
+ "profileTypeCategories": [
+  "employee",
+  "non-employee",
+  "organization",
+  "assignment",
+  "other"
+ ],
+ "riskObjectTypes": [
+  "Profile",
+  "WorkflowSession"
+ ],
+ "ruleTypes": {
+  "ProfileAttributeRuleDate": {
+   "keys": [
+    "comparison_operator",
+    "condition_object_id",
+    "condition_object_type",
+    "id",
+    "secondary_attribute_id",
+    "secondary_attribute_type",
+    "secondary_value",
+    "tertiary_value",
+    "type",
+    "uid",
+    "value"
+   ],
+   "objectTypes": [
+    "DateAttribute"
+   ],
+   "operators": [
+    ">",
+    "<",
+    "after",
+    "before"
+   ],
+   "required": [
+    "type",
+    "condition_object_type",
+    "value"
+   ],
+   "type": "ProfileAttributeRule",
+   "values": [
+    "Today",
+    "<uid>"
+   ]
+  },
+  "ProfileAttributeRuleId": {
+   "keys": [
+    "comparison_operator",
+    "condition_object_id",
+    "condition_object_type",
+    "id",
+    "type",
+    "uid",
+    "value"
+   ],
+   "objectTypes": [
+    "ProfileSelectAttribute",
+    "ProfileSearchAttribute",
+    "OwnerSelectAttribute",
+    "OwnerSearchAttribute",
+    "ContributorSelectAttribute",
+    "ContributorSearchAttribute"
+   ],
+   "operators": [
+    "include?",
+    "exclude?"
+   ],
+   "required": [
+    "type",
+    "condition_object_type",
+    "condition_object_id",
+    "comparison_operator",
+    "value"
+   ],
+   "type": "ProfileAttributeRule",
+   "values": []
+  },
+  "ProfileAttributeRuleString": {
+   "keys": [
+    "comparison_operator",
+    "condition_object_id",
+    "condition_object_type",
+    "id",
+    "type",
+    "uid",
+    "value"
+   ],
+   "objectTypes": [
+    "TextFieldAttribute",
+    "TextAreaAttribute"
+   ],
+   "operators": [
+    "==",
+    "!=",
+    ">",
+    "<",
+    "start_with?",
+    "end_with?",
+    "include?"
+   ],
+   "required": [
+    "type",
+    "condition_object_type",
+    "condition_object_id",
+    "comparison_operator",
+    "value"
+   ],
+   "type": "ProfileAttributeRule",
+   "values": []
+  },
+  "ProfileStatusRule": {
+   "keys": [
+    "comparison_operator",
+    "id",
+    "type",
+    "uid",
+    "value"
+   ],
+   "objectTypes": [],
+   "operators": [
+    "==",
+    "!="
+   ],
+   "required": [
+    "type"
+   ],
+   "type": "ProfileStatusRule",
+   "values": [
+    "Active",
+    "Inactive",
+    "Leave of absence",
+    "Terminated"
+   ]
+  },
+  "ProfileTypeRule": {
+   "keys": [
+    "comparison_operator",
+    "id",
+    "type",
+    "uid",
+    "value"
+   ],
+   "objectTypes": [],
+   "operators": [
+    "==",
+    "!="
+   ],
+   "required": [
+    "type"
+   ],
+   "type": "ProfileTypeRule",
+   "values": []
+  },
+  "RiskRule": {
+   "keys": [
+    "comparison_operator",
+    "id",
+    "secondary_value",
+    "type",
+    "uid",
+    "value"
+   ],
+   "objectTypes": [],
+   "operators": [
+    "==",
+    ">",
+    "<"
+   ],
+   "required": [
+    "type",
+    "value",
+    "secondary_value"
+   ],
+   "type": "RiskRule",
+   "values": []
+  }
+ },
+ "scopes": {
+  "nerm:api:configuration-manager": {
+   "Advanced search": [],
+   "Audit": [],
+   "Profile types": [
+    "R",
+    "W",
+    "D"
+   ],
+   "Profiles": [],
+   "Templates/Configuration": [
+    "R",
+    "W",
+    "D"
+   ],
+   "Users & roles": [
+    "R"
+   ],
+   "Workflow sessions": [],
+   "Workflows": []
+  },
+  "nerm:api:integration-partner": {
+   "Advanced search": [],
+   "Audit": [],
+   "Profile types": [
+    "R"
+   ],
+   "Profiles": [
+    "W"
+   ],
+   "Templates/Configuration": [],
+   "Users & roles": [],
+   "Workflow sessions": [],
+   "Workflows": []
+  },
+  "nerm:api:profile-manager": {
+   "Advanced search": [
+    "R"
+   ],
+   "Audit": [],
+   "Profile types": [
+    "R"
+   ],
+   "Profiles": [
+    "R",
+    "W",
+    "D"
+   ],
+   "Templates/Configuration": [],
+   "Users & roles": [
+    "R"
+   ],
+   "Workflow sessions": [],
+   "Workflows": []
+  },
+  "nerm:api:profile-reader": {
+   "Advanced search": [
+    "R"
+   ],
+   "Audit": [],
+   "Profile types": [
+    "R"
+   ],
+   "Profiles": [
+    "R"
+   ],
+   "Templates/Configuration": [],
+   "Users & roles": [],
+   "Workflow sessions": [],
+   "Workflows": []
+  },
+  "nerm:api:read-only": {
+   "Advanced search": [
+    "R"
+   ],
+   "Audit": [
+    "R"
+   ],
+   "Profile types": [
+    "R"
+   ],
+   "Profiles": [
+    "R"
+   ],
+   "Templates/Configuration": [
+    "R"
+   ],
+   "Users & roles": [
+    "R"
+   ],
+   "Workflow sessions": [
+    "R"
+   ],
+   "Workflows": [
+    "R"
+   ]
+  },
+  "nerm:api:workflow-operator": {
+   "Advanced search": [
+    "R"
+   ],
+   "Audit": [],
+   "Profile types": [
+    "R"
+   ],
+   "Profiles": [
+    "R"
+   ],
+   "Templates/Configuration": [],
+   "Users & roles": [],
+   "Workflow sessions": [
+    "R",
+    "X"
+   ],
+   "Workflows": [
+    "R"
+   ]
+  },
+  "nerm:general:manage": {
+   "Advanced search": [
+    "R",
+    "W"
+   ],
+   "Audit": [
+    "R",
+    "W",
+    "D"
+   ],
+   "Profile types": [
+    "R",
+    "W",
+    "D"
+   ],
+   "Profiles": [
+    "R",
+    "W",
+    "D"
+   ],
+   "Templates/Configuration": [
+    "R",
+    "W",
+    "D"
+   ],
+   "Users & roles": [
+    "R",
+    "W",
+    "D"
+   ],
+   "Workflow sessions": [
+    "R",
+    "W",
+    "D"
+   ],
+   "Workflows": [
+    "R",
+    "W",
+    "D"
+   ]
+  }
+ },
+ "user": {
+  "keys": [
+   "email",
+   "group_strings",
+   "locale",
+   "login",
+   "name",
+   "password",
+   "profile_id",
+   "sailpoint_identity_id",
+   "status",
+   "title",
+   "type"
+  ],
+  "required": [
+   "name",
+   "email",
+   "type",
+   "login"
+  ],
+  "statuses": [
+   "Active",
+   "Pending",
+   "Disabled"
+  ],
+  "types": [
+   "NeprofileUser",
+   "NeaccessUser"
+  ]
+ },
+ "workflowActionTypes": [
+  "approval_actions",
+  "ask_security_question_actions",
+  "auto_assign_actions",
+  "batch_update_actions",
+  "close_session_actions",
+  "contributors_actions",
+  "create_profile_actions",
+  "duplicate_prevention_actions",
+  "email_verification_actions",
+  "fulfillment_actions",
+  "identity_proofing_actions",
+  "invitation_actions",
+  "ldap_actions",
+  "notification_actions",
+  "password_reset_actions",
+  "profile_check_actions",
+  "profile_select_actions",
+  "request_actions",
+  "rest_api_actions",
+  "review_actions",
+  "run_workflow_actions",
+  "set_attributes_actions",
+  "set_security_question_actions",
+  "soap_api_actions",
+  "status_change_actions",
+  "unassign_actions",
+  "update_profile_actions",
+  "username_password_actions"
+ ],
+ "workflowSession": {
+  "keys": [
+   "attributes",
+   "profile_id",
+   "profile_ids",
+   "requester_id",
+   "requester_type",
+   "workflow_id"
+  ],
+  "requesterTypes": [
+   "User",
+   "NeprofileUser",
+   "NeaccessUser",
+   "NeaccessRegistrant"
+  ],
+  "required": [
+   "workflow_id",
+   "requester_id",
+   "requester_type"
+  ],
+  "statuses": [
+   "api_request_sent",
+   "approved",
+   "assigned",
+   "attempting_to_start_workflow",
+   "AUTH-STATUS1",
+   "AUTH-STATUS2",
+   "AUTH-STATUS3",
+   "AUTH-STATUS4",
+   "AUTH-STATUS5",
+   "AUTH-STATUS6",
+   "AUTH-STATUS7",
+   "AUTH-STATUS8",
+   "AUTH-STATUS9",
+   "auto_assigned",
+   "batch_completed",
+   "checking_for_duplicates",
+   "closed",
+   "completed",
+   "courion_add",
+   "courion_extend",
+   "courion_terminate",
+   "courion_update",
+   "duplicates_resolved",
+   "failed",
+   "fulfilled",
+   "invitation_sent",
+   "ldap_provided",
+   "new",
+   "non_employee_created",
+   "non_employee_updated",
+   "notified",
+   "pending_approval",
+   "pending_assignment",
+   "pending_courion_add",
+   "pending_courion_extend",
+   "pending_courion_terminate",
+   "pending_courion_update",
+   "pending_creation",
+   "pending_fulfillment",
+   "pending_ldap",
+   "pending_notification",
+   "pending_profile_select",
+   "pending_request",
+   "pending_review",
+   "pending_status_change",
+   "pending_stored_procedure",
+   "pending_trigger",
+   "pending_update",
+   "processing",
+   "profile_check_complete",
+   "profiles_selected",
+   "rejected",
+   "requested",
+   "reviewed",
+   "soap_request_sent",
+   "started_workflow",
+   "status_changed",
+   "stored_procedure",
+   "un_assigned",
+   "waiting_on_workflow",
+   "workflow_changed"
+  ]
+ },
+ "workflowTypes": [
+  "automated_workflows",
+  "batch_workflows",
+  "create_workflows",
+  "login_workflows",
+  "password_reset_workflows",
+  "registration_workflows",
+  "update_workflows"
+ ]
+}
