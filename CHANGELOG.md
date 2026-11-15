@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0 — 2026-11-15
+
+- New skill `isc-nerm` for SailPoint Non-Employee Risk Management: NERM vs ISC Non-Employee Lifecycle Management,
+  data model, workflows and actions, risk scoring, ISC connectors, and the NERM API (authentication with ISC tokens,
+  `nerm:` scopes, wrapped bodies, paging with `after_id`, advanced search, workflow sessions, audit query).
+- Generated for it from SailPoint's NERM OpenAPI specs (v1 and v2025): endpoint index, endpoint details with body
+  wrappers, schemas, and the enums/scope matrix used by the checker; SailPoint's NERM API guide pages.
+- New checker `isc-nerm/scripts/check_nerm.py` (request bodies, URLs and query parameters, scopes), tested on good and
+  broken fixtures and on the guide's examples (doc defects kept as known issues).
+- 10 new evaluation questions for NERM.
+
 ## 0.2.0 — 2026-11-14
 
 - New skill `isc-sources`: source anatomy (UI ↔ API), onboarding order, aggregation (optimized vs unoptimized,

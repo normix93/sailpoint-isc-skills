@@ -1,0 +1,4 @@
+'profile_type_id' is required
+'id' is read-only
+status 'Leave of absence' is not valid
+'attributes' must be an object

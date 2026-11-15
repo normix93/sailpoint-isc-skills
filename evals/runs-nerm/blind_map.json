@@ -1,0 +1,42 @@
+{
+ "nerm-01": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "nerm-02": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "nerm-03": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "nerm-04": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "nerm-05": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "nerm-06": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "nerm-07": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "nerm-08": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "nerm-09": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "nerm-10": {
+  "A": "skills",
+  "B": "baseline"
+ }
+}

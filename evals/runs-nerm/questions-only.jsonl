@@ -1,0 +1,10 @@
+{"id": "nerm-01", "q": "I want to create a contractor in SailPoint NERM via API. Which URL do I call and what does the body look like?"}
+{"id": "nerm-02", "q": "How do I authenticate to the NERM API today? Can I use my ISC personal access token?"}
+{"id": "nerm-03", "q": "Which NERM API scope should I give an integration that only needs to start workflow sessions and read profiles, and what happens if a scope is missing?"}
+{"id": "nerm-04", "q": "I need to export all ~200,000 NERM profiles nightly. How should I page through /profiles?"}
+{"id": "nerm-05", "q": "I created a NERM workflow session with POST /workflow_sessions and it just sits there. Why?"}
+{"id": "nerm-06", "q": "How do I find, via the NERM API, all non-terminated profiles whose first name starts with 'a'?"}
+{"id": "nerm-07", "q": "What is the difference between SailPoint NERM and the Non-Employee Lifecycle Management in Identity Security Cloud?"}
+{"id": "nerm-08", "q": "How is a profile's overall risk score calculated in NERM, and which attributes can carry risk?"}
+{"id": "nerm-09", "q": "We sync NERM non-employees to ISC. Which attribute correlates the accounts, which profiles get aggregated, and do all attributes sync?"}
+{"id": "nerm-10", "q": "In a NERM automated workflow I put Status Change to Terminated before the manager approval step and a REST API step that calls a slow service. Any problem?"}

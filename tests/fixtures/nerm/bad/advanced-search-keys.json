@@ -1,0 +1,1 @@
+{"advanced_search": {"conditions": [{"type": "ProfileStatusRule", "comparison_operator": "==", "value": "Active"}]}}
