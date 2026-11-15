@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="Unique Email" type="AttributeGenerator">
+  <Description>Builds a unique email.</Description>
+  <Source><![CDATA[
+String email = identity.getAttribute("firstname").toLowerCase() + "@example.com";
+int n = idn.countIdentitiesBySearchableIdentityAttribute("email", "Contains", email);
+if (idn.accountExistByNativeIdentity("AD", email)) {
+  email = "x" + email;
+}
+String first = idn.getFirstAccountNativeIdentity("Active Directory", identity.getName(), "x");
+return email;
+  ]]></Source>
+</Rule>

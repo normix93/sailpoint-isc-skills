@@ -778,6 +778,67 @@ def build_nerm_refs(specs: Path, docs: Path) -> None:
     out.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
 
 
+# --------------------------------------------------------------------------- isc-cloud-rule-review
+
+def _md_table(md: str, after: str) -> list[list[str]]:
+    """Rows of the first Markdown table after the heading `after` (e.g. '## Input')."""
+    i = md.find(after)
+    if i < 0:
+        return []
+    rows = []
+    for line in md[i:].split("\n")[1:]:
+        s = line.strip()
+        if not s and rows:
+            break
+        if s.startswith("## ") and rows:
+            break
+        if s.startswith("|") and not re.match(r"^\|\s*-", s):
+            rows.append([c.strip() for c in s.strip("|").split("|")])
+    return rows[1:] if rows and rows[0][0].lower() == "argument" else rows
+
+
+def build_rule_review_refs(docs: Path) -> None:
+    dsha = git_sha(docs)
+    base = docs / "docs/extensibility/rules"
+    catalog = {}
+    for kind, folder in (("cloud", "cloud-rules"), ("connector", "connector-rules")):
+        for page in sorted((base / folder).glob("*.md")):
+            if page.name == "index.md":
+                continue
+            md = page.read_text(encoding="utf-8")
+            types = re.findall(r'<Rule\b[^>]*\btype="([A-Za-z]+)"', md)
+            if not types:
+                continue
+            rtype = max(set(types), key=types.count)
+            catalog[rtype] = {
+                "execution": kind,
+                "page": page_url(page, docs / "docs"),
+                "inputs": [r[0] for r in _md_table(md, "## Input") if r and r[0]],
+                "outputs": [r[0] for r in _md_table(md, "## Output") if r and r[0]],
+            }
+    util = (base / "idn_rule_utility.md").read_text(encoding="utf-8")
+    blk = util[util.index("## IdnRuleUtil.java descriptors"):util.index("## Example usage")]
+    blk = re.sub(r"/\*\*.*?\*/", "", blk, flags=re.S)
+    methods: dict = {}
+    for m in re.finditer(r"(?:public\s+)?([\w.]+(?:<[^>]*>)?)\s+(\w+)\s*\(([^)]*)\)", blk):
+        params = [" ".join(p.split()) for p in m.group(3).split(",") if p.strip()]
+        methods.setdefault(m.group(2), []).append({"returns": m.group(1), "params": params})
+    rules = (base / "index.md").read_text(encoding="utf-8")
+    deprecated = re.findall(r"^- \*\*(.+?) Rules\*\* - (.+)$", rules, re.M)
+    data = {
+        "_generated": f"tools/build_references.py from developer.sailpoint.com ({dsha})",
+        "ruleTypes": catalog,
+        "idnMethods": methods,
+        "deprecated": {name.replace(" ", ""): advice.strip() for name, advice in deprecated},
+        "guidelinesPage": page_url(base / "index.md", docs / "docs"),
+        "cloudRulesPage": page_url(base / "cloud-rules/index.md", docs / "docs"),
+        "idnRuleUtilPage": page_url(base / "idn_rule_utility.md", docs / "docs"),
+    }
+    out = SKILLS / "isc-cloud-rule-review/scripts/rule_catalog.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--specs", type=Path, required=True, help="clone of sailpoint-oss/api-specs")
@@ -787,6 +848,7 @@ def main() -> None:
     build_endpoint_refs(a.specs)
     build_source_refs(a.specs, a.docs)
     build_nerm_refs(a.specs, a.docs)
+    build_rule_review_refs(a.docs)
     print("references rebuilt")
 
 

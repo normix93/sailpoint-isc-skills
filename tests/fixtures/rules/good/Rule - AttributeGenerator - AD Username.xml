@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="AD Username" type="AttributeGenerator">
+  <Description>Generates a unique sAMAccountName (first initial + last name, then a counter) for Active Directory,
+  checking uniqueness on the target source as SailPoint recommends.</Description>
+  <Source><![CDATA[
+import org.apache.commons.lang.StringUtils;
+
+int MAX_ITERATIONS = 99;
+
+String firstName = StringUtils.trimToNull(identity.getAttribute("firstname"));
+String lastName = StringUtils.trimToNull(identity.getAttribute("lastname"));
+if (firstName == null || lastName == null) {
+  log.warn("AD Username: missing first or last name");
+  return null;
+}
+String base = StringUtils.lowerCase(firstName.substring(0, 1) + lastName.replaceAll("[^A-Za-z]", ""));
+if (base.length() > 18) {
+  base = base.substring(0, 18);
+}
+String candidate = base;
+int i = 1;
+while (idn.accountExistsByNativeIdentity(application.getName(), candidate) && i <= MAX_ITERATIONS) {
+  candidate = base + i;
+  i++;
+}
+return candidate;
+  ]]></Source>
+</Rule>

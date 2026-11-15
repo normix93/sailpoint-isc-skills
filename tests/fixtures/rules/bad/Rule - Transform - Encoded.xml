@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="Encoded" type="Transform">
+  <Description>Trims the value.</Description>
+  <Source><![CDATA[
+if (value != null &amp;&amp; value.length() &gt; 0) {
+  return value.trim();
+}
+return null;
+log.debug("done");
+  ]]></Source>
+</Rule>
