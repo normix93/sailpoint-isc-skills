@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="Disable Moves OU" type="BeforeProvisioning">
+  <Description>When an AD account is disabled, also moves it to the Disabled Users OU (AC_NewParent), because the
+  connector does not move disabled accounts on its own.</Description>
+  <Source><![CDATA[
+import sailpoint.object.ProvisioningPlan;
+import sailpoint.object.ProvisioningPlan.AccountRequest;
+import sailpoint.object.ProvisioningPlan.AttributeRequest;
+
+if (plan != null && plan.getAccountRequests() != null) {
+  for (AccountRequest request : plan.getAccountRequests()) {
+    if (AccountRequest.Operation.Disable.equals(request.getOperation())) {
+      request.add(new AttributeRequest("AC_NewParent", ProvisioningPlan.Operation.Set,
+          "OU=Disabled Users,DC=example,DC=com"));
+      log.info("Disable Moves OU: moving " + request.getNativeIdentity());
+    }
+  }
+}
+  ]]></Source>
+</Rule>

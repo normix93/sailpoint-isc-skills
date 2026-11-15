@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE sailpoint PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<!-- Fictional IdentityIQ export written for the tests (no real customer data). -->
+<sailpoint>
+  <Application authoritative="true" connector="sailpoint.connector.DelimitedFileConnector" name="HR Feed" type="DelimitedFile">
+    <Attributes>
+      <Map>
+        <entry key="buildMapRule" value="HR - BuildMap - Split Name"/>
+        <entry key="preIterativeRule" value="HR - PreIterate - Unzip"/>
+        <entry key="file" value="/data/hr/people.csv"/>
+      </Map>
+    </Attributes>
+    <CorrelationRule><Reference class="sailpoint.object.Rule" name="HR - Correlation - Employee ID"/></CorrelationRule>
+    <CreationRule><Reference class="sailpoint.object.Rule" name="HR - Creation - Set Defaults"/></CreationRule>
+    <ManagerCorrelationRule><Reference class="sailpoint.object.Rule" name="HR - ManagerCorrelation - By Manager ID"/></ManagerCorrelationRule>
+  </Application>
+  <Application connector="sailpoint.connector.ADLDAPConnector" name="Active Directory" type="Active Directory - Direct">
+    <BeforeProvisioningRule><Reference class="sailpoint.object.Rule" name="AD - BeforeProvisioning - Move OU"/></BeforeProvisioningRule>
+    <CustomizationRule><Reference class="sailpoint.object.Rule" name="AD - Customization - Normalize"/></CustomizationRule>
+  </Application>
+  <Application name="Finance Suite" type="Logical"/>
+
+  <Rule language="beanshell" name="HR - BuildMap - Split Name" type="BuildMap">
+    <Source><![CDATA[
+import sailpoint.connector.DelimitedFileConnector;
+Map map = DelimitedFileConnector.defaultBuildMap(cols, record);
+String full = (String) map.get("FULL_NAME");
+if (full != null && full.indexOf(" ") > 0) {
+  map.put("firstName", full.substring(0, full.indexOf(" ")));
+  map.put("lastName", full.substring(full.indexOf(" ") + 1));
+}
+return map;
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="HR - PreIterate - Unzip" type="PreIterate">
+    <Source><![CDATA[
+java.io.File f = new java.io.File("/data/hr/people.zip");
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="HR - Correlation - Employee ID" type="Correlation">
+    <Source><![CDATA[
+import sailpoint.object.*;
+Map result = new HashMap();
+String empId = account.getStringAttribute("EMP_ID");
+Identity id = context.getObjectByName(Identity.class, empId);
+if (id != null) {
+  result.put("identity", id);
+}
+return result;
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="HR - Creation - Set Defaults" type="IdentityCreation">
+    <Source><![CDATA[
+identity.setAttribute("region", "EMEA");
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="HR - ManagerCorrelation - By Manager ID" type="ManagerCorrelation">
+    <Source><![CDATA[
+import sailpoint.object.*;
+QueryOptions qo = new QueryOptions();
+qo.addFilter(Filter.eq("employeeId", managerAttributeValue));
+Iterator it = context.search(Identity.class, qo);
+Map returnMap = new HashMap();
+if (it.hasNext()) {
+  returnMap.put("identityName", ((Identity) it.next()).getName());
+}
+return returnMap;
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="AD - BeforeProvisioning - Move OU" type="BeforeProvisioning">
+    <Source><![CDATA[
+import sailpoint.object.ProvisioningPlan;
+import sailpoint.object.ProvisioningPlan.AccountRequest;
+import sailpoint.object.ProvisioningPlan.AttributeRequest;
+if (plan != null && plan.getAccountRequests() != null) {
+  for (AccountRequest req : plan.getAccountRequests()) {
+    if (AccountRequest.Operation.Disable.equals(req.getOperation())) {
+      req.add(new AttributeRequest("AC_NewParent", ProvisioningPlan.Operation.Set, "OU=Disabled,DC=acme,DC=example"));
+    }
+  }
+}
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="AD - Customization - Normalize" type="ResourceObjectCustomization">
+    <Source><![CDATA[
+object.setAttribute("mail", object.getStringAttribute("mail").toLowerCase());
+return object;
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="AD - AfterProvisioning - Ticket" type="AfterProvisioning">
+    <ReferencedRules><Reference class="sailpoint.object.Rule" name="ACME Common Library"/></ReferencedRules>
+    <Source><![CDATA[
+java.net.URL u = new java.net.URL("https://tickets.acme.example/api");
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="AD - FieldValue - sAMAccountName" type="FieldValue">
+    <Source><![CDATA[
+String base = identity.getFirstname().substring(0, 1) + identity.getLastname();
+return base.toLowerCase();
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="Identity - Department Code" type="IdentityAttribute">
+    <Source><![CDATA[
+String d = identity.getStringAttribute("department");
+return d == null ? null : d.split("-")[0];
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="Cert - Exclude Service Accounts" type="CertificationExclusion">
+    <Source><![CDATA[
+return null;
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="Role - Selector - Finance" type="IdentitySelector">
+    <Source><![CDATA[
+return "Finance".equals(identity.getAttribute("department"));
+    ]]></Source>
+  </Rule>
+  <Rule language="beanshell" name="Task - Nightly Cleanup" type="TaskCompletion">
+    <Source><![CDATA[
+context.sendEmailNotification(null, null);
+    ]]></Source>
+  </Rule>
+
+  <Workflow name="ACME Joiner" type="IdentityLifecycle">
+    <Step name="Start"/>
+    <Step name="Notify Manager"><Script><Source>System.out.println("hi");</Source></Script></Step>
+    <Step name="Stop"/>
+  </Workflow>
+  <Form name="Contractor Onboarding" type="Workflow"/>
+  <Bundle name="Finance Analyst" type="business">
+    <Selector><IdentitySelector><RuleRef><Reference class="sailpoint.object.Rule" name="Role - Selector - Finance"/></RuleRef></IdentitySelector></Selector>
+  </Bundle>
+  <Bundle name="AD Finance Groups" type="it"/>
+  <Policy name="Payments SOD" type="SOD"/>
+  <Policy name="Risky Activity" type="Activity"/>
+  <CertificationDefinition name="Quarterly Manager Review"/>
+  <TaskDefinition executor="sailpoint.task.IdentityRefreshExecutor" name="Refresh Identity Cube"/>
+  <TaskDefinition executor="sailpoint.task.ResourceIdentityScan" name="Aggregate HR"/>
+  <TaskDefinition executor="sailpoint.task.RuleExecutor" name="Run Nightly Cleanup"/>
+  <QuickLink name="Request Laptop"/>
+  <Custom name="Department Mapping"/>
+  <ObjectConfig name="Identity"/>
+  <IdentityTrigger name="Leaver" type="AttributeChange"/>
+  <EmailTemplate name="Welcome Email"/>
+</sailpoint>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="Loop" type="Correlation">
+  <Description>Tries every identity.</Description>
+  <Source><![CDATA[
+import java.util.*;
+Map returnMap = new HashMap();
+String mail = account.getStringAttribute("mail");
+for (Object o : idn.findIdentitiesBySearchableIdentityAttribute("email", "StartsWith", mail, "name")) {
+  if (idn.getIdentityById(o.toString()) != null) {
+    returnMap.put("name", o);
+  }
+}
+try {
+  Thread.sleep(100);
+} catch (Exception e) {}
+return returnMap;
+  ]]></Source>
+</Rule>

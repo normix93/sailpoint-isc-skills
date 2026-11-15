@@ -1,0 +1,10 @@
+{"id": "rev-01", "q": "What exactly do I need to send SailPoint to get a cloud rule reviewed, and how should the file be named?"}
+{"id": "rev-02", "q": "My IdentityAttribute rule uses context.getObjectByName(Identity.class, managerId) to read the manager's email. Will it pass review? What should I use?"}
+{"id": "rev-03", "q": "Which logging practices get an ISC rule rejected?"}
+{"id": "rev-04", "q": "I need to update an approved BeforeProvisioning rule but control exactly when the new logic goes live. How?"}
+{"id": "rev-05", "q": "A colleague's AttributeGenerator rule calls idn.countIdentitiesBySearchableIdentityAttribute(\"email\", \"Contains\", value) and loops over identity.getLinks(). Problems?"}
+{"id": "mig-01", "q": "Can I import my IdentityIQ XML objects (rules, applications, workflows) into Identity Security Cloud?"}
+{"id": "mig-02", "q": "What happens to my IIQ AfterProvisioning rule that opens a ServiceNow ticket after an AD account is disabled?"}
+{"id": "mig-03", "q": "Our IIQ HR application has a Correlation rule, a Creation rule and a ResourceObjectCustomization rule. What do they become in ISC?"}
+{"id": "mig-04", "q": "We use IIQ QuickLinks, custom objects and a couple of plugins. What are the ISC options?"}
+{"id": "mig-05", "q": "How do IIQ business roles with an IdentitySelector rule and IIQ CertificationExclusion rules migrate?"}

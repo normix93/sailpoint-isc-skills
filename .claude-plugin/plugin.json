@@ -1,8 +1,8 @@
 {
   "name": "sailpoint-isc-skills",
   "displayName": "SailPoint ISC Skills (unofficial)",
-  "version": "0.3.0",
-  "description": "Generic reference skills for SailPoint Identity Security Cloud (IdentityNow): REST API (endpoints, filters, pagination), Workflows, Event Triggers, email Notifications, Transforms, Rules (cloud and connector), Search, Sources (aggregation, correlation, create profile, attribute sync, native change detection) and Non-Employee Risk Management (NERM API, workflows, risk, ISC sync). Built from SailPoint's public MIT-licensed docs and OpenAPI specs. Never calls a tenant. Not affiliated with SailPoint.",
+  "version": "0.4.0",
+  "description": "Generic reference skills for SailPoint Identity Security Cloud (IdentityNow): REST API (endpoints, filters, pagination), Workflows, Event Triggers, email Notifications, Transforms, Rules (cloud and connector), Search, Sources (aggregation, correlation, create profile, attribute sync, native change detection), Non-Employee Risk Management (NERM API, workflows, risk, ISC sync), pre-submission rule review and IdentityIQ-to-ISC migration planning. Built from SailPoint's public MIT-licensed docs and OpenAPI specs. Never calls a tenant. Not affiliated with SailPoint.",
   "author": {
     "name": "normix",
     "url": "https://github.com/normix93"
@@ -16,11 +16,14 @@
     "event-triggers",
     "iam",
     "identity-security-cloud",
+    "identityiq",
     "identitynow",
     "iga",
     "isc",
+    "migration",
     "nerm",
     "non-employee",
+    "rule-review",
     "rules",
     "sailpoint",
     "sources",

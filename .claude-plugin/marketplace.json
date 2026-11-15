@@ -8,8 +8,8 @@
     {
       "name": "sailpoint-isc-skills",
       "source": "./",
-      "description": "Reference skills for SailPoint Identity Security Cloud: API, Workflows, Event Triggers, Notifications, Transforms, Rules, Search, Sources, and Non-Employee Risk Management (NERM).",
-      "version": "0.3.0"
+      "description": "Reference skills for SailPoint Identity Security Cloud: API, Workflows, Event Triggers, Notifications, Transforms, Rules, Search, Sources, Non-Employee Risk Management (NERM), rule review before submission and IdentityIQ-to-ISC migration.",
+      "version": "0.4.0"
     }
   ]
 }

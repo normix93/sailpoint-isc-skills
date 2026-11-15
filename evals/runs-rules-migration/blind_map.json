@@ -1,0 +1,42 @@
+{
+ "mig-01": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "mig-02": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "mig-03": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "mig-04": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "mig-05": {
+  "A": "baseline",
+  "B": "skills"
+ },
+ "rev-01": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "rev-02": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "rev-03": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "rev-04": {
+  "A": "skills",
+  "B": "baseline"
+ },
+ "rev-05": {
+  "A": "baseline",
+  "B": "skills"
+ }
+}

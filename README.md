@@ -22,6 +22,8 @@ Generic by design: no tenant data, no credentials, no calls to any tenant. Every
 | `isc-rules` | cloud rules and connector rules: signatures, templates, IdnRuleUtil, forbidden code, review process, connector rule API, attaching to sources |
 | `isc-search` | query syntax, searchable fields per index, `POST /search/v1`, `searchAfter` paging, audit events |
 | `isc-sources` | source object and connector settings, account schema, aggregation (optimized, delta, delete threshold, schedules), correlation and manager correlation, uncorrelated accounts, create profile / provisioning policies, attribute sync, native change detection, health statuses, SaaS connector commands and customizers |
+| `isc-cloud-rule-review` | pre-submission review of cloud and connector rules against SailPoint's rule guidelines (code restrictions, logging, IdnRuleUtil signatures, loops, file naming, standards) with a report to attach to the review ticket; submission process, SLAs, versioning |
+| `iiq-to-isc-migration` | IdentityIQ → ISC: reads IIQ XML exports, maps every object and rule type to its ISC equivalent (direct/adapt/none), flags IIQ-only APIs, checks future ISC rules against the review guidelines, writes a migration plan |
 | `isc-nerm` | Non-Employee Risk Management (separate product on `{tenant}.nonemployee.com`): NERM vs ISC Non-Employee Lifecycle Management, profiles and profile types, workflows and actions, workflow sessions, risk scoring, ISC connectors, the NERM API (ISC tokens, `nerm:` scopes, wrapped bodies, `after_id` paging, advanced search) |
 
 Each skill is a short `SKILL.md` (how to answer + the core rules) plus `references/` that Claude opens only when needed. The API skill ships a generated page for every service (~1,100 operations) listing scopes, user levels and the exact filterable/sortable fields.
@@ -38,6 +40,8 @@ Every skill comes with a script Claude runs before handing you something (Python
 | `isc-rules/scripts/lint_rule.py` | SailPoint's forbidden code list, deprecated/unsupported rule types, file naming, sensitive logging, hard-coded credentials |
 | `isc-notifications/scripts/check_template.py` | unbalanced `#if/#end`, variables the template doesn't have, `$user` in v2 templates, HTML the sanitizer strips, subjects that disable the email |
 | `isc-sources/scripts/check_source_config.py` | create-profile fields computed in the wrong order, invalid usage types and field types, duplicate fields, broken field transforms, unknown source features, delete threshold outside 0–100, plain-text secrets in connector attributes, correlation operators other than EQ, native change detection that can never fire, non-Quartz cron schedules |
+| `isc-cloud-rule-review/scripts/review_rule.py` | 42 checks tied to SailPoint's rule guidelines (each finding cites the guideline): forbidden code and `context`, IdnRuleUtil methods that don't exist or get the wrong arguments/operations, loops over accounts, lookups in loops, sensitive or wrong-level logging, connections/files/sleeps, empty catches, dead code, missing returns, commented-out code, encoding, file naming; writes a Markdown report for the ticket |
+| `iiq-to-isc-migration/scripts/analyze_iiq.py` | IIQ objects with no ISC equivalent, IIQ APIs in rules (context, QueryOptions, Provisioner, rule libraries, JDBC/HTTP/files) with the ISC replacement, and what SailPoint's review would reject once a rule becomes an ISC rule; writes the migration plan |
 | `isc-nerm/scripts/check_nerm.py` | NERM bodies sent unwrapped, ISC NELM payloads or URLs used against NERM, unknown paths/methods, invalid statuses and enums, names where ids are required, advanced-search operators that don't fit the attribute type, `after_id` mixed with `offset`, `limit` over 500, ISC-only `filters`/`count`, workflow sessions that won't start, and whether a token's `nerm:` scopes allow a call |
 | `isc-search/scripts/lint_query.py` | API filter syntax in search queries, lowercase boolean operators, split nested conditions, `.exact` on unsupported fields |
 
@@ -52,6 +56,8 @@ Honest caveat: the questions were written from the same sources the skills use, 
 Added in 0.2.0: 10 questions on sources (`src-*`), same protocol: **9/20 (45%) without the skills, 20/20 (100%) with them**. Without them the model said a UI option disables optimized aggregation, said a delete-threshold breach fails the aggregation (it skips the delete phase with a warning), missed every real attribute-sync limit and used legacy `/beta` and `/v3` paths. Details: [`evals/results-sources.md`](evals/results-sources.md).
 
 Added in 0.3.0: 10 questions on NERM (`nerm-*`): **3/20 (15%) without the skills, 20/20 (100%) with them**. Without them the model said ISC personal access tokens don't work with NERM, invented scopes such as `nerm:profiles:read`, paged 200,000 profiles with `offset`, missed that workflow sessions need `?run=true`, used a `starts_with` operator, described risk as a weighted sum and assumed email correlation. Details: [`evals/results-nerm.md`](evals/results-nerm.md).
+
+Added in 0.4.0: 10 questions on rule review and IIQ migration (`rev-*`, `mig-*`): **12/20 (60%) without the skills, 19/20 (95%) with them** (rule review 5/10 → 10/10, migration 7/10 → 9/10). Without them the model recommended a "v2" copy of a rule instead of SailPoint's `-TEMP` procedure, gave a wrong review SLA, invented an IdnRuleUtil method and said a ResourceObjectCustomization rule exists in ISC. Details: [`evals/results-rules-migration.md`](evals/results-rules-migration.md).
 
 ## Install
 
@@ -87,6 +93,8 @@ The other references (workflow triggers/actions/operators, email template catalo
 - An early draft of these skills said trigger filters allow at most 5 conditions; running the workflow validator on SailPoint's own exported workflows (one uses 7) showed the limit applies to the basic editor only. Fixed.
 
 - NERM's API guide examples call `/api/v1/non-employee-sources` (an ISC endpoint name), two advanced-search examples are invalid JSON (missing quote), one uses the operator `includes?` instead of `include?`, and the examples use `object_type: NeAttribute` where the OpenAPI spec defines `condition_object_type`. The guide says `offset` starts at 0, the spec says minimum 1; the rule enum says `Leave of absence`, profiles say `On Leave`; the v2025 pagination page is a copy of the ISC page. All kept as known issues in the tests and explained in `isc-nerm/references/api-gotchas.md`.
+
+- Running the rule reviewer on SailPoint's own example rules: the Web Services After Operation example logs with `log.error` for normal messages and has a statement after `return`; the AttributeGeneratorFromTemplate example uses `application`, which the page's Input table doesn't list; one tutorial step has a method without a return. Kept as known issues in the tests.
 
 ## Accuracy
 

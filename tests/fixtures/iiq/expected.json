@@ -1,0 +1,130 @@
+{
+ "ACME Joiner": {
+  "class": "Workflow",
+  "level": "adapt"
+ },
+ "AD - AfterProvisioning - Ticket": {
+  "class": "Rule",
+  "level": "adapt"
+ },
+ "AD - BeforeProvisioning - Move OU": {
+  "class": "Rule",
+  "level": "direct"
+ },
+ "AD - Customization - Normalize": {
+  "class": "Rule",
+  "level": "adapt"
+ },
+ "AD - FieldValue - sAMAccountName": {
+  "class": "Rule",
+  "level": "adapt"
+ },
+ "AD Finance Groups": {
+  "class": "Bundle",
+  "level": "adapt"
+ },
+ "Active Directory": {
+  "class": "Application",
+  "level": "adapt"
+ },
+ "Aggregate HR": {
+  "class": "TaskDefinition",
+  "level": "direct"
+ },
+ "Cert - Exclude Service Accounts": {
+  "class": "Rule",
+  "level": "adapt"
+ },
+ "Contractor Onboarding": {
+  "class": "Form",
+  "level": "adapt"
+ },
+ "Department Mapping": {
+  "class": "Custom",
+  "level": "none"
+ },
+ "Finance Analyst": {
+  "class": "Bundle",
+  "level": "adapt"
+ },
+ "Finance Suite": {
+  "class": "Application",
+  "level": "none"
+ },
+ "HR - BuildMap - Split Name": {
+  "class": "Rule",
+  "level": "direct"
+ },
+ "HR - Correlation - Employee ID": {
+  "class": "Rule",
+  "level": "adapt"
+ },
+ "HR - Creation - Set Defaults": {
+  "class": "Rule",
+  "level": "adapt"
+ },
+ "HR - ManagerCorrelation - By Manager ID": {
+  "class": "Rule",
+  "level": "adapt"
+ },
+ "HR - PreIterate - Unzip": {
+  "class": "Rule",
+  "level": "none"
+ },
+ "HR Feed": {
+  "class": "Application",
+  "level": "adapt"
+ },
+ "Identity": {
+  "class": "ObjectConfig",
+  "level": "adapt"
+ },
+ "Identity - Department Code": {
+  "class": "Rule",
+  "level": "adapt"
+ },
+ "Leaver": {
+  "class": "IdentityTrigger",
+  "level": "adapt"
+ },
+ "Payments SOD": {
+  "class": "Policy",
+  "level": "adapt"
+ },
+ "Quarterly Manager Review": {
+  "class": "CertificationDefinition",
+  "level": "adapt"
+ },
+ "REST - After - Map Users": {
+  "class": "Rule",
+  "level": "direct"
+ },
+ "Refresh Identity Cube": {
+  "class": "TaskDefinition",
+  "level": "direct"
+ },
+ "Request Laptop": {
+  "class": "QuickLink",
+  "level": "none"
+ },
+ "Risky Activity": {
+  "class": "Policy",
+  "level": "none"
+ },
+ "Role - Selector - Finance": {
+  "class": "Rule",
+  "level": "adapt"
+ },
+ "Run Nightly Cleanup": {
+  "class": "TaskDefinition",
+  "level": "none"
+ },
+ "Task - Nightly Cleanup": {
+  "class": "Rule",
+  "level": "none"
+ },
+ "Welcome Email": {
+  "class": "EmailTemplate",
+  "level": "adapt"
+ }
+}

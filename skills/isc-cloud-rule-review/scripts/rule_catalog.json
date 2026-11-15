@@ -1,0 +1,413 @@
+{
+ "_generated": "tools/build_references.py from developer.sailpoint.com (fe42feb)",
+ "cloudRulesPage": "https://developer.sailpoint.com/docs/extensibility/rules/cloud-rules",
+ "deprecated": {
+  "CertificationExclusion": "Use configurable certification campaign filters instead.",
+  "IdentitySelector": "Use role standard assignment criteria instead.",
+  "Integration": "Use [Before Provisioning](./cloud-rules/before_provisioning_rule.md) rules instead."
+ },
+ "guidelinesPage": "https://developer.sailpoint.com/docs/extensibility/rules",
+ "idnMethods": {
+  "accountExistsByDisplayName": [
+   {
+    "params": [
+     "String applicationName",
+     "String displayName"
+    ],
+    "returns": "boolean"
+   }
+  ],
+  "accountExistsByNativeIdentity": [
+   {
+    "params": [
+     "String applicationName",
+     "String nativeIdentity"
+    ],
+    "returns": "boolean"
+   }
+  ],
+  "attrSearchCountAccounts": [
+   {
+    "params": [
+     "List<String> sourceIds",
+     "String attributeName",
+     "String operation",
+     "List<String> values"
+    ],
+    "returns": "int"
+   }
+  ],
+  "attrSearchGetIdentityName": [
+   {
+    "params": [
+     "List<String> sourceIds",
+     "String attributeName",
+     "String operation",
+     "List<String> values"
+    ],
+    "returns": "String"
+   }
+  ],
+  "countAccounts": [
+   {
+    "params": [
+     "String applicationName"
+    ],
+    "returns": "int"
+   }
+  ],
+  "countIdentitiesBySearchableIdentityAttribute": [
+   {
+    "params": [
+     "String attributeName",
+     "String operation",
+     "String value"
+    ],
+    "returns": "int"
+   }
+  ],
+  "findIdentitiesBySearchableIdentityAttribute": [
+   {
+    "params": [
+     "String attributeName",
+     "String operation",
+     "String value",
+     "String sortAttribute"
+    ],
+    "returns": "List<sailpoint.rule.Identity>"
+   }
+  ],
+  "getAccountAttribute": [
+   {
+    "params": [
+     "String applicationName",
+     "String nativeIdentity",
+     "String attribute"
+    ],
+    "returns": "String"
+   },
+   {
+    "params": [
+     "Account account",
+     "String attribute"
+    ],
+    "returns": "String"
+   }
+  ],
+  "getAccountAttributeBool": [
+   {
+    "params": [
+     "String applicationName",
+     "String nativeIdentity",
+     "String attribute"
+    ],
+    "returns": "boolean"
+   },
+   {
+    "params": [
+     "Account account",
+     "String attribute"
+    ],
+    "returns": "boolean"
+   }
+  ],
+  "getAccountAttributeInt": [
+   {
+    "params": [
+     "String applicationName",
+     "String nativeIdentity",
+     "String attribute"
+    ],
+    "returns": "int"
+   },
+   {
+    "params": [
+     "Account account",
+     "String attribute"
+    ],
+    "returns": "int"
+   }
+  ],
+  "getAccountByDisplayName": [
+   {
+    "params": [
+     "String applicationName",
+     "String displayName"
+    ],
+    "returns": "Account"
+   }
+  ],
+  "getAccountByNativeIdentity": [
+   {
+    "params": [
+     "String applicationName",
+     "String nativeIdentity"
+    ],
+    "returns": "Account"
+   }
+  ],
+  "getFirstAccountNativeIdentity": [
+   {
+    "params": [
+     "String applicationName",
+     "String identityName"
+    ],
+    "returns": "String"
+   }
+  ],
+  "getIdentityById": [
+   {
+    "params": [
+     "String id"
+    ],
+    "returns": "sailpoint.rule.Identity"
+   }
+  ],
+  "getManagedAttributeDescription": [
+   {
+    "params": [
+     "String sourceId",
+     "String name",
+     "String value",
+     "ManagedAttribute.Type type"
+    ],
+    "returns": "String"
+   }
+  ],
+  "getManagedAttributeDetails": [
+   {
+    "params": [
+     "String sourceId",
+     "String name",
+     "String value",
+     "ManagedAttribute.Type type"
+    ],
+    "returns": "ManagedAttributeDetails"
+   }
+  ],
+  "getRawAccountAttribute": [
+   {
+    "params": [
+     "String applicationName",
+     "String nativeIdentity",
+     "String attribute"
+    ],
+    "returns": "Object"
+   },
+   {
+    "params": [
+     "Account account",
+     "String attribute"
+    ],
+    "returns": "Object"
+   }
+  ],
+  "isUniqueLDAPValue": [
+   {
+    "params": [
+     "String identityNameOrId",
+     "String applicationNameOrId",
+     "String attributeName",
+     "String attributeValue"
+    ],
+    "returns": "boolean"
+   }
+  ]
+ },
+ "idnRuleUtilPage": "https://developer.sailpoint.com/docs/extensibility/rules/rule-utility",
+ "ruleTypes": {
+  "AttributeGenerator": {
+   "execution": "cloud",
+   "inputs": [
+    "log",
+    "idn",
+    "identity",
+    "application",
+    "field"
+   ],
+   "outputs": [
+    "value"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/cloud-rules/account-profile-attribute-generator"
+  },
+  "AttributeGeneratorFromTemplate": {
+   "execution": "cloud",
+   "inputs": [
+    "log",
+    "idn",
+    "identity",
+    "field"
+   ],
+   "outputs": [
+    "value"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/cloud-rules/account-profile-attribute-generator-template"
+  },
+  "BeforeProvisioning": {
+   "execution": "cloud",
+   "inputs": [
+    "log",
+    "idn",
+    "plan",
+    "application",
+    "integration"
+   ],
+   "outputs": [],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/cloud-rules/before-provisioning-rule"
+  },
+  "BuildMap": {
+   "execution": "cloud",
+   "inputs": [
+    "cols",
+    "record",
+    "application",
+    "schema"
+   ],
+   "outputs": [],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/cloud-rules/buildmap-rule"
+  },
+  "ConnectorBeforeCreate": {
+   "execution": "connector",
+   "inputs": [
+    "Application",
+    "Request",
+    "Result"
+   ],
+   "outputs": [],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/connector-rules/before-and-after-rule-operations"
+  },
+  "Correlation": {
+   "execution": "cloud",
+   "inputs": [
+    "log",
+    "idn",
+    "account",
+    "application"
+   ],
+   "outputs": [
+    "returnMap"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/cloud-rules/correlation-rule"
+  },
+  "IdentityAttribute": {
+   "execution": "cloud",
+   "inputs": [
+    "log",
+    "idn",
+    "identity",
+    "oldValue"
+   ],
+   "outputs": [
+    "attributeValue"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/cloud-rules/identity-attribute-rule"
+  },
+  "JDBCBuildMap": {
+   "execution": "connector",
+   "inputs": [
+    "result",
+    "connection",
+    "state",
+    "application",
+    "schema"
+   ],
+   "outputs": [
+    "map"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/connector-rules/jdbc-buildmap-rule"
+  },
+  "JDBCProvision": {
+   "execution": "connector",
+   "inputs": [
+    "connection",
+    "plan",
+    "application",
+    "schema"
+   ],
+   "outputs": [
+    "result"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/connector-rules/jdbc-provisioning-rule"
+  },
+  "ManagerCorrelation": {
+   "execution": "cloud",
+   "inputs": [
+    "log",
+    "idn",
+    "link",
+    "managerAttributeValue"
+   ],
+   "outputs": [
+    "returnMap"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/cloud-rules/manager-correlation-rule"
+  },
+  "SAPBuildMap": {
+   "execution": "connector",
+   "inputs": [
+    "object",
+    "connector",
+    "state",
+    "application",
+    "schema",
+    "destination"
+   ],
+   "outputs": [],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/connector-rules/sap-buildmap-rule"
+  },
+  "SapHrOperationProvisioning": {
+   "execution": "connector",
+   "inputs": [
+    "application",
+    "schema",
+    "destination",
+    "plan",
+    "request",
+    "connector"
+   ],
+   "outputs": [
+    "result"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/connector-rules/sap-provisioning-modify-rule"
+  },
+  "Transform": {
+   "execution": "cloud",
+   "inputs": [
+    "log",
+    "idn"
+   ],
+   "outputs": [
+    "value"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/cloud-rules/transform-rule"
+  },
+  "WebServiceAfterOperationRule": {
+   "execution": "connector",
+   "inputs": [
+    "application",
+    "processedResponseObject",
+    "requestEndPoint",
+    "restClient",
+    "rawResponseObject"
+   ],
+   "outputs": [
+    "updatedAccountOrGroupList"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/connector-rules/webservices-after-provisioning-rule"
+  },
+  "WebServiceBeforeOperationRule": {
+   "execution": "connector",
+   "inputs": [
+    "application",
+    "provisioningPlan",
+    "requestEndPoint",
+    "restClient",
+    "oldResponseMap"
+   ],
+   "outputs": [
+    "EndPoint / Map"
+   ],
+   "page": "https://developer.sailpoint.com/docs/extensibility/rules/connector-rules/webservices-before-provisioning-rule"
+  }
+ }
+}
