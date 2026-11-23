@@ -1,5 +1,5 @@
 {
-"_generated": "tools/build_references.py from sailpoint-oss/api-specs 1f5d866",
+"_generated": "tools/build_references.py from sailpoint-oss/api-specs 1f7f8d5",
 "endpoints": {
 "DELETE /access-model-metadata/v1/attributes/{key}": {
 "experimental": false,
@@ -29,8 +29,16 @@
 "experimental": false,
 "query": []
 },
+"DELETE /accounts/v2/sources/{sourceId}/subtypes/{subtypeId}": {
+"experimental": true,
+"query": []
+},
 "DELETE /authorization/v1/custom-user-levels/{id}": {
 "experimental": true,
+"query": []
+},
+"DELETE /brandings/v1/default": {
+"experimental": false,
 "query": []
 },
 "DELETE /brandings/v1/{name}": {
@@ -347,10 +355,6 @@
 },
 "DELETE /sources/v1/{sourceId}/schemas/{schemaId}": {
 "experimental": false,
-"query": []
-},
-"DELETE /sources/v1/{sourceId}/subtypes/{technicalName}": {
-"experimental": true,
 "query": []
 },
 "DELETE /sources/v2/{sourceId}/provisioning-policies/{id}": {
@@ -1427,6 +1431,27 @@
 "owner.id"
 ]
 },
+"GET /accounts/v2/source-subtypes/{subtypeId}/human-config": {
+"experimental": true,
+"query": []
+},
+"GET /accounts/v2/sources/{sourceId}/subtypes": {
+"experimental": true,
+"limitMax": 250,
+"query": [
+"count",
+"limit",
+"offset",
+"sorters"
+],
+"sorters": [
+"sourceId"
+]
+},
+"GET /accounts/v2/sources/{sourceId}/subtypes/{subtypeId}": {
+"experimental": true,
+"query": []
+},
 "GET /ai-access-request-recommendations/v1": {
 "experimental": true,
 "filters": {
@@ -1917,6 +1942,10 @@
 },
 "GET /campaigns/v1/{id}/reports": {
 "experimental": false,
+"query": []
+},
+"GET /campaigns/v1/{id}/reports/{taskResultId}/download-url/{reportFormat}": {
+"experimental": true,
 "query": []
 },
 "GET /capabilities/v1": {
@@ -6358,6 +6387,10 @@
 "experimental": false,
 "query": []
 },
+"GET /mfa/v1/clear1/config": {
+"experimental": false,
+"query": []
+},
 "GET /mfa/v1/duo-web/config": {
 "experimental": false,
 "query": []
@@ -8507,10 +8540,7 @@
 "filters": {
 "classification": [
 "eq",
-"ne",
-"in",
-"sw",
-"co"
+"in"
 ],
 "created": [
 "gt",
@@ -8520,15 +8550,12 @@
 ],
 "displayName": [
 "eq",
-"ne",
-"in",
-"sw",
-"co"
+"sw"
 ],
 "id": [
 "eq",
-"ne",
-"in"
+"in",
+"sw"
 ],
 "modified": [
 "gt",
@@ -8538,64 +8565,45 @@
 ],
 "source.id": [
 "eq",
-"ne",
-"in",
-"sw",
-"co"
+"in"
 ],
 "targetId": [
 "eq",
-"ne",
-"in",
-"sw",
-"co"
+"in"
 ],
 "targetName": [
 "eq",
-"ne",
-"in",
-"sw",
-"co",
-"isnull"
+"sw"
 ],
 "targetType": [
 "eq",
-"ne",
-"in",
-"sw",
-"co"
+"in"
 ],
 "technicalName": [
 "eq",
-"ne",
-"in",
-"sw",
-"co"
+"sw"
 ],
 "type": [
 "eq",
-"ne",
-"in",
-"sw",
-"co"
+"in"
 ]
 },
 "limitMax": 250,
 "query": [
+"filters",
+"sorters",
 "sourceId",
 "effectiveSet",
 "targetType",
 "includeConfigs",
-"limit",
-"offset",
 "count",
-"filters",
-"sorters"
+"limit",
+"offset"
 ],
 "sorters": [
 "id",
-"technicalName",
 "displayName",
+"technicalName",
 "source.id",
 "targetType",
 "targetId",
@@ -8619,11 +8627,11 @@
 },
 "limitMax": 250,
 "query": [
-"limit",
-"offset",
-"count",
 "filters",
-"sorters"
+"sorters",
+"count",
+"limit",
+"offset"
 ],
 "sorters": [
 "targetType",
@@ -8827,10 +8835,6 @@
 "connectionType"
 ]
 },
-"GET /sources/v1/subtypes/{subtypeId}": {
-"experimental": true,
-"query": []
-},
 "GET /sources/v1/{id}": {
 "experimental": false,
 "query": []
@@ -8995,35 +8999,6 @@
 },
 "GET /sources/v1/{sourceId}/source-health": {
 "experimental": false,
-"query": []
-},
-"GET /sources/v1/{sourceId}/subtypes": {
-"experimental": true,
-"filters": {
-"displayName": [
-"eq",
-"sw"
-],
-"technicalName": [
-"eq",
-"sw"
-]
-},
-"limitMax": 250,
-"query": [
-"filters",
-"sorters",
-"count",
-"limit",
-"offset"
-],
-"sorters": [
-"displayName",
-"technicalName"
-]
-},
-"GET /sources/v1/{sourceId}/subtypes/{technicalName}": {
-"experimental": true,
 "query": []
 },
 "GET /sources/v2/{sourceId}/provisioning-policies": {
@@ -9807,6 +9782,14 @@
 "experimental": false,
 "query": []
 },
+"PATCH /accounts/v2/source-subtypes/{subtypeId}/human-config": {
+"experimental": true,
+"query": []
+},
+"PATCH /accounts/v2/sources/{sourceId}/subtypes/{subtypeId}": {
+"experimental": true,
+"query": []
+},
 "PATCH /auth-org/v1/lockout-config": {
 "experimental": false,
 "query": []
@@ -10087,10 +10070,6 @@
 "experimental": false,
 "query": []
 },
-"PATCH /sources/v1/{sourceId}/subtypes/{technicalName}": {
-"experimental": true,
-"query": []
-},
 "PATCH /sources/v2/{sourceId}/provisioning-policies/{id}": {
 "experimental": true,
 "query": []
@@ -10320,6 +10299,10 @@
 },
 "POST /accounts/v1/{id}/unlock": {
 "experimental": false,
+"query": []
+},
+"POST /accounts/v2/sources/{sourceId}/subtypes": {
+"experimental": true,
 "query": []
 },
 "POST /ai-access-request-recommendations/v1/ignored-items": {
@@ -11026,10 +11009,6 @@
 "experimental": true,
 "query": []
 },
-"POST /machine-accounts/v1/bulk-reload": {
-"experimental": true,
-"query": []
-},
 "POST /machine-accounts/v1/bulk-reload-async": {
 "experimental": true,
 "query": []
@@ -11070,6 +11049,14 @@
 "experimental": true,
 "query": []
 },
+"POST /machine-identities/v1/bulk-delete": {
+"experimental": true,
+"query": []
+},
+"POST /machine-identities/v1/bulk-update": {
+"experimental": true,
+"query": []
+},
 "POST /machine-identities/v1/lifecycle-actions/{requestId}/cancel": {
 "experimental": true,
 "query": []
@@ -11079,14 +11066,6 @@
 "query": []
 },
 "POST /machine-identities/v2": {
-"experimental": true,
-"query": []
-},
-"POST /machine-identities/v2/bulk-delete": {
-"experimental": true,
-"query": []
-},
-"POST /machine-identities/v2/bulk-update": {
 "experimental": true,
 "query": []
 },
@@ -11572,10 +11551,6 @@
 "experimental": false,
 "query": []
 },
-"POST /sources/v1/{sourceId}/subtypes": {
-"experimental": true,
-"query": []
-},
 "POST /sources/v1/{sourceId}/upload-connector-file": {
 "experimental": false,
 "query": []
@@ -11865,6 +11840,10 @@
 "query": []
 },
 "PUT /managed-clusters/v1/{id}/log-config": {
+"experimental": false,
+"query": []
+},
+"PUT /mfa/v1/clear1/config": {
 "experimental": false,
 "query": []
 },
